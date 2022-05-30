@@ -1,1 +1,95 @@
-local a=workspace.CurrentCamera;local b=game.TextService;local c={accent=Color3.fromRGB(200,0,207)}do local d=Instance.new("ScreenGui")local e=Instance.new("Frame")local f=Instance.new("UIListLayout")d.Name="pie.solutions NOTIFS"d.Parent=game.CoreGui;syn.protect_gui(d)e.Name="container"e.Parent=d;e.BackgroundColor3=Color3.fromRGB(255,255,255)e.BackgroundTransparency=1.000;e.Position=UDim2.new(0,4,0,0)e.Size=UDim2.new(0,360,0,271)f.Parent=e;f.SortOrder=Enum.SortOrder.LayoutOrder;f.Padding=UDim.new(0,4)local function g(h,i)assert(h or typeof(h)=="Instance")assert(i or type(i)=="number")local j=b.GetTextSize(b,h.Text,h.TextSize,h.Font,Vector2.new(a.ViewportSize.X,h.AbsoluteSize.Y)).X;h.Size=UDim2.new(0,j+i,0,h.Size.Y.Offset)end;function c:Notify(k,l)k=k or'Notification'l=l or 1;local m=Instance.new("Frame")local n=Instance.new("Frame",m)local o=Instance.new("TextLabel",n)local p=Instance.new("Frame")m.Name="mainNotif"m.Parent=e;m.BackgroundColor3=Color3.fromRGB(75,75,75)m.BorderColor3=Color3.fromRGB(0,0,0)m.ClipsDescendants=true;m.Position=UDim2.new(0.055555582,0,0.405904055,0)m.Size=UDim2.new(0,0,0,21)n.Name="innerNotif"n.BackgroundColor3=Color3.fromRGB(40,40,40)n.BorderColor3=Color3.fromRGB(0,0,0)n.Size=UDim2.new(0,337,0,17)o.Name="notifText"o.BackgroundColor3=Color3.fromRGB(255,255,255)o.BackgroundTransparency=1.000;o.Size=UDim2.new(0,331,0,17)o.Font=Enum.Font.Code;o.Text=' '..tostring(k)o.TextColor3=Color3.fromRGB(255,255,255)o.TextSize=14.000;o.TextStrokeTransparency=0.500;o.TextXAlignment=Enum.TextXAlignment.Left;g(o,0)n.Size=UDim2.new(0,o.Size.X.Offset+6,0,17)n.Position=UDim2.new(0,0,0,0)p.Name="accentNotif"p.Parent=m;p.BackgroundColor3=c.accent;p.BorderColor3=Color3.fromRGB(0,0,0)p.Size=UDim2.new(0,343,0,1)m:TweenSize(UDim2.new(0,n.Size.X.Offset+4,0,21),'Out','Sine',0.5,true)n.Position=UDim2.new(0,2,0,2)p.Size=UDim2.new(0,n.Size.X.Offset+4,0,1)p.Position=UDim2.new(0,0,0,0)task.spawn(function()task.wait(l)m:TweenSize(UDim2.new(0,0,0,21),"In","Sine",0.5,true)delay(0.3,function()m:Destroy()end)end)end end;c:Notify('Notifications loaded!',2)
+local Camera = workspace.CurrentCamera 
+local TextService = game.TextService
+local NOTIFICATIONS = {
+    accent = Color3.fromRGB(200,0,207),
+}
+do 
+    local piesolutionsNOTIFS = Instance.new("ScreenGui");
+    local container = Instance.new("Frame");
+    local UIListLayout = Instance.new("UIListLayout");
+    
+    piesolutionsNOTIFS.Name = "pie.solutions NOTIFS";
+    piesolutionsNOTIFS.Parent = game.CoreGui
+    syn.protect_gui(piesolutionsNOTIFS);
+    container.Name = "container";
+    container.Parent = piesolutionsNOTIFS;
+    container.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+    container.BackgroundTransparency = 1.000;
+    container.Position = UDim2.new(0, 4, 0, 0);
+    container.Size = UDim2.new(0, 360, 0, 271);
+    
+    UIListLayout.Parent = container;
+    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder;
+    UIListLayout.Padding = UDim.new(0, 4);
+    
+    local function FixTextSize(Object, FixSize)
+        
+        assert((Object or typeof(Object) == "Instance"));
+        assert((FixSize or type(FixSize) == "number"));
+    
+        local TextSize = TextService.GetTextSize(TextService,
+            Object.Text, Object.TextSize, Object.Font, Vector2.new(Camera.ViewportSize.X, Object.AbsoluteSize.Y)
+        ).X;
+    
+        Object.Size = UDim2.new(0, TextSize + FixSize, 0, Object.Size.Y.Offset);
+    end;
+    
+     function NOTIFICATIONS:Notify(text,time)
+        text = text or 'Notification';
+        time = time or 1;
+        local mainNotif = Instance.new("Frame");
+        local innerNotif = Instance.new("Frame",mainNotif);
+        local notifText = Instance.new("TextLabel",innerNotif);
+        local accentNotif = Instance.new("Frame");
+    
+        mainNotif.Name = "mainNotif";
+        mainNotif.Parent = container;
+        mainNotif.BackgroundColor3 = Color3.fromRGB(75,75,75);
+        mainNotif.BorderColor3 = Color3.fromRGB(0, 0, 0);
+        mainNotif.ClipsDescendants = true;
+        mainNotif.Position = UDim2.new(0.055555582, 0, 0.405904055, 0);
+        mainNotif.Size = UDim2.new(0, 0, 0, 21);
+        
+        innerNotif.Name = "innerNotif";
+        innerNotif.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
+        innerNotif.BorderColor3 = Color3.fromRGB(0, 0, 0);
+        innerNotif.Size = UDim2.new(0, 337, 0, 17);
+        
+        
+        notifText.Name = "notifText";
+        notifText.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+        notifText.BackgroundTransparency = 1.000;
+        notifText.Size = UDim2.new(0, 331, 0, 17);
+        notifText.Font = Enum.Font.Code;
+        notifText.Text = ' '..tostring(text);
+        notifText.TextColor3 = Color3.fromRGB(255, 255, 255);
+        notifText.TextSize = 14.000;
+        notifText.TextStrokeTransparency = 0.500;
+        notifText.TextXAlignment = Enum.TextXAlignment.Left;
+        
+        FixTextSize(notifText,0);
+        innerNotif.Size = UDim2.new(0,notifText.Size.X.Offset + 6,0,17);
+        innerNotif.Position = UDim2.new(0, 0, 0, 0);
+        accentNotif.Name = "accentNotif";
+        accentNotif.Parent = mainNotif;
+        accentNotif.BackgroundColor3 = NOTIFICATIONS.accent;
+        accentNotif.BorderColor3 = Color3.fromRGB(0, 0, 0);
+        accentNotif.Size = UDim2.new(0, 343, 0, 1);
+        
+        mainNotif:TweenSize(UDim2.new(0,innerNotif.Size.X.Offset + 4,0,21),'Out','Sine',0.5,true);
+        innerNotif.Position = UDim2.new(0, 2, 0, 2);
+        accentNotif.Size = UDim2.new(0,innerNotif.Size.X.Offset + 4,0,1);
+        accentNotif.Position = UDim2.new(0,0,0,0);
+        
+        task.spawn(function()
+            task.wait(time);
+            mainNotif:TweenSize(UDim2.new(0,0,0,21),"In","Sine",0.5,true);
+            delay(0.3,function()
+                mainNotif:Destroy();
+            end);
+        end);
+    end;
+end
+
+NOTIFICATIONS:Notify('Notifications Loaded!',2)
+return NOTIFICATIONS
