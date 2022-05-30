@@ -30,7 +30,7 @@ local library = {
 	tabs = {},
 	draggable = true,
 	flags = {},
-	title = "Amnesty - Universal",
+	title = "pie.solutions",
 	open = false,
 	mousestate = inputService.MouseIconEnabled,
 	popup = nil,
@@ -40,8 +40,8 @@ local library = {
 	notifications = {},
 	tabSize = 0,
 	theme = {},
-	foldername = "amnesty/universal",
-	fileext = ".sex"
+	foldername = "pie.solutions",
+	fileext = ".json"
 }
 
 getgenv().library = library
