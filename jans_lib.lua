@@ -41,7 +41,7 @@ local library = {
 	tabSize = 0,
 	theme = {},
 	foldername = "pie.solutions",
-	fileext = ".json"
+	fileext = ".sex"
 }
 
 getgenv().library = library
