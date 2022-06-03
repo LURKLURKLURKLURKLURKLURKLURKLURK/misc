@@ -30,7 +30,7 @@ local library = {
 	tabs = {},
 	draggable = true,
 	flags = {},
-	title = "pie.solutions",
+	title = "Amnesty - Universal",
 	open = false,
 	mousestate = inputService.MouseIconEnabled,
 	popup = nil,
@@ -40,7 +40,7 @@ local library = {
 	notifications = {},
 	tabSize = 0,
 	theme = {},
-	foldername = "pie.solutions",
+	foldername = "amnesty/universal",
 	fileext = ".sex"
 }
 
@@ -2589,7 +2589,7 @@ SettingSection:AddBind({text = "Open / Close", flag = "UI Toggle", nomouse = tru
     library:Close();
 end});
 
-SettingSection:AddColor({text = "Accent Color", flag = "Menu Accent Color", color = Color3.fromRGB(200,0,207), callback = function(color)
+SettingSection:AddColor({text = "Accent Color", flag = "Menu Accent Color", color = Color3.fromRGB(255, 229, 31), callback = function(color)
     if library.currentTab then
         library.currentTab.button.TextColor3 = color;
     end
@@ -2608,31 +2608,29 @@ local backgroundlist = {
 };
 
 -- [Background List]
-local back = SettingSection:AddList({text = "Background", max = 5, flag = "background", values = {"Floral", "Flowers", "Circles", "Hearts", "None"}, value = "Hearts", callback = function(v)
+local back = SettingSection:AddList({text = "Background", max = 5, flag = "background", values = {"Floral", "Flowers", "Circles", "Hearts", "None"}, value = "None", callback = function(v)
     if library.main then
         library.main.Image = backgroundlist[v];
     end
 end});
 
 -- [Background Color Picker]
-back:AddColor({flag = "backgroundcolor", color = Color3.fromRGB(200,0,207), callback = function(color)
+back:AddColor({flag = "backgroundcolor", color = Color3.new(), callback = function(color)
     if library.main then
         library.main.ImageColor3 = color;
     end
-end, trans = 0.1, calltrans = function(trans)
+end, trans = 1, calltrans = function(trans)
     if library.main then
         library.main.ImageTransparency = 1 - trans;
     end
 end});
 
 -- [Tile Size Slider]
-SettingSection:AddSlider({text = "Tile Size", min = 50, max = 500, value = 500, callback = function(size)
+SettingSection:AddSlider({text = "Tile Size", min = 50, max = 500, value = 50, callback = function(size)
     if library.main then
         library.main.TileSize = UDim2.new(0, size, 0, size);
     end
 end});
-
--- [Discord Button]
 
 -- [Config Box]
 ConfigSection:AddBox({text = "Config Name", skipflag = true});
