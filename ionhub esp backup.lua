@@ -223,7 +223,7 @@ local utility = {}; do
             return esp_overrides.get_tool(player, character);
         end;
         if character then
-            local tool = tostring(game.GetService(game,'ReplicatedStorage').Players[character.Name].GameplayVariables.EquippedTool.Value) --find_first_child_of_class(character, "Tool");
+            local tool = tostring(game.GetService(game,'ReplicatedStorage').Players[character.Name].Status.GameplayVariables.EquippedTool.Value) --find_first_child_of_class(character, "Tool");
             if tool then
                 return tool.Name;
             end;
