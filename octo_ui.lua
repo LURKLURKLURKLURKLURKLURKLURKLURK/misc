@@ -4783,7 +4783,7 @@ function library:CreateSettingsTab(menu)
         end
     end})
 
-    mainSection:AddButton({text = 'Join Discord', flag = 'joindiscord', confirm = true, callback = function()
+    --[[mainSection:AddButton({text = 'Join Discord', flag = 'joindiscord', confirm = true, callback = function()
         local res = syn.request({
 			Url = 'http://127.0.0.1:6463/rpc?v=1',
 			Method = 'POST',
@@ -4804,7 +4804,7 @@ function library:CreateSettingsTab(menu)
 
     mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
         setclipboard('discord.gg/jhS2vYpZqH')
-    end})
+    end})]]
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
         setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
@@ -4859,3 +4859,11 @@ end
 getgenv().library = library
 --return library
 return library
+library:init();
+local menu       = library.NewWindow({title = library.cheatname..' | '..library.gamename, size = UDim2.new(0,525,0,650)})
+local legitTab   = menu:AddTab('Legit')
+local visualTab  = menu:AddTab('Visuals')
+local miscTab    = menu:AddTab('Misc')
+local settingTab = library:CreateSettingsTab(menu)
+
+library:SendNotification('This can be found as an example in the code for the ui, it is how you use the notifs.')
