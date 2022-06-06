@@ -14,8 +14,8 @@
 
 local startupArgs = ({...})[1] or {}
 
-if library then
-    library:Unload();
+if getgenv().library ~= nil then
+    getgenv().library:Unload();
 end
 
 if not game:IsLoaded() then
@@ -27,16 +27,16 @@ local function gs(a)
 end
 
 -- // Variables
-local players, http, runservice, inputservice, tweenService, stats = gs('Players'), gs('HttpService'), gs('RunService'), gs('UserInputService'), gs('TweenService'), gs('Stats')
+local players, http, runservice, inputservice, tweenService, stats, actionservice = gs('Players'), gs('HttpService'), gs('RunService'), gs('UserInputService'), gs('TweenService'), gs('Stats'), gs('ContextActionService')
 local localplayer = players.LocalPlayer
 
 local floor, ceil, huge, pi, clamp = math.floor, math.ceil, math.huge, math.pi, math.clamp
 local c3new, fromrgb, fromhsv = Color3.new, Color3.fromRGB, Color3.fromHSV
 local next, newInstance, newUDim2, newVector2 = next, Instance.new, UDim2.new, Vector2.new
-local isexecutorclosure = isexecutorclosure or is_synapse_function or is_sirhurt_closure;
+local isexecutorclosure = isexecutorclosure or is_synapse_function or is_sirhurt_closure or iskrnlclosure;
 local executor = (
     syn and 'syn' or
-    getexecutorname() or
+    getexecutorname and getexecutorname() or
     'unknown'
 )
 
@@ -75,7 +75,6 @@ local library = {
     };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
     signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/misc/main/signal.lua'))();
-    mouseBehavior = inputservice.MouseBehavior;
     open = false;
     opening = false;
     hasInit = false;
@@ -84,26 +83,189 @@ local library = {
     fileext = startupArgs.fileext or '.txt';
 }
 
-library.defaultTheme = {
-    ['Accent']                    = fromrgb(255,135,255);
-    ['Background']                = fromrgb(18,18,18);
-    ['Border']                    = fromrgb(0,0,0);
-    ['Border 1']                  = fromrgb(60,60,60);
-    ['Border 2']                  = fromrgb(35,35,35);
-    ['Border 3']                  = fromrgb(10,10,10);
-    ['Primary Text']              = fromrgb(235,235,235);
-    ['Group Background']          = fromrgb(35,35,35);
-    ['Selected Tab Background']   = fromrgb(35,35,35);
-    ['Unselected Tab Background'] = fromrgb(18,18,18);
-    ['Selected Tab Text']         = fromrgb(245,245,245);
-    ['Unselected Tab Text']       = fromrgb(145,145,145);
-    ['Section Background']        = fromrgb(18,18,18);
-    ['Option Text 1']             = fromrgb(245,245,245);
-    ['Option Text 2']             = fromrgb(195,195,195);
-    ['Option Text 3']             = fromrgb(145,145,145);
-    ['Option Border 1']           = fromrgb(50,50,50);
-    ['Option Border 2']           = fromrgb(0,0,0);
-    ['Option Background']         = fromrgb(35,35,35);
+library.themes = {
+    {
+        name = 'Default',
+        theme = {
+            ['Accent']                    = fromrgb(255,135,255);
+            ['Background']                = fromrgb(18,18,18);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(60,60,60);
+            ['Border 2']                  = fromrgb(35,35,35);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(35,35,35);
+            ['Selected Tab Background']   = fromrgb(35,35,35);
+            ['Unselected Tab Background'] = fromrgb(18,18,18);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(18,18,18);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(50,50,50);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(35,35,35);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    },
+    {
+        name = 'Tokyo Night',
+        theme = {
+            ['Accent']                    = fromrgb(103,89,179);
+            ['Background']                = fromrgb(22,22,31);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(50,50,50);
+            ['Border 2']                  = fromrgb(24,25,37);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(24,25,37);
+            ['Selected Tab Background']   = fromrgb(24,25,37);
+            ['Unselected Tab Background'] = fromrgb(22,22,31);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(22,22,31);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(50,50,50);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(24,25,37);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    },
+    {
+        name = 'Nekocheat',
+        theme = {
+            ["Accent"]                    = fromrgb(226, 30, 112);
+            ["Background"]                = fromrgb(18,18,18);
+            ["Border"]                    = fromrgb(0,0,0);
+            ["Border 1"]                  = fromrgb(60,60,60);
+            ["Border 2"]                  = fromrgb(18,18,18);
+            ["Border 3"]                  = fromrgb(10,10,10);
+            ["Primary Text"]              = fromrgb(255,255,255);
+            ["Group Background"]          = fromrgb(18,18,18);
+            ["Selected Tab Background"]   = fromrgb(18,18,18);
+            ["Unselected Tab Background"] = fromrgb(18,18,18);
+            ["Selected Tab Text"]         = fromrgb(245,245,245);
+            ["Unselected Tab Text"]       = fromrgb(145,145,145);
+            ["Section Background"]        = fromrgb(18,18,18);
+            ["Option Text 1"]             = fromrgb(255,255,255);
+            ["Option Text 2"]             = fromrgb(255,255,255);
+            ["Option Text 3"]             = fromrgb(255,255,255);
+            ["Option Border 1"]           = fromrgb(50,50,50);
+            ["Option Border 2"]           = fromrgb(0,0,0);
+            ["Option Background"]         = fromrgb(23,23,23);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    },
+    {
+        name = 'Nekocheat Blue',
+        theme = {
+            ["Accent"]                    = fromrgb(0, 247, 255);
+            ["Background"]                = fromrgb(18,18,18);
+            ["Border"]                    = fromrgb(0,0,0);
+            ["Border 1"]                  = fromrgb(60,60,60);
+            ["Border 2"]                  = fromrgb(18,18,18);
+            ["Border 3"]                  = fromrgb(10,10,10);
+            ["Primary Text"]              = fromrgb(255,255,255);
+            ["Group Background"]          = fromrgb(18,18,18);
+            ["Selected Tab Background"]   = fromrgb(18,18,18);
+            ["Unselected Tab Background"] = fromrgb(18,18,18);
+            ["Selected Tab Text"]         = fromrgb(245,245,245);
+            ["Unselected Tab Text"]       = fromrgb(145,145,145);
+            ["Section Background"]        = fromrgb(18,18,18);
+            ["Option Text 1"]             = fromrgb(255,255,255);
+            ["Option Text 2"]             = fromrgb(255,255,255);
+            ["Option Text 3"]             = fromrgb(255,255,255);
+            ["Option Border 1"]           = fromrgb(50,50,50);
+            ["Option Border 2"]           = fromrgb(0,0,0);
+            ["Option Background"]         = fromrgb(23,23,23);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    },
+    {
+        name = 'Fatality',
+        theme = {
+            ['Accent']                    = fromrgb(197,7,83);
+            ['Background']                = fromrgb(25,19,53);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(60,53,93);
+            ['Border 2']                  = fromrgb(29,23,66);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(29,23,66);
+            ['Selected Tab Background']   = fromrgb(29,23,66);
+            ['Unselected Tab Background'] = fromrgb(25,19,53);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(25,19,53);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(60,53,93);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(29,23,66);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    },
+    {
+        name = 'Gamesense',
+        theme = {
+            ['Accent']                    = fromrgb(147,184,26);
+            ['Background']                = fromrgb(17,17,17);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(47,47,47);
+            ['Border 2']                  = fromrgb(17,17,17);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(17,17,17);
+            ['Selected Tab Background']   = fromrgb(17,17,17);
+            ['Unselected Tab Background'] = fromrgb(17,17,17);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(17,17,17);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(47,47,47);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(35,35,35);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    },
+    {
+        name = 'Twitch',
+        theme = {
+            ['Accent']                    = fromrgb(169,112,255);
+            ['Background']                = fromrgb(14,14,14);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(45,45,45);
+            ['Border 2']                  = fromrgb(31,31,35);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(31,31,35);
+            ['Selected Tab Background']   = fromrgb(31,31,35);
+            ['Unselected Tab Background'] = fromrgb(17,17,17);
+            ['Selected Tab Text']         = fromrgb(225,225,225);
+            ['Unselected Tab Text']       = fromrgb(160,170,175);
+            ['Section Background']        = fromrgb(17,17,17);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(45,45,45);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(24,24,27);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    }
 }
 
 local blacklistedKeys = {
@@ -117,6 +279,19 @@ local blacklistedKeys = {
 	Enum.KeyCode.Escape
 }
 
+local whitelistedBoxKeys = {
+    Enum.KeyCode.Zero,
+    Enum.KeyCode.One,
+    Enum.KeyCode.Two,
+    Enum.KeyCode.Three,
+    Enum.KeyCode.Four,
+    Enum.KeyCode.Five,
+    Enum.KeyCode.Six,
+    Enum.KeyCode.Seven,
+    Enum.KeyCode.Eight,
+    Enum.KeyCode.Nine,
+}
+
 local keyNames = {
     [Enum.KeyCode.LeftControl] = 'LCTRL';
     [Enum.KeyCode.RightControl] = 'RCTRL';
@@ -126,10 +301,6 @@ local keyNames = {
     [Enum.UserInputType.MouseButton2] = 'MB2';
     [Enum.UserInputType.MouseButton3] = 'MB3';
 }
-
-for i,v in next, library.defaultTheme do
-    library.theme[i] = v;
-end
 
 library.button1down = library.signal.new()
 library.button1up   = library.signal.new()
@@ -248,7 +419,7 @@ do
     function utility:AddRGB(a,b)
         local r1,g1,b1 = self:ToRGB(a);
         local r2,g2,b2 = self:ToRGB(b);
-        return Color3.fromRGB(clamp(r1+r2,0,255),clamp(g1+g2,0,255),clamp(b1+b2,0,255))
+        return fromrgb(clamp(r1+r2,0,255),clamp(g1+g2,0,255),clamp(b1+b2,0,255))
     end
 
     function utility:ConvertNumberRange(val,oldmin,oldmax,newmin,newmax)
@@ -387,24 +558,26 @@ do
         }
 
         function drawing:Update()
-            if drawing.Parent then
-                local parent = library.drawings[drawing.Parent.Object]
-                local parentSize,parentPos
-                if parent then
+            -- if drawing.Parent then
+                local parent = drawing.Parent ~= nil and library.drawings[drawing.Parent.Object] or nil
+                local parentSize,parentPos,parentVis = workspace.CurrentCamera.ViewportSize, Vector2.new(0,0), true;
+                if parent ~= nil then
                     parentSize = (parent.Class == 'Square' or parent.Class == 'Image') and parent.Object.Size or parent.Class == 'Text' and parent.TextBounds or workspace.CurrentCamera.ViewportSize
                     parentPos = parent.Object.Position
+                    parentVis = parent.Object.Visible
                 end
 
                 if drawing.Class == 'Square' or drawing.Class == 'Image' then
                     drawing.Object.Size = typeof(drawing.Size) == 'Vector2' and drawing.Size or typeof(drawing.Size) == 'UDim2' and utility:UDim2ToVector2(drawing.Size,parentSize)
                 end
-                if parent then
+
+                if drawing.Class == 'Square' or drawing.Class == 'Image' or drawing.Class == 'Circle' or drawing.Class == 'Text' then
                     drawing.Object.Position = parentPos + (typeof(drawing.Position) == 'Vector2' and drawing.Position or utility:UDim2ToVector2(drawing.Position,parentSize))
                 end
 
-                drawing.Object.Visible = (drawing.Parent.Object.Visible and drawing.Visible) and true or false
+                drawing.Object.Visible = (parentVis and drawing.Visible) and true or false
 
-            end
+            -- end
             drawing:UpdateChildren()
         end
 
@@ -520,15 +693,14 @@ function library:Unload()
     end
     table.clear(self.drawings)
     getgenv().library = nil
-    if esp then
-        esp:unload()
-    end
 end
 
 function library:init()
     if self.hasInit then
         return
     end
+
+    local tooltipObjects = {};
 
     makefolder(self.cheatname)
     makefolder(self.cheatname..'/assets')
@@ -540,6 +712,13 @@ function library:init()
     end
     if not isfile(self.cheatname..'_enemylist.txt') then
         writefile(self.cheatname..'_enemylist.txt', http:JSONEncode({}))
+    end
+
+    function self:SetTheme(theme)
+        for i,v in next, theme do
+            self.theme[i] = v;
+        end
+        self.UpdateThemeColors();
     end
 
     function self:GetConfig(name)
@@ -641,32 +820,27 @@ function library:init()
         end
     end
 
-    if not getgenv().realBehavior then
-        getgenv().realBehavior = inputservice.MouseBehavior;
-    end
-    local index; index = hookmetamethod(inputservice, '__index', function(obj, idx)
-        if not checkcaller() and idx == 'MouseBehavior' and self.open then
-            return realBehavior
-        end
-        return index(obj, idx);
-    end)
+    local screenGui = Instance.new('ScreenGui');
+    if syn then syn.protect_gui(screenGui); end
+    screenGui.Parent = game:GetService('CoreGui');
+    screenGui.Enabled = true;
+    utility:Instance('ImageButton', {
+        Parent = screenGui,
+        Visible = true,
+        Modal = true,
+        Size = UDim2.new(1,0,1,0),
+        ZIndex = 9999999999,
+        Transparency = 1;
+    })
 
-    local newindex; newindex = hookmetamethod(inputservice, '__newindex', function(obj, idx, val)
-        if not checkcaller() and idx == 'MouseBehavior' then
-            realBehavior = val;
-            if self.open then
-                val = Enum.MouseBehavior.Default;
-            end
-        end
-        return newindex(obj, idx, val);
+    utility:Connection(library.unloaded, function()
+        screenGui:Destroy()
     end)
 
     local namecall; namecall = hookmetamethod(game, '__namecall', function(obj, ...)
-
         if getnamecallmethod() == 'Destroy' and library.instances[obj] ~= nil then
             library.instances[obj] = nil;
         end
-
         return namecall(obj, ...)
     end)
 
@@ -730,6 +904,12 @@ function library:init()
             mousemove:Fire(inputservice:GetMouseLocation());
             updateCursor();
 
+            if library.CurrentTooltip ~= nil then
+                local mousePos = inputservice:GetMouseLocation()
+                tooltipObjects.background.Position = UDim2.new(0,mousePos.X + 15,0,mousePos.Y + 15)
+                tooltipObjects.background.Size = UDim2.new(0,tooltipObjects.text.TextBounds.X + 6 + (library.CurrentTooltip.risky and 60 or 0),0,tooltipObjects.text.TextBounds.Y + 2)
+            end
+
             local hoverObj = utility:GetHoverObject();
             for _,v in next, library.drawings do
                 local hover = hoverObj == v.Object;
@@ -758,16 +938,23 @@ function library:init()
     
     function self:SetOpen(bool)
         self.open = bool;
-        inputservice.MouseBehavior = bool and Enum.MouseBehavior.Default or realBehavior;
+        screenGui.Enabled = bool;
 
-        if bool then
-            utility:DisableConnections(inputservice.InputBegan, true);
-            utility:DisableConnections(inputservice.InputEnded, true);
-            utility:DisableConnections(inputservice.InputChanged, true);
+        if bool and library.flags.disablemenumovement then
+            actionservice:BindAction(
+                'FreezeMovement',
+                function()
+                    return Enum.ContextActionResult.Sink
+                end,
+                false,
+                unpack(Enum.PlayerActions:GetEnumItems())
+            )
         else
-            utility:EnableConnections(inputservice.InputBegan, true);
-            utility:EnableConnections(inputservice.InputEnded, true);
-            utility:EnableConnections(inputservice.InputChanged, true);
+            actionservice:UnbindAction('FreezeMovement');
+        end
+
+        if not bool and tooltipObjects.background.Visible then
+            tooltipObjects.background.Visible = false;
         end
 
         updateCursor();
@@ -926,7 +1113,7 @@ function library:init()
             objs.border1 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'Border 1';
+                ThemeColor = 'Border 2';
                 Parent = objs.background;
                 ZIndex = z-1;
             })
@@ -1635,6 +1822,7 @@ function library:init()
                 if typeof(c3) ~= 'Color3' then return end
                 if typeof(a) ~= 'number' then return end
                 local h,s,v = c3:ToHSV();
+                local r,g,b = utility:ToRGB(c3);
                 h = h == 0 and 1 or h;
                 self.color = c3;
                 self.trans = a;
@@ -1644,6 +1832,9 @@ function library:init()
                 self.objects.transSlider.Position = newUDim2(0,0,a,0);
                 self.objects.pointer.Position = newUDim2(1 - s, 0, 1 - v, 0);
                 self.objects.statusText.Text = 'Editing : Unknown';
+                self.objects.rText.Text = string.format("%.14g", floor(r))
+                self.objects.gText.Text = string.format("%.14g", floor(g))
+                self.objects.bText.Text = string.format("%.14g", floor(b))
                 if self.selected ~= nil then
                     local txt = 'Editing : Unknown';
                     if self.selected.text ~= nil and self.selected.text ~= '' then
@@ -1791,6 +1982,22 @@ function library:init()
             window.dropdown:Refresh();
         end
         -------------------------
+
+        local function tooltip(option)
+            utility:Connection(option.objects.holder.MouseEnter, function()
+                tooltipObjects.background.Visible = (not (option.tooltip == '' or option.tooltip == nil)) and true or false;
+                tooltipObjects.riskytext.Visible = option.risky;
+                tooltipObjects.text.Position = option.risky and newUDim2(0,60,0,0) or newUDim2(0,3,0,0)
+                tooltipObjects.text.Text = tostring(option.tooltip);
+                library.CurrentTooltip = option;
+            end)
+            utility:Connection(option.objects.holder.MouseLeave, function()
+                if library.CurrentTooltip == option then
+                    library.CurrentTooltip = nil;
+                    tooltipObjects.background.Visible = false
+                end
+            end)
+        end
 
 
         local visValues = {};
@@ -2003,8 +2210,10 @@ function library:init()
                         class = 'toggle';
                         flag = data.flag;
                         text = '';
+                        tooltip = '';
                         order = #self.options+1;
                         state = false;
+                        risky = false;
                         callback = function() end;
                         enabled = true;
                         options = {};
@@ -2102,7 +2311,7 @@ function library:init()
                             end
 
                             self.objects.border1.ThemeColor = bool and 'Accent' or (self.objects.holder.Hover and 'Accent' or 'Option Border 1');
-                            self.objects.text.ThemeColor = bool and 'Option Text 1' or 'Option Text 3';
+                            self.objects.text.ThemeColor = bool and (self.risky and 'Risky Text Enabled' or 'Option Text 1') or (self.risky and 'Risky Text' or 'Option Text 3');
                             self.objects.background.ThemeColor = bool and 'Accent' or 'Option Background';
                             self.objects.background.ThemeColorOffset = bool and -55 or 0
 
@@ -2147,6 +2356,7 @@ function library:init()
                             class = 'color';
                             flag = data.flag;
                             text = '';
+                            tooltip = '';
                             order = #self.options+1;
                             callback = function() end;
                             color = Color3.new(1,.995,.995);
@@ -2231,6 +2441,7 @@ function library:init()
     
                         function color:SetColor(c3, nocallback)
                             if typeof(c3) == 'Color3' then
+                                local h,s,v = c3:ToHSV(); c3 = fromhsv(h, clamp(s,.005,.995), clamp(v,.005,.995))
                                 self.color = c3;
                                 self.objects.background.Color = c3;
                                 if not nocallback then
@@ -2276,6 +2487,7 @@ function library:init()
                             end
                         end
     
+                        tooltip(color);
                         color:SetColor(color.color, true);
                         color:SetTrans(color.trans, true);
                         self:UpdateOptions();
@@ -2287,6 +2499,7 @@ function library:init()
                             class = 'bind';
                             flag = data.flag;
                             text = '';
+                            tooltip = '';
                             bind = 'none';
                             mode = 'toggle';
                             order = #self.options+1;
@@ -2321,7 +2534,7 @@ function library:init()
                             local z = library.zindexOrder.window+25;
     
                             objs.holder = utility:Draw('Square', {
-                                Size = newUDim2(0,0,1,0);
+                                Size = newUDim2(0,0,0,17);
                                 Transparency = 0;
                                 ZIndex = z+6;
                                 Parent = self.objects.holder;
@@ -2381,7 +2594,7 @@ function library:init()
                             str = tostring(str);
                             self.objects.keyText.Text = '['..str..']';
                             self.objects.keyText.Position = newUDim2(0, 2, 0, 2);
-                            self.objects.holder.Size = newUDim2(0,self.objects.keyText.TextBounds.X+2,1,0)
+                            self.objects.holder.Size = newUDim2(0,self.objects.keyText.TextBounds.X+2,0,17)
                             toggle:UpdateOptions();
                         end
     
@@ -2432,6 +2645,7 @@ function library:init()
                             end
                         end)
     
+                        tooltip(bind);
                         bind:SetBind(bind.bind);
                         self:UpdateOptions();
                         return bind
@@ -2442,6 +2656,7 @@ function library:init()
                             class = 'slider';
                             flag = data.flag;
                             suffix = '';
+                            tooltip = '';
                             order = #self.options+1;
                             value = 0;
                             min = 0;
@@ -2601,7 +2816,7 @@ function library:init()
                                 self.value = newValue;
                                 library.flags[self.flag] = newValue;
                                 self.objects.text.Text = string.format("%.14g",newValue)..tostring(self.suffix)..'/'..self.max..tostring(self.suffix);
-                                self.objects.text.ThemeColor = (self.min < 0 and newValue == 0 or newValue == self.min)  and 'Option Text 3' or 'Option Text 1';
+                                self.objects.text.ThemeColor = (self.min < 0 and newValue == 0 or newValue == self.min)  and (self.risky and 'Risky Text' or 'Option Text 3') or (self.risky and 'Risky Text Enabled' or 'Option Text 1');
     
                                 if not nocallback then
                                     self.callback(newValue);
@@ -2610,6 +2825,7 @@ function library:init()
                             end
                         end
 
+                        tooltip(slider);
                         slider:SetValue(slider.value, true);
                         self:UpdateOptions();
                         return slider
@@ -2621,6 +2837,7 @@ function library:init()
                             flag = data.flag;
                             text = '';
                             selected = '';
+                            tooltip = '';
                             order = #self.options+1;
                             callback = function() end;
                             enabled = true;
@@ -2792,11 +3009,13 @@ function library:init()
                             end
                         end
     
+                        tooltip(list);
                         list:Select((data.value or data.selected) or (list.multi and 'none' or list.values[1]), true);
                         self:UpdateOptions();
                         return list
                     end
 
+                    tooltip(toggle);
                     toggle:SetText(toggle.text);
                     toggle:SetState(toggle.state, true);
                     self:UpdateOptions();
@@ -2809,6 +3028,7 @@ function library:init()
                         class = 'slider';
                         flag = data.flag;
                         text = '';
+                        tooltip = '';
                         suffix = '';
                         order = #self.options+1;
                         value = 0;
@@ -2819,6 +3039,7 @@ function library:init()
                         enabled = true;
                         dragging = false;
                         focused = false;
+                        risky = false;
                         objects = {};
                     };
 
@@ -3020,7 +3241,7 @@ function library:init()
                             self.value = newValue;
                             library.flags[self.flag] = newValue;
                             self.objects.text.Text = slider.text..': '..string.format("%.14g",newValue)..tostring(self.suffix);
-                            self.objects.text.ThemeColor = (self.min < 0 and newValue == 0 or newValue == self.min) and 'Option Text 3' or 'Option Text 1';
+                            self.objects.text.ThemeColor = (self.min < 0 and newValue == 0 or newValue == self.min)  and (self.risky and 'Risky Text' or 'Option Text 3') or (self.risky and 'Risky Text Enabled' or 'Option Text 1');
 
                             if not nocallback then
                                 self.callback(newValue);
@@ -3036,6 +3257,7 @@ function library:init()
                         end
                     end
 
+                    tooltip(slider);
                     slider:SetText(slider.text);
                     slider:SetValue(slider.value, true);
                     self:UpdateOptions();
@@ -3049,11 +3271,14 @@ function library:init()
                         flag = data.flag;
                         text = '';
                         suffix = '';
+                        tooltip = '';
                         order = #self.options+1;
                         callback = function() end;
                         confirm = false;
                         enabled = true;
+                        risky = false;
                         objects = {};
+                        subbuttons = {};
                     };
 
                     local blacklist = {'objects'};
@@ -3130,20 +3355,20 @@ function library:init()
 
                         utility:Connection(objs.holder.MouseLeave, function()
                             objs.border1.ThemeColor = 'Option Border 1';
-                            objs.text.ThemeColor = 'Option Text 3';
+                            objs.text.ThemeColor = self.risky and 'Risky Text' or 'Option Text 3';
                             objs.background.ThemeColor = 'Option Background';
                             objs.background.ThemeColorOffset = 0;
                         end)
 
                         utility:Connection(objs.holder.MouseButton1Up, function()
-                            objs.text.ThemeColor = 'Option Text 3';
+                            objs.text.ThemeColor = self.risky and 'Risky Text' or  'Option Text 3';
                             objs.background.ThemeColor = 'Option Background';
                             objs.background.ThemeColorOffset = 0;
                         end)
 
                         local clicked, counting = false, false
                         utility:Connection(objs.holder.MouseButton1Down, function()
-                            objs.text.ThemeColor = 'Option Text 2';
+                            objs.text.ThemeColor = self.risky and 'Risky Text Enabled' or 'Option Text 2';
                             objs.background.ThemeColor = 'Accent';
                             objs.background.ThemeColorOffset = -95;
 
@@ -3177,6 +3402,165 @@ function library:init()
 
                     end
                     ----------------------
+                    function button:AddButton(data)
+                        local button = {
+                            class = 'button';
+                            flag = data.flag;
+                            text = '';
+                            suffix = '';
+                            tooltip = '';
+                            order = #self.subbuttons+1;
+                            callback = function() end;
+                            confirm = false;
+                            enabled = true;
+                            objects = {};
+                        };
+    
+                        local blacklist = {'objects'};
+                        for i,v in next, data do
+                            if not table.find(blacklist, i) and button[i] ~= nil then
+                                button[i] = v;
+                            end
+                        end
+               
+                        table.insert(self.subbuttons, button)
+    
+                        if button.flag then
+                            library.options[button.flag] = button;
+                        end
+    
+                        --- Create Objects ---
+                        do
+                            local objs = button.objects;
+                            local z = library.zindexOrder.window+25;
+    
+                            objs.holder = utility:Draw('Square', {
+                                Size = newUDim2(1,0,1,0);
+                                Transparency = 0;
+                                ZIndex = z+5;
+                                Parent = self.objects.holder;
+                            })
+    
+                            objs.background = utility:Draw('Square', {
+                                Size = newUDim2(1,-4,1,-8);
+                                Position = newUDim2(0,2,0,4);
+                                ThemeColor = 'Option Background';
+                                ZIndex = z+2;
+                                Parent = objs.holder;
+                            })
+    
+                            objs.border1 = utility:Draw('Square', {
+                                Size = newUDim2(1,2,1,2);
+                                Position = newUDim2(0,-1,0,-1);
+                                ThemeColor = 'Option Border 1';
+                                ZIndex = z+1;
+                                Parent = objs.background;
+                            })
+    
+                            objs.border2 = utility:Draw('Square', {
+                                Size = newUDim2(1,2,1,2);
+                                Position = newUDim2(0,-1,0,-1);
+                                ThemeColor = 'Option Border 2';
+                                ZIndex = z;
+                                Parent = objs.border1;
+                            })
+    
+                            objs.gradient = utility:Draw('Image', {
+                                Size = newUDim2(1,0,1,0);
+                                Data = library.images.gradientp90;
+                                Transparency = .65;
+                                ZIndex = z+3;
+                                Parent = objs.background;
+                            })
+    
+                            objs.text = utility:Draw('Text', {
+                                Position = newUDim2(.5,0,0,0);
+                                ThemeColor = 'Option Text 3';
+                                Size = 13;
+                                Font = 2;
+                                ZIndex = z+4;
+                                Outline = true;
+                                Center = true;
+                                Parent = objs.background;
+                            })
+    
+                            utility:Connection(objs.holder.MouseEnter, function()
+                                objs.border1.ThemeColor = 'Accent';
+                            end)
+    
+                            utility:Connection(objs.holder.MouseLeave, function()
+                                objs.border1.ThemeColor = 'Option Border 1';
+                                objs.text.ThemeColor = self.risky and 'Risky Text' or 'Option Text 3';
+                                objs.background.ThemeColor = 'Option Background';
+                                objs.background.ThemeColorOffset = 0;
+                            end)
+    
+                            utility:Connection(objs.holder.MouseButton1Up, function()
+                                objs.text.ThemeColor = self.risky and 'Risky Text' or 'Option Text 3';
+                                objs.background.ThemeColor = 'Option Background';
+                                objs.background.ThemeColorOffset = 0;
+                            end)
+    
+                            local clicked, counting = false, false
+                            utility:Connection(objs.holder.MouseButton1Down, function()
+                                objs.text.ThemeColor = self.risky and 'Risky Text Enabled' or 'Option Text 2';
+                                objs.background.ThemeColor = 'Accent';
+                                objs.background.ThemeColorOffset = -95;
+    
+                                task.spawn(function() -- this is ugly and i do not care :)
+                                    if button.confirm then
+                                        if clicked then
+                                            clicked = false
+                                            counting = false
+                                            objs.text.Text = button.text
+                                            button.callback()
+                                        else
+                                            clicked = true
+                                            counting = true
+                                            for i = 3,1,-1 do
+                                                if not counting then
+                                                    break
+                                                end
+                                                objs.text.Text = 'Confirm '..button.text..'? '..tostring(i)
+                                                wait(1)
+                                            end
+                                            clicked = false
+                                            counting = false
+                                            objs.text.Text = button.text
+                                        end
+                                    else
+                                        button.callback()
+                                    end
+                                end)
+    
+                            end)
+    
+                        end
+                        ----------------------
+    
+                        function button:SetText(str)
+                            if typeof(str) == 'string' then
+                                self.text = str;
+                                self.objects.text.Text = str;
+                            end
+                        end
+    
+                        tooltip(button);
+                        button:SetText(button.text);
+                        self:UpdateOptions();
+                        return button
+                    end
+                    ----------------------
+
+                    function button:UpdateOptions() -- this so dumb XD
+                        local buttons = 1 + #self.subbuttons;
+                        local buttonSize = (1 / buttons) - .005;
+                        self.objects.background.Size = newUDim2(buttonSize,-4,0,14);
+                        for i,v in next, self.subbuttons do
+                            v.objects.holder.Size = newUDim2(buttonSize,0,1,0);
+                            v.objects.holder.Position = newUDim2(i * buttonSize + .01, 0, 0, 0)
+                        end
+                    end
 
                     function button:SetText(str)
                         if typeof(str) == 'string' then
@@ -3185,6 +3569,7 @@ function library:init()
                         end
                     end
 
+                    tooltip(button);
                     button:SetText(button.text);
                     self:UpdateOptions();
                     return button
@@ -3289,12 +3674,14 @@ function library:init()
                         class = 'color';
                         flag = data.flag;
                         text = '';
+                        tooltip = '';
                         order = #self.options+1;
                         callback = function() end;
                         color = Color3.new(1,.995,.995);
                         trans = 0;
                         open = false;
                         enabled = true;
+                        risky = false;
                         objects = {};
                     };
 
@@ -3357,7 +3744,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = 'Option Text 3';
+                            ThemeColor = color.risky and 'Risky Text Enabled' or 'Option Text 3';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -3389,6 +3776,7 @@ function library:init()
 
                     function color:SetColor(c3, nocallback)
                         if typeof(c3) == 'Color3' then
+                            local h,s,v = c3:ToHSV(); c3 = fromhsv(h, clamp(s,.005,.995), clamp(v,.005,.995));
                             self.color = c3;
                             self.objects.background.Color = c3;
                             if not nocallback then
@@ -3434,6 +3822,7 @@ function library:init()
                         end
                     end
 
+                    tooltip(color);
                     color:SetText(color.text);
                     color:SetColor(color.color, true);
                     color:SetTrans(color.trans, true);
@@ -3452,6 +3841,7 @@ function library:init()
                         callback = function() end;
                         enabled = true;
                         focused = false;
+                        risky = false;
                         objects = {};
                     };
 
@@ -3515,7 +3905,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = 'Option Text 2';
+                            ThemeColor = box.risky and 'Risky Text Enabled' or 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -3595,8 +3985,9 @@ function library:init()
                             elseif inp.KeyCode == Enum.KeyCode.Backspace then
                                 input = input:sub(1,-2);
                                 self.objects.inputText.Text = input;
-                            elseif #inp.KeyCode.Name == 1 or inp.KeyCode.Name ==  'Space' then
-                                local keyString = inp.KeyCode.Name == 'Space' and ' ' or inp.KeyCode.Name
+                            elseif #inp.KeyCode.Name == 1 or table.find(whitelistedBoxKeys, inp.KeyCode) or inp.KeyCode.Name ==  'Space' then
+                                local wlIdx = table.find(whitelistedBoxKeys, inp.KeyCode)
+                                local keyString = inp.KeyCode.Name == 'Space' and ' ' or wlIdx ~= nil and tostring(wlIdx-1) or inp.KeyCode.Name
                                 if not (inputservice:IsKeyDown(Enum.KeyCode.LeftShift) or inputservice:IsKeyDown(Enum.KeyCode.RightShift)) then
                                     keyString = keyString:lower();
                                 end
@@ -3616,6 +4007,7 @@ function library:init()
                         c:Disconnect();
                     end
 
+                    tooltip(box);
                     box:SetText(box.text);
                     box:SetInput(box.input, true);
                     self:UpdateOptions();
@@ -3628,6 +4020,7 @@ function library:init()
                         class = 'bind';
                         flag = data.flag;
                         text = '';
+                        tooltip = '';
                         bind = 'none';
                         mode = 'toggle';
                         order = #self.options+1;
@@ -3639,6 +4032,7 @@ function library:init()
                         nomouse = false;
                         enabled = true;
                         binding = false;
+                        risky = false;
                         objects = {};
                     };
 
@@ -3669,7 +4063,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = 'Option Text 2';
+                            ThemeColor = bind.risky and 'Risky Text' or 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -3783,6 +4177,7 @@ function library:init()
                         end
                     end)
 
+                    tooltip(bind);
                     bind:SetBind(bind.bind);
                     bind:SetText(bind.text);
                     self:UpdateOptions();
@@ -3796,11 +4191,13 @@ function library:init()
                         flag = data.flag;
                         text = '';
                         selected = '';
+                        tooltip = '';
                         order = #self.options+1;
                         callback = function() end;
                         enabled = true;
                         multi = false;
                         open = false;
+                        risky = false;
                         values = {};
                         objects = {};
                     }
@@ -3865,7 +4262,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = 'Option Text 2';
+                            ThemeColor = list.risky and 'Risky Text Enabled' or 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -3984,6 +4381,7 @@ function library:init()
                         end
                     end
 
+                    tooltip(list);
                     list:Select((data.value or data.selected) or (list.multi and 'none' or list.values[1]), true);
                     list:SetText(list.text);
                     self:UpdateOptions();
@@ -3996,8 +4394,10 @@ function library:init()
                         class = 'text';
                         flag = data.flag;
                         text = '';
+                        tooltip = '';
                         order = #self.options+1;
                         enabled = true;
+                        risky = false;
                         objects = {};
                     };
 
@@ -4027,7 +4427,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = 'Option Text 2';
+                            ThemeColor = text.risky and 'Risky Text Enabled' or 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -4147,6 +4547,54 @@ function library:init()
         return window;
     end
 
+    -- Tooltip
+    do
+        local z = library.zindexOrder.window + 2000;
+        tooltipObjects.background = utility:Draw('Square', {
+            ThemeColor = 'Group Background';
+            ZIndex = z;
+            Visible = false;
+        })
+
+        tooltipObjects.border1 = utility:Draw('Square', {
+            Size = UDim2.new(1,2,1,2);
+            Position = UDim2.new(0,-1,0,-1);
+            ThemeColor = 'Border 1';
+            ZIndex = z-1;
+            Parent = tooltipObjects.background;
+        })
+
+        tooltipObjects.border2 = utility:Draw('Square', {
+            Size = UDim2.new(1,4,1,4);
+            Position = UDim2.new(0,-2,0,-2);
+            ThemeColor = 'Border 3';
+            ZIndex = z-2;
+            Parent = tooltipObjects.background;
+        })
+
+        tooltipObjects.text = utility:Draw('Text', {
+            Position = UDim2.new(0,3,0,0);
+            ThemeColor = 'Primary Text';
+            Size = 13;
+            Font = 2;
+            ZIndex = z+1;
+            Outline = true;
+            Parent = tooltipObjects.background;
+        })
+
+        tooltipObjects.riskytext = utility:Draw('Text', {
+            Position = UDim2.new(0,3,0,0);
+            ThemeColor = 'Risky Text Enabled';
+            Text = '[RISKY]';
+            Size = 13;
+            Font = 2;
+            ZIndex = z+1;
+            Outline = true;
+            Parent = tooltipObjects.background;
+        })
+
+    end
+    
     -- Watermark
     do
         self.watermark = {
@@ -4199,7 +4647,7 @@ function library:init()
                     self.lock == 'Bottom Right' and newUDim2(0, screensize.X - size.X - 15, 0, screensize.Y - size.Y - 15) or
                     self.lock == 'Bottom Left' and newUDim2(0, 15, 0, screensize.Y - size.Y - 15) or
                     self.lock == 'Top' and newUDim2(0, screensize.X / 2 - size.X / 2, 0, 15) or
-                    newUDim2(0, utility:ConvertNumberRange(library.flags.watermark_x, 0, 100, 0, workspace.CurrentCamera.ViewportSize.X), 0,  utility:ConvertNumberRange(library.flags.watermark_y, 0, 100, 0, workspace.CurrentCamera.ViewportSize.Y)) -- this is so retarded but i broke udim2 scale for viewport somehow loll
+                    newUDim2(library.flags.watermark_x / 100, 0, library.flags.watermark_y / 100, 0)
                 )
 
                 self.objects.background.Position = self.position
@@ -4270,9 +4718,9 @@ function library:init()
     end)
 
     self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = newUDim2(0,15,0,325), enabled = false});
+    self:SetTheme(library.theme);
     self:SetOpen(true);
     self.hasInit = true
-    self:SendNotification(self.cheatname..' | ui initalized', 5);
 
 end
 
@@ -4294,6 +4742,12 @@ function library:CreateSettingsTab(menu)
         end
     end
 
+    configSection:AddButton({text = 'Load', confirm = true, callback = function()
+        library:LoadConfig(library.flags.selectedconfig);
+    end}):AddButton({text = 'Save', confirm = true, callback = function()
+        library:SaveConfig(library.flags.selectedconfig);
+    end})
+
     configSection:AddButton({text = 'Create', confirm = true, callback = function()
         if library:GetConfig(library.flags.configinput) then
             library:SendNotification('Config \''..library.flags.configinput..'\' already exists.', 5, c3new(1,0,0));
@@ -4301,17 +4755,7 @@ function library:CreateSettingsTab(menu)
         end
         writefile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.configinput.. self.fileext, http:JSONEncode({}));
         refreshConfigs()
-    end})
-
-    configSection:AddButton({text = 'Save', confirm = true, callback = function()
-        library:SaveConfig(library.flags.selectedconfig);
-    end})
-
-    configSection:AddButton({text = 'Load', confirm = true, callback = function()
-        library:LoadConfig(library.flags.selectedconfig);
-    end})
-
-    configSection:AddButton({text = 'Delete', confirm = true, callback = function()
+    end}):AddButton({text = 'Delete', confirm = true, callback = function()
         if library:GetConfig(library.flags.selectedconfig) then
             delfile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.selectedconfig.. self.fileext);
             refreshConfigs()
@@ -4324,7 +4768,22 @@ function library:CreateSettingsTab(menu)
         library:SetOpen(not library.open)
     end});
 
-    mainSection:AddButton({text = 'Join Discord', confirm = true, callback = function()
+    mainSection:AddToggle({text = 'Disable Movement If Open', flag = 'disablemenumovement', callback = function(bool)
+        if bool and library.open then
+            actionservice:BindAction(
+                'FreezeMovement',
+                function()
+                    return Enum.ContextActionResult.Sink
+                end,
+                false,
+                unpack(Enum.PlayerActions:GetEnumItems())
+            )
+        else
+            actionservice:UnbindAction('FreezeMovement');
+        end
+    end})
+
+    mainSection:AddButton({text = 'Join Discord', flag = 'joindiscord', confirm = true, callback = function()
         local res = syn.request({
 			Url = 'http://127.0.0.1:6463/rpc?v=1',
 			Method = 'POST',
@@ -4343,7 +4802,7 @@ function library:CreateSettingsTab(menu)
         end
     end})
 
-    mainSection:AddButton({text = 'Copy Discord', callback = function()
+    mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
         setclipboard('discord.gg/jhS2vYpZqH')
     end})
 
@@ -4360,15 +4819,10 @@ function library:CreateSettingsTab(menu)
         library.keyIndicator:SetEnabled(bool);
     end})
     mainSection:AddSlider({text = 'Position X', flag = 'keybind_indicator_x', min = 0, max = 100, increment = .1, value = .5, callback = function()
-        local x, y
-        x = utility:ConvertNumberRange(library.flags.keybind_indicator_x, 0, 100, 0, workspace.CurrentCamera.ViewportSize.X) -- this is retarded but i broke udim2 scale with viewport somehow
-        y = utility:ConvertNumberRange(library.flags.keybind_indicator_y, 0, 100, 0, workspace.CurrentCamera.ViewportSize.Y) -- this is retarded but i broke udim2 scale with viewport somehow
-        library.keyIndicator:SetPosition(newUDim2(0, x, 0, y));    end});
-    mainSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 20, callback = function()
-        local x, y
-        x = utility:ConvertNumberRange(library.flags.keybind_indicator_x, 0, 100, 0, workspace.CurrentCamera.ViewportSize.X) -- this is retarded but i broke udim2 scale with viewport somehow
-        y = utility:ConvertNumberRange(library.flags.keybind_indicator_y, 0, 100, 0, workspace.CurrentCamera.ViewportSize.Y) -- this is retarded but i broke udim2 scale with viewport somehow
-        library.keyIndicator:SetPosition(newUDim2(0, x, 0, y));
+        library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
+    end});
+    mainSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 35, callback = function()
+        library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
     end});
 
     mainSection:AddSeparator({text = 'Watermark'})
@@ -4379,27 +4833,29 @@ function library:CreateSettingsTab(menu)
     mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
     mainSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
 
-    local colorpickers = {}
-    local themeSection = settingsTab:AddSection('Theme', 2);
-    themeSection:AddButton({text = 'Reset to Defaults', order = 'z', confirm = true, callback = function()
-        for i,v in next, library.defaultTheme do
-            library.theme[i] = v;
-            colorpickers[i]:SetColor(v);
-        end
-        library.UpdateThemeColors();
-    end})
-    for i,v in next, library.theme do
-        if table.find({'Accent', 'Option Text 1', 'Option Text 2', 'Option Text 3', 'Primary Text'}, i) then
-            colorpickers[i] = themeSection:AddColor({text = i, order = i, color = v, flag = 'theme_'..i, callback = function(c3)
-                library.theme[i] = c3;
-                library.UpdateThemeColors();
-            end});
-            colorpickers[i]:SetColor(v)
-        end
+    local themeStrings = {};
+    for _,v in next, library.themes do
+        table.insert(themeStrings, v.name)
     end
+    local themeSection = settingsTab:AddSection('Theme', 2);
+
+    themeSection:AddColor({text = 'Accent', flag = 'theme_accent', callback = function(c3)
+        library.theme.Accent = c3
+        library:SetTheme(library.theme)
+    end});
+    themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
+        for _,v in next, library.themes do
+            if v.name == newTheme then
+                library.options.theme_accent:SetColor(v.theme.Accent);
+                library:SetTheme(v.theme)
+                break
+            end
+        end
+    end}):Select('Default');
 
     return settingsTab;
 end
 
 getgenv().library = library
+--return library
 return library
