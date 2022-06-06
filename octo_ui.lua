@@ -4859,11 +4859,4 @@ end
 getgenv().library = library
 --return library
 return library
-library:init();
-local menu       = library.NewWindow({title = library.cheatname..' | '..library.gamename, size = UDim2.new(0,525,0,650)})
-local legitTab   = menu:AddTab('Legit')
-local visualTab  = menu:AddTab('Visuals')
-local miscTab    = menu:AddTab('Misc')
-local settingTab = library:CreateSettingsTab(menu)
 
-library:SendNotification('This can be found as an example in the code for the ui, it is how you use the notifs.')
