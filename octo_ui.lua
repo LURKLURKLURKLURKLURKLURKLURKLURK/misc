@@ -4600,7 +4600,7 @@ function library:init()
         self.watermark = {
             objects = {};
             text = {
-                {self.cheatname, true},
+                {'pie.solutions', true},
                 {localplayer.Name, false},
                 {localplayer.DisplayName, false},
                 {'dev', true},
@@ -4857,6 +4857,7 @@ function library:CreateSettingsTab(menu)
 end
 
 getgenv().library = library
+
 --return library
 return library
 
