@@ -1,21 +1,6 @@
---[[------------------------------------------------
-|
-|    Library Made for IonHub (discord.gg/seU6gab)
-|    Developed by tatar0071#0627 and tested#0021
-|    IF YOU USE THIS, PLEASE CREDIT DEVELOPER(S)!
-|
---]]------------------------------------------------
 --[[
-    ✅ - ❌
-    Todo:
-      [✅] - Finished static math 
-      [✅] - Add target highlight
-      [✅] - Add chams 
-      [✅] - Start on dynamic math 
-      [❌] - Add fade with distance
-      [❌] - Add fade on death
+Credits to tatar and tested for esp 
 ]]
-
 if esp then
     esp.unload()
 end
@@ -247,7 +232,7 @@ local utility = {}; do
         if character then
             local humanoid = find_first_child_of_class(character, "Humanoid");
             if humanoid then
-                return humanoid.Health, humanoid.MaxHealth;
+                return math.floor(humanoid.Health), humanoid.MaxHealth;
             end;
         end;
         return 100, 100;
