@@ -65,13 +65,14 @@ local library = {
         ['fps'] = 0;
         ['ping'] = 0;
     };
+	-- credits to reaper for reuploading
     images = {
-        ['gradientp90'] = 'https://www.octohook.xyz/assets/gradientp90.png';
-        ['gradientp45'] = 'https://octohook.xyz/assets/gradientP45.png';
-        ['colorhue'] = 'https://www.octohook.xyz/assets/hue.png';
-        ['colorsat1'] = 'https://t5.rbxcdn.com/b6ce2f465dbe0ca4bf88d45ac4be1362';
-        ['colorsat2'] = 'https://t4.rbxcdn.com/0c51aa9d7f2ede5c635c2f44f66be88f';
-        ['colortrans'] = 'https://octohook.xyz/assets/transparency.png';
+        ['gradientp90'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/gradientp90.oh'; -- gradient90
+        ['gradientp45'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/gradientp45.oh'; -- gradient45
+        ['colorhue'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/colorhue.oh'; -- colorhue
+        ['colorsat1'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/colorsat1.oh'; -- colorsat1
+        ['colorsat2'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/colorsat2.oh'; -- colorsat2
+        ['colortrans'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/colortrans.oh'; -- colortrans
     };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
     signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/misc/main/signal.lua'))();
