@@ -86,7 +86,7 @@ local library = {
 
 library.themes = {
     {
-        name = 'Gamesense',
+        name = 'Default',
         theme = {
             ['Accent']                    = fromrgb(255,0,0);
             ['Background']                = fromrgb(17,17,17);
