@@ -4604,7 +4604,7 @@ function library:init()
                 {'pie.solutions', true},
                 {localplayer.Name, false},
                 {localplayer.DisplayName, false},
-                {'dev', true},
+                {'user', false},
                 {'0 fps', true},
                 {'0ms', true},
                 {'00:00:00', true},
