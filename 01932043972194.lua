@@ -285,6 +285,7 @@ do
                     array.Tool.Size = esp.fontsize
                     array.Tool.Text = character:FindFirstChildOfClass('Tool') ~= nil and tostring(character:FindFirstChildOfClass('Tool')) or 'none'--tostring(character:FindFirstChildOfClass('Tool'))
                     array.Tool.Font = esp.font
+                    array.Tool.Color = esp.tool.color
                     array.Tool.Outline = esp.tool.outline
                     if esp.boldtext then 
                         array.Tool_Bold.Visible = true 
