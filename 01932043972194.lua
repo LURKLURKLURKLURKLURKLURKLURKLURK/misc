@@ -33,7 +33,7 @@ local esp = {
     healthbar = {outline = false, enabled = false, higher = rgb(0,255,0), lower = rgb(255,0,0)},
     tool = {class = 'text', enabled = false, color = rgb(255,255,255), outline = false},
     tracers = {enabled = false, color = rgb(255,255,255)},
-    highlights = {fillcolor = rgb(86,0,232), enabled = false, outline_color = rgb(0,0,0), fill_transparency = 0.5, outline_transparency = 0},
+    highlights = {fillcolor = rgb(255,255,255), enabled = false, outline_color = rgb(255,255,255), fill_transparency = 0, outline_transparency = 0},
     objects = {},
     visible_check = false,
     font = 0,
@@ -185,6 +185,8 @@ do
                     array.Highlight.FillTransparency = esp.highlights.fill_transparency
                     array.Highlight.OutlineColor = esp.highlights.outline_color
                     array.Highlight.FillColor = esp.highlights.fillcolor
+                    else 
+                        array.Highlight.Enabled = false 
                 end
                 if esp.name.enabled then 
                     array.Name.Visible = true 
@@ -253,7 +255,8 @@ do
                     array.Box.Size = Size 
                     array.Box.Position = Position
                     array.Box.Color = esp.box.color 
-                    array.Box.Visible = true 
+                    array.Box.Visible = true
+                    
                     array.Box_Outline.Visible = esp.box.outline 
                     array.Box_Outline.Size = Size 
                     array.Box_Outline.Position = Position
@@ -310,6 +313,7 @@ do
                     array.Box.Visible = false 
                     array.inner_box.Visible = false 
                     array.Box_Outline.Visible = false 
+                    array.Highlight.Enabled = false 
             end
             else
                 array.Name_Bold.Visible = false
