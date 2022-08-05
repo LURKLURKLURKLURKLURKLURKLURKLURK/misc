@@ -88,23 +88,23 @@ library.themes = {
     {
         name = 'Default',
         theme = {
-            ['Accent']                    = fromrgb(255,0,0);
-            ['Background']                = fromrgb(17,17,17);
-            ['Border']                    = fromrgb(0,0,0);
-            ['Border 1']                  = fromrgb(47,47,47);
-            ['Border 2']                  = fromrgb(17,17,17);
-            ['Border 3']                  = fromrgb(10,10,10);
-            ['Primary Text']              = fromrgb(235,235,235);
-            ['Group Background']          = fromrgb(17,17,17);
-            ['Selected Tab Background']   = fromrgb(17,17,17);
-            ['Unselected Tab Background'] = fromrgb(17,17,17);
-            ['Selected Tab Text']         = fromrgb(245,245,245);
-            ['Unselected Tab Text']       = fromrgb(145,145,145);
-            ['Section Background']        = fromrgb(17,17,17);
+            ['Accent']                    = fromrgb(0,156,255),
+            ['Background']                = fromrgb(19,19,19),
+            ['Border']                    = fromrgb(0,0,0),
+            ['Border 1']                  = fromrgb(0,0,0),
+            ['Border 2']                  = fromrgb(19,19,19),
+            ['Border 3']                  = fromrgb(0,0,0),
+            ['Primary Text']              = fromrgb(220,220,220),
+            ['Group Background']          = fromrgb(21,21,21),
+            ['Selected Tab Background']   = fromrgb(32,32,32),
+            ['Unselected Tab Background'] = fromrgb(19,19,19),
+            ['Selected Tab Text']         = fromrgb(255,255,255),
+            ['Unselected Tab Text']       = fromrgb(220,220,220),
+            ['Section Background']        = fromrgb(19,19,19);
             ['Option Text 1']             = fromrgb(245,245,245);
             ['Option Text 2']             = fromrgb(195,195,195);
             ['Option Text 3']             = fromrgb(145,145,145);
-            ['Option Border 1']           = fromrgb(47,47,47);
+            ['Option Border 1']           = fromrgb(0,0,0);
             ['Option Border 2']           = fromrgb(0,0,0);
             ['Option Background']         = fromrgb(35,35,35);
             ["Risky Text"]                = fromrgb(175, 21, 21);
@@ -1158,6 +1158,7 @@ function library:init()
                 ThemeColor = 'Accent';
                 Parent = objs.background;
                 ZIndex = z+1;
+                Thickness = 2,
             })
 
             objs.textlabel = utility:Draw('Text', {
@@ -1412,6 +1413,7 @@ function library:init()
                 ThemeColor = 'Accent';
                 ZIndex = z+1;
                 Parent = objs.background;
+                Thickness = 2, 
             })
 
             objs.title = utility:Draw('Text', {
@@ -2168,12 +2170,14 @@ function library:init()
                         ThemeColor = 'Accent';
                         ZIndex = z+1;
                         Parent = objs.background;
+                        Thickness = 2, 
                     })
 
                     objs.topBorder2 = utility:Draw('Square', {
                         ThemeColor = 'Accent';
                         ZIndex = z+1;
                         Parent = objs.background;
+                        Thickness = 2, 
                     })
 
                     objs.textlabel = utility:Draw('Text', {
