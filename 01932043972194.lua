@@ -233,7 +233,7 @@ do
                         array.Distance_Bold.Font = esp.font
                         array.Distance_Bold.Outline = false
                         else 
-                            Distance_Bold.Visible = false 
+                            array.Distance_Bold.Visible = false 
                     end
                     bottom_bounds = bottom_bounds + 14
                     else 
