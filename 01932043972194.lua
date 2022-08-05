@@ -328,12 +328,13 @@ do
                 array.Distance.Visible = false 
                 array.Box.Visible = false 
                 array.Box_Outline.Visible = false
+                array.Highlight.Enabled = false 
         end
     end
 end
 
 for i,v in next, Players:GetChildren() do
-    if v~=LP then 
+    if v ~= LP then 
         esp.add_esp_player(v)
     end
 end
