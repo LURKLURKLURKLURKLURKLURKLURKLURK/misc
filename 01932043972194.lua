@@ -21,19 +21,19 @@ local i_new = Instance.new
 local GBB = workspace.GetBoundingBox
 
 local esp = { 
-    enabled = false,
+    enabled = true,
     players = true,
-    boldtext = false,
+    boldtext = true,
     max_distance_players = 1000, 
-    box = {enabled = false, color = rgb(255,255,255), outline = false},
+    box = {enabled = true, color = rgb(255,255,255), outline = true},
     inner_box = {enabled = false, color = rgb(0,0,0),transparency = 0.3},
-    name = {class = 'text', enabled = false, color = rgb(255,255,255), outline = false},
-    distance = {class = 'text', enabled = false, color = rgb(255,255,255), outline = false, health = false},
+    name = {class = 'text', enabled = true, color = rgb(255,255,255), outline = true},
+    distance = {class = 'text', enabled = true, color = rgb(255,255,255), outline = true, health = false},
     health = {enabled = false, color = rgb(0,255,0), outline = false},
-    healthbar = {outline = false, enabled = false, higher = rgb(0,255,0), lower = rgb(255,0,0)},
-    tool = {class = 'text', enabled = false, color = rgb(255,255,255), outline = false},
+    healthbar = {outline = true, enabled = true, higher = rgb(0,255,0), lower = rgb(255,0,0)},
+    tool = {class = 'text', enabled = true, color = rgb(255,255,255), outline = true},
     tracers = {enabled = false, color = rgb(255,255,255)},
-    highlights = {fillcolor = rgb(255,255,255), enabled = false, outline_color = rgb(255,255,255), fill_transparency = 0, outline_transparency = 0},
+    highlights = {fillcolor = rgb(255,255,255), enabled = true, outline_color = rgb(255,255,255), fill_transparency = 0, outline_transparency = 0},
     objects = {},
     visible_check = false,
     font = 0,
@@ -160,7 +160,7 @@ do
     
     function esp.update_player_esp(obj,array)
         local character = obj.Character
-        if esp.enabled and esp.players and character ~= nil and find_first_child(character,'Torso') ~= nil and LP.Character ~= nil and find_first_child(LP.Character,'Torso') and find_first_child(character,'Humanoid') then
+        if esp.enabled and esp.players  and character ~= nil and LP.Character ~= nil and find_first_child(character,'Humanoid') and findfirstchild(character,'HumanoidRootPart') then
             local hrp = character.PrimaryPart
 
             local Pos, Size = GBB(character)
@@ -174,9 +174,12 @@ do
             local top_bounds = 0 
             local bottom_offset = Vector2.new(Size.X / 2 + Position.X, Size.Y + Position.Y + 1)
             local top_offset = Vector2.new(Size.X / 2 + Position.X, Position.Y - 16)
-            local distance = math.floor(esp.get_magnitude(hrp.Position,find_first_child(LP.Character,'Torso').Position))
+            local distance = 0
+            if hrp then 
+                distance = math.floor(esp.get_magnitude(hrp.Position,find_first_child(LP.Character,'HumanoidRootPart').Position))
+            end
                 
-            if OnScreen and distance < esp.max_distance_players then
+            if hrp and  OnScreen and distance < esp.max_distance_players then
                 if esp.highlights.enabled then
                     array.Highlight.Parent = game.GetService(game,'CoreGui') 
                     array.Highlight.Adornee = character
