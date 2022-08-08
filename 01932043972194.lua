@@ -160,7 +160,7 @@ do
     
     function esp.update_player_esp(obj,array)
         local character = obj.Character
-        if esp.enabled and esp.players  and character ~= nil and LP.Character ~= nil and find_first_child(character,'Humanoid') and findfirstchild(character,'HumanoidRootPart') then
+        if esp.enabled and esp.players  and character ~= nil and LP.Character ~= nil and find_first_child(character,'Humanoid') and find_first_child(character,'HumanoidRootPart') then
             local hrp = character.PrimaryPart
 
             local Pos, Size = GBB(character)
