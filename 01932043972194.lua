@@ -21,23 +21,23 @@ local i_new = Instance.new
 local GBB = workspace.GetBoundingBox
 
 local esp = { 
-    enabled = true,
+    enabled = false,
     players = true,
-    boldtext = true,
+    boldtext = false,
     max_distance_players = 1000, 
-    box = {enabled = true, color = rgb(255,255,255), outline = true},
+    box = {enabled = false, color = rgb(255,255,255), outline = false},
     inner_box = {enabled = false, color = rgb(0,0,0),transparency = 0.3},
-    name = {class = 'text', enabled = true, color = rgb(255,255,255), outline = true},
-    distance = {class = 'text', enabled = true, color = rgb(255,255,255), outline = true, health = false},
+    name = {class = 'text', enabled = false, color = rgb(255,255,255), outline = false},
+    distance = {class = 'text', enabled = false, color = rgb(255,255,255), outline = false, health = false},
     health = {enabled = false, color = rgb(0,255,0), outline = false},
-    healthbar = {outline = true, enabled = true, higher = rgb(0,255,0), lower = rgb(255,0,0)},
-    tool = {class = 'text', enabled = true, color = rgb(255,255,255), outline = true},
+    healthbar = {outline = false, enabled = false, higher = rgb(0,255,0), lower = rgb(255,0,0)},
+    tool = {class = 'text', enabled = false, color = rgb(255,255,255), outline = false},
     tracers = {enabled = false, color = rgb(255,255,255)},
-    highlights = {fillcolor = rgb(255,255,255), enabled = true, outline_color = rgb(255,255,255), fill_transparency = 0, outline_transparency = 0},
+    highlights = {fillcolor = rgb(255,255,255), enabled = false, outline_color = rgb(255,255,255), fill_transparency = 0, outline_transparency = 0},
     objects = {},
     visible_check = false,
     font = 0,
-    fontsize = 19,
+    fontsize = 0,
     measurement = 'studs',
 }
 
