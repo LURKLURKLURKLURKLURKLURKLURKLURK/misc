@@ -67,12 +67,12 @@ local library = {
     };
 	-- credits to reaper for reuploading
     images = {
-        ['gradientp90'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/gradientp90.oh'; -- gradient90
-        ['gradientp45'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/gradientp45.oh'; -- gradient45
-        ['colorhue'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/colorhue.oh'; -- colorhue
-        ['colorsat1'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/colorsat1.oh'; -- colorsat1
-        ['colorsat2'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/colorsat2.oh'; -- colorsat2
-        ['colortrans'] = 'https://raw.githubusercontent.com/isthisreaper/Reaper-s-Hub/main/Assets/colortrans.oh'; -- colortrans
+        ['gradientp90'] = 'https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/ui_images/main/gradientp90.oh'; -- gradient90
+        ['gradientp45'] = 'https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/ui_images/main/gradientp45.oh'; -- gradient45
+        ['colorhue'] = 'https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/ui_images/main/colorhue.oh'; -- colorhue
+        ['colorsat1'] = 'https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/ui_images/main/colorsat1.oh'; -- colorsat1
+        ['colorsat2'] = 'https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/ui_images/main/colorsat2.oh'; -- colorsat2
+        ['colortrans'] = 'https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/ui_images/main/colortrans.oh'; -- colortrans
     };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
     signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/misc/main/signal.lua'))();
