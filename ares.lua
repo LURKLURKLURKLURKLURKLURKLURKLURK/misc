@@ -408,7 +408,7 @@ function esp.update_esp(plr,array)
 		                array.health.Transparency = 1 
 		                array.health_bold.Transparency = 1
 		                array.health.Visible = true 
-		                array.health.Text = tostring(mfloor(character.Stats.Health.Base.Value ))
+		                array.health.Text = tostring(mfloor(character.Stats.Health.Base.Value))
 		                array.health.Size = esp.fontsize 
 		                array.health.Font = esp.font 
 		                array.health.Color = esp.misc_layout['health'].lower:lerp(esp.misc_layout['health'].higher,character.Stats.Health.Base.Value / character.Humanoid.MaxHealth);
@@ -419,7 +419,7 @@ function esp.update_esp(plr,array)
 		                    array.health_bold.Visible = true 
 		                    array.health_bold.Size = esp.fontsize 
 		                    array.health_bold.Font = esp.font 
-		                    array.health_bold.Color = esp.misc_layout['health'].lower:lerp(esp.misc_layout['health'].higher,character.Stats.Health.Base.Value / character.Humanoid.MaxHealth);
+		                    array.health_bold.Color = esp.misc_layout['health'].lower:lerp(esp.misc_layout['health'].highercharacter.Stats.Health.Base.Value / character.Humanoid.MaxHealth);
 		                    array.health_bold.Text = array.health.Text
 		                    array.health_bold.Position = v2(array.health.Position.X + 1, array.health.Position.Y)
 		                    else 
@@ -435,7 +435,7 @@ function esp.update_esp(plr,array)
 		                array.tool.Transparency = 1 
 		                array.tool_bold.Transparency = 1
 		                array.tool.Visible = true 
-		                array.tool.Text = (findfirstchildofclass(character,'Tool') and tostring(findfirstchildofclass(character,'Tool'))) or 'none'
+		                array.tool.Text = (findfirstchildofclass(character.Equipped,'Model') and tostring(findfirstchildofclass(character.Equipped,'Model'))) or 'none'
 		                array.tool.Size = esp.fontsize 
 		                array.tool.Font = esp.font
 		                if esp.highlight_target.enabled and esp.highlight_target.target == tostring(character) then
@@ -466,7 +466,19 @@ function esp.update_esp(plr,array)
 		                    array.tool.Visible = false 
 		                    array.tool_bold.Visible = false 
 		            end
-		            
+		            else 
+		                array.tool.Visible = false 
+		                array.tool_bold.Visible = false 
+		                
+		                array.health_bold.Visible = false 
+		                array.health.Visible = false 
+		                
+		                array.name.Visible = false 
+		                array.name_bold.Visible = false 
+		                
+		                array.distance.Visible = false 
+		                array.distnace_bold.Visible = false 
+		                
 		        end
 		    else
 		        array.highlight.Enabled = false
