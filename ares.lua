@@ -9,7 +9,7 @@ local v2,v3,cf,c3rgb,c3new,gbb = Vector2.new,Vector3.new,CFrame.new,Color3.fromR
 local esp = {
     highlight_target = {enabled = false, color = c3rgb(255,0,0),target = ''},
     teamcheck        = false,
-    enabled          = false, 
+    enabled          = true, 
     boldtext         = false, 
     limitdistance    = false,
     renderdistance   = 50,
@@ -17,7 +17,7 @@ local esp = {
     fontsize         = 13,
     font             = 2,
     distance_mode    = 'studs',
-    text             = {enabled = false, color = c3rgb(255,255,255)},
+    text             = {enabled = true, color = c3rgb(255,255,255)},
     misc_layout      = {
         ['arrows']    = {transparency = 1, enabled = false, size = 0, color = c3rgb(255,255,255),radius = 0},
         ['box']       = {inner = false, inner_trans = 0.5, inner_color = c3rgb(0,0,0), enabled = false, color = c3rgb(255,255,255)},
@@ -25,10 +25,10 @@ local esp = {
         ['highlight'] = {enabled = false, outline = c3rgb(255,255,255),fill = c3rgb(255,255,255),outlinetrans = 0,filltrans = 0},
     },
     text_layout      = {
-        ['health']   = {enabled = false, position = 'left'},
-        ['name']     = {enabled = false,position = 'top',order = 1},
-        ['distance'] = {enabled = false, position = 'bottom',order = 1},
-        ['tool']     = {enabled = false, position = 'bottom',order = 2},
+        ['health']   = {enabled = true, position = 'left'},
+        ['name']     = {enabled = true,position = 'top',order = 1},
+        ['distance'] = {enabled = true, position = 'bottom',order = 1},
+        ['tool']     = {enabled = true, position = 'bottom',order = 2},
     },
     cache = {},
 };
@@ -419,7 +419,7 @@ function esp.update_esp(plr,array)
 		                    array.health_bold.Visible = true 
 		                    array.health_bold.Size = esp.fontsize 
 		                    array.health_bold.Font = esp.font 
-		                    array.health_bold.Color = esp.misc_layout['health'].lower:lerp(esp.misc_layout['health'].highercharacter.Stats.Health.Base.Value / character.Humanoid.MaxHealth);
+		                    array.health_bold.Color = array.health.Color
 		                    array.health_bold.Text = array.health.Text
 		                    array.health_bold.Position = v2(array.health.Position.X + 1, array.health.Position.Y)
 		                    else 
@@ -477,7 +477,7 @@ function esp.update_esp(plr,array)
 		                array.name_bold.Visible = false 
 		                
 		                array.distance.Visible = false 
-		                array.distnace_bold.Visible = false 
+		                array.distance_bold.Visible = false 
 		                
 		        end
 		    else
