@@ -246,7 +246,7 @@ function esp.update_esp(plr,array)
 		local distance = esp.getmagnitude(rootpart.Position,lp.Character.HumanoidRootPart.Position)
 		local check = esp.check(character,distance)
 		local s, e = pcall(function()
-		    if not onscreen and check then
+		    if not onscreen and check and esp.enabled then
 		        if esp.misc_layout['arrows'].enabled then 
     		        local proj = camera.CFrame:PointToObjectSpace(rootpart.CFrame.p);
                     local ang  = atan2(proj.Z, proj.X);
@@ -274,7 +274,7 @@ function esp.update_esp(plr,array)
                     array.arrow_outline.Visible = false 
                     array.arrow.Visible = false 
 		    end
-		    if onscreen and check then
+		    if onscreen and check and esp.enabled then
 		        if esp.misc_layout['highlight'].enabled then 
 		            array.highlight.Parent = game.GetService(game,'CoreGui')
 		            array.highlight.Adornee = character 
