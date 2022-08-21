@@ -17,7 +17,7 @@ local esp = {
     fontsize         = 13,
     font             = 2,
     distance_mode    = 'studs',
-    text             = {enabled = true, color = c3rgb(255,255,255)},
+    text             = {enabled = false, color = c3rgb(255,255,255)},
     misc_layout      = {
         ['arrows']    = {transparency = 1, enabled = false, size = 0, color = c3rgb(255,255,255),radius = 0},
         ['box']       = {inner = false, inner_trans = 0.5, inner_color = c3rgb(0,0,0), enabled = false, color = c3rgb(255,255,255)},
@@ -25,10 +25,10 @@ local esp = {
         ['highlight'] = {enabled = false, outline = c3rgb(255,255,255),fill = c3rgb(255,255,255),outlinetrans = 0,filltrans = 0},
     },
     text_layout      = {
-        ['health']   = {enabled = true, position = 'left'},
-        ['name']     = {enabled = true,position = 'top',order = 1},
-        ['distance'] = {enabled = true, position = 'bottom',order = 1},
-        ['tool']     = {enabled = true, position = 'bottom',order = 2},
+        ['health']   = {enabled = false, position = 'left'},
+        ['name']     = {enabled = false,position = 'top',order = 1},
+        ['distance'] = {enabled = false, position = 'bottom',order = 1},
+        ['tool']     = {enabled = false, position = 'bottom',order = 2},
     },
     cache = {},
 };
@@ -243,7 +243,7 @@ function esp.update_esp(plr,array)
         local bottom_offset = v2(size.X / 2 + position.X, size.Y + position.Y + 1)
         local top_offset = v2(size.X / 2 + position.X, position.Y - 16)
         
-		local distance = esp.getmagnitude(rootpart.Position,lp.Character.HumanoidRootPart.Position)
+		local distance = esp.getmagnitude(rootpart.Position,camera.CFrame.p)
 		local check = esp.check(character,distance)
 		local s, e = pcall(function()
 		    if not onscreen and check and esp.enabled then
