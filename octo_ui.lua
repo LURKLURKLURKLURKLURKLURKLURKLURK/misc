@@ -88,7 +88,7 @@ library.themes = {
     {
         name = 'Default',
         theme = {
-            ['Accent']                    = fromrgb(0,156,255),
+            ['Accent']                    = fromrgb(127, 50, 168),
             ['Background']                = fromrgb(19,19,19),
             ['Border']                    = fromrgb(0,0,0),
             ['Border 1']                  = fromrgb(0,0,0),
