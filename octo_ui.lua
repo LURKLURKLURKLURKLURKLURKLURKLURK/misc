@@ -4884,6 +4884,7 @@ function library:CreateSettingsTab(menu)
 
     return settings
 end
+function library:CreateSettingsTab(menu)
     local settingsTab = menu:AddTab('Settings', 999);
     local configSection = settingsTab:AddSection('Config', 2);
     local mainSection = settingsTab:AddSection('Main', 1);
