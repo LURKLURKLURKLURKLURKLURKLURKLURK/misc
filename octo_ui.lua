@@ -4,7 +4,7 @@
     Developed by liam#4567
 
     Ik this code is really shit in some places lol
-    will rewrite again i was just using some rly old stuff that i was lazy to  rewrite
+    will rewrite again i was just using some rly old stuff that i was lazy to rewrite
     could've been a lot better and more optimized in some places and some things arent done as they should've been
     got lazy when trying to make disable all roblox input when ui is open sooo that will be added later =)
 
@@ -4756,135 +4756,6 @@ function library:init()
 end
 
 function library:CreateSettingsTab(menu)
-    local flags = library.flags;
-    local options = library.options;
-
-    local settings = menu:AddTab("Settings"); do 
-        local theme_section = settings:AddSection("Theme", 1); do
-            local theme_strings = {"Custom"};
-            for _, v in next, library.themes do
-                table.insert(theme_strings, v.name);
-            end;
-            local setByPreset = false;
-
-            theme_section:AddList({text = "Presets", flag = "preset_theme", values = theme_strings, callback = function(new_theme)
-                if new_theme == "Custom" then return end
-                setByPreset = true
-                for _,v in next, library.themes do
-                    if v.name == new_theme then
-                        for x, d in pairs(library.options) do
-                            if v.theme[tostring(x)] ~= nil then
-                                d:SetColor(v.theme[tostring(x)]);
-                            end;
-                        end;
-                        library:SetTheme(v.theme);
-                        break;
-                    end;
-                end;
-                setByPreset = false
-            end}):Select("Default");
-        
-            for i, v in pairs(library.theme) do
-                theme_section:AddColor({text = i, flag = i, color = library.theme[i], callback = function(c3)
-                    library.theme[i] = c3;
-                    library:SetTheme(library.theme);
-                    if not setByPreset and not setByConfig then 
-                        library.options.preset_theme:Select("Custom");
-                    end;
-                end});
-            end;
-        end;
-        -- 
-        local configuration_section = settings:AddSection("Configuration", 2); do
-            local function refresh_configs()
-                options.selected_config:ClearValues();
-                for _,v in next, listfiles(library.cheatname .."/" .. library.gamename .. "/configs") do
-                    local ext = "."..v:split(".")[#v:split(".")];
-                    if ext == library.fileext then
-                        options.selected_config:AddValue(v:split("\\")[#v:split("\\")]:sub(1,-#ext-1))
-                    end
-                end
-            end
-        
-            configuration_section:AddBox({text = "Config Name", flag = "configinput"})
-            configuration_section:AddList({text = "Config", flag = "selected_config"})
-            configuration_section:AddButton({text = "Load", confirm = true, callback = function()
-                library:LoadConfig(flags.selected_config);
-            end});
-            configuration_section:AddButton({text = "Save", confirm = true, callback = function()
-                library:SaveConfig(flags.selected_config);
-            end});
-            configuration_section:AddButton({text = "Create", confirm = true, callback = function()
-                if library:GetConfig(flags.configinput) then
-                    library:SendNotification("Config \""..flags.configinput.."\" already exists.", 5, c3new(1,0,0));
-                    return
-                end
-                writefile(library.cheatname.."/"..library.gamename.."/configs/"..flags.configinput.. library.fileext, http:JSONEncode({}));
-                refresh_configs();
-            end})
-            configuration_section:AddButton({text = "Delete", confirm = true, callback = function()
-                if library:GetConfig(flags.selectedconfig) then
-                    delfile(library.cheatname.."/"..library.gamename.."/configs/"..flags.selectedconfig.. library.fileext);
-                    refresh_configs();
-                end;
-            end});
-            configuration_section:AddButton({text = "Refresh", callback = function()
-                refresh_configs();
-            end});
-            refresh_configs();
-        end;
-        --
-        local scripts_section = settings:AddSection("Scripts", 2); do
-            local function refresh_scripts()
-                options.selected_script:ClearValues();
-                for _,v in next, listfiles(library.cheatname .."/" .. library.gamename .. "/scripts") do
-                    local ext = "."..v:split(".")[#v:split(".")];
-                    if ext == ".lua" then
-                        options.selected_script:AddValue(v:split("\\")[#v:split("\\")]:sub(1,-#ext-1))
-                    end
-                end
-            end
-        
-            scripts_section:AddList({text = "Script", flag = "selected_script"})
-            scripts_section:AddButton({text = "Load", confirm = true, callback = function()
-                loadfile(library.cheatname.."/"..library.gamename.."/scripts/"..flags.selected_script.. ".lua")();
-            end});
-            scripts_section:AddButton({text = "Delete", confirm = true, callback = function()
-                if library:GetConfig(flags.selected_script) then
-                    delfile(library.cheatname.."/"..library.gamename.."/scripts/"..flags.selected_script.. ".lua");
-                    refresh_scripts();
-                end;
-            end});
-            scripts_section:AddButton({text = "Refresh", callback = function()
-                refresh_scripts();
-            end});
-            refresh_scripts();
-        end;
-        -- 
-        local main_section = settings:AddSection("Main", 2); do
-            main_section:AddBind({text = "Open / Close", flag = "togglebind", nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
-                library:SetOpen(not library.open)
-            end});
-        
-            main_section:AddButton({text = "Copy Server Connect Script", callback = function()
-                setclipboard(([[game:GetService("TeleportService"):TeleportToPlaceInstance(%s, "%s")]]):format(game.PlaceId, game.JobId));
-            end});
-            main_section:AddButton({text = "Rejoin Game", confirm = true, callback = function()
-                game:GetService("TeleportService"):Teleport(game.PlaceId);
-            end})
-
-            main_section:AddBox({text = "Cheat Name", flag = "cheat_name", input = library.cheatname, callback = function(txt)
-                library.change_name(txt, flags.cheat_domain);
-            end});
-            main_section:AddBox({text = "Cheat Domain", flag = "cheat_domain", input = library.domain, callback = function(txt)
-                library.change_name(flags.cheat_name, txt);
-            end});
-        end;
-    end;
-
-    return settings
-end
-function library:CreateSettingsTab(menu)
     local settingsTab = menu:AddTab('Settings', 999);
     local configSection = settingsTab:AddSection('Config', 2);
     local mainSection = settingsTab:AddSection('Main', 1);
@@ -4943,21 +4814,31 @@ function library:CreateSettingsTab(menu)
         end
     end})
 
-
-    mainSection:AddButton({text = 'Rejoin Server', confirm = true, callback = function()
-        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId);
+    --[[mainSection:AddButton({text = 'Join Discord', flag = 'joindiscord', confirm = true, callback = function()
+        local res = syn.request({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = game:GetService('HttpService'):JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = game:GetService('HttpService'):GenerateGUID(false),
+				args = {code = 'jhS2vYpZqH'}
+			})
+		})
+        if res.Success then
+            library:SendNotification(library.cheatname..' | joined discord', 3);
+        end
     end})
 
-    mainSection:AddButton({text = 'Rejoin Game', confirm = true, callback = function()
-        game:GetService("TeleportService"):Teleport(game.PlaceId);
-    end})
-
-    mainSection:AddButton({text = 'Copy Join Script', callback = function()
-        setclipboard(([[game:GetService("TeleportService"):TeleportToPlaceInstance(%s, "%s")]]):format(game.PlaceId, game.JobId))
-    end})
+    mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
+        setclipboard('discord.gg/jhS2vYpZqH')
+    end})]]
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
-        setclipboard(([[Roblox.GameLauncher.joinGameInstance(%s, "%s"))]]):format(game.PlaceId, game.JobId))
+        setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
     end})
 
     mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
@@ -4983,40 +4864,25 @@ function library:CreateSettingsTab(menu)
     mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
     mainSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
 
-    local themeStrings = {"Custom"};
+    local themeStrings = {};
     for _,v in next, library.themes do
         table.insert(themeStrings, v.name)
     end
-    local themeTab = menu:AddTab('Theme', 990);
-    local themeSection = themeTab:AddSection('Theme', 1);
-    local setByPreset = false
+    local themeSection = settingsTab:AddSection('Theme', 2);
 
+    themeSection:AddColor({text = 'Accent', flag = 'theme_accent', callback = function(c3)
+        library.theme.Accent = c3
+        library:SetTheme(library.theme)
+    end});
     themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
-        if newTheme == "Custom" then return end
-        setByPreset = true
         for _,v in next, library.themes do
             if v.name == newTheme then
-                for x, d in pairs(library.options) do
-                    if v.theme[tostring(x)] ~= nil then
-                        d:SetColor(v.theme[tostring(x)])
-                    end
-                end
+                library.options.theme_accent:SetColor(v.theme.Accent);
                 library:SetTheme(v.theme)
                 break
             end
         end
-        setByPreset = false
     end}):Select('Default');
-
-    for i, v in pairs(library.theme) do
-        themeSection:AddColor({text = i, flag = i, color = library.theme[i], callback = function(c3)
-            library.theme[i] = c3
-            library:SetTheme(library.theme)
-            if not setByPreset and not setByConfig then 
-                library.options.preset_theme:Select('Custom')
-            end
-        end});
-    end
 
     return settingsTab;
 end
