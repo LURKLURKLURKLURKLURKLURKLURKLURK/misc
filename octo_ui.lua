@@ -115,7 +115,7 @@ library.themes = {
 {
         name = 'NEVERLOSE',
         theme = {
-            ["Accent"]                    = fromrgb(0, 247, 255);
+            ["Accent"]                    = fromrgb(65, 28, 250);
             ["Background"]                = fromrgb(18,18,18);
             ["Border"]                    = fromrgb(0,0,0);
             ["Border 1"]                  = fromrgb(60,60,60);
