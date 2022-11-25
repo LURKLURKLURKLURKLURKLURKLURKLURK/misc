@@ -115,27 +115,27 @@ library.themes = {
 {
         name = 'NEVERLOSE',
         theme = {
-            ["Accent"]                    = fromrgb(65, 28, 250);
-            ["Background"]                = fromrgb(18,18,18);
+            ["Accent"]                    = fromrgb(15, 177, 239);
+            ["Background"]                = fromrgb(7,6,20);
             ["Border"]                    = fromrgb(0,0,0);
-            ["Border 1"]                  = fromrgb(60,60,60);
-            ["Border 2"]                  = fromrgb(18,18,18);
-            ["Border 3"]                  = fromrgb(10,10,10);
+            ["Border 1"]                  = fromrgb(60,80,60);
+            ["Border 2"]                  = fromrgb(18,38,18);
+            ["Border 3"]                  = fromrgb(10,30,10);
             ["Primary Text"]              = fromrgb(255,255,255);
-            ["Group Background"]          = fromrgb(18,18,18);
-            ["Selected Tab Background"]   = fromrgb(18,18,18);
-            ["Unselected Tab Background"] = fromrgb(18,18,18);
+            ["Group Background"]          = fromrgb(18,38,18);
+            ["Selected Tab Background"]   = fromrgb(18,28,18);
+            ["Unselected Tab Background"] = fromrgb(18,38,18);
             ["Selected Tab Text"]         = fromrgb(245,245,245);
             ["Unselected Tab Text"]       = fromrgb(220,220,220);
-            ["Section Background"]        = fromrgb(18,18,18);
+            ["Section Background"]        = fromrgb(0, 15 ,30);
             ['Option Text 1']             = fromrgb(245,245,245);
             ['Option Text 2']             = fromrgb(195,195,195);
             ['Option Text 3']             = fromrgb(145,145,145);
-            ["Option Border 1"]           = fromrgb(50,50,50);
-            ["Option Border 2"]           = fromrgb(0,0,0);
-            ["Option Background"]         = fromrgb(23,23,23);
-            ["Risky Text"]                = fromrgb(175, 21, 21);
-            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+            ["Option Border 1"]           = fromrgb(50,70,50);
+            ["Option Border 2"]           = fromrgb(0,10,0);
+            ["Option Background"]         = fromrgb(23,33,23);
+            ["Risky Text"]                = fromrgb(220, 220, 44);
+            ["Risky Text Enabled"]        = fromrgb(255, 255, 64);
         }
     },
     {
