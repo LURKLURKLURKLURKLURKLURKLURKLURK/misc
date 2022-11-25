@@ -4785,11 +4785,12 @@ end
 function library:CreateSettingsTab(menu)
     local settingsTab = menu:AddTab('Settings', 999);
     local configSection = settingsTab:AddSection('Config', 2);
-    local mainSection = settingsTab:AddSection('Main', 1);
-
+    local mainSection = settingsTab:AddSection('Main', 2);
+    local themeSection = settingsTab:AddSection('Theme', 1);
+    local extraSection = settingsTab:AddSection('Extra', 1);
     configSection:AddBox({text = 'Config Name', flag = 'configinput'})
     configSection:AddList({text = 'Config', flag = 'selectedconfig'})
-
+    
     local function refreshConfigs()
         library.options.selectedconfig:ClearValues();
         for _,v in next, listfiles(self.cheatname..'/'..self.gamename..'/configs') do
@@ -4841,7 +4842,7 @@ function library:CreateSettingsTab(menu)
         end
     end})
 
-    --[[mainSection:AddButton({text = 'Join Discord', flag = 'joindiscord', confirm = true, callback = function()
+    mainSection:AddButton({text = 'Join discord', flag = 'joindiscord', confirm = true, callback = function()
         local res = syn.request({
 			Url = 'http://127.0.0.1:6463/rpc?v=1',
 			Method = 'POST',
@@ -4852,50 +4853,50 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'jhS2vYpZqH'}
+				args = {code = 'Va8VQnNfGQ'}
 			})
 		})
         if res.Success then
-            library:SendNotification(library.cheatname..' | joined discord', 3);
+            library:SendNotification('pie.solutions'..' | joined discord', 3);
         end
     end})
-
-    mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('discord.gg/jhS2vYpZqH')
-    end})]]
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
         setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
     end})
-
+    mainSection:AddButton({text = 'Copy discord invite',callback = function()
+        setclipboard('https://discord.gg/Va8VQnNfGQ')
+    end})
+    mainSection:AddButton({text = 'Rejoin',confirm = true, callback = function()
+        game.TeleportService:Teleport(game.PlaceId)
+    end})
     mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
         library:Unload();
     end})
 
-    mainSection:AddSeparator({text = 'Keybinds'});
-    mainSection:AddToggle({text = 'Keybind Indicator', flag = 'keybind_indicator', callback = function(bool)
+    extraSection:AddSeparator({text = 'Keybinds'});
+    extraSection:AddToggle({text = 'Keybind Indicator', flag = 'keybind_indicator', callback = function(bool)
         library.keyIndicator:SetEnabled(bool);
     end})
-    mainSection:AddSlider({text = 'Position X', flag = 'keybind_indicator_x', min = 0, max = 100, increment = .1, value = .5, callback = function()
+    extraSection:AddSlider({text = 'Position X', flag = 'keybind_indicator_x', min = 0, max = 100, increment = .1, value = .5, callback = function()
         library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
     end});
-    mainSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 35, callback = function()
+    extraSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 35, callback = function()
         library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
     end});
 
-    mainSection:AddSeparator({text = 'Watermark'})
-    mainSection:AddToggle({text = 'Enabled', flag = 'watermark_enabled'});
-    mainSection:AddList({text = 'Position', flag = 'watermark_pos', selected = 'Custom', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
+    extraSection:AddSeparator({text = 'Watermark'})
+    extraSection:AddToggle({text = 'Enabled', flag = 'watermark_enabled'});
+    extraSection:AddList({text = 'Position', flag = 'watermark_pos', selected = 'Custom', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
         library.watermark.lock = val;
     end})
-    mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
-    mainSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
+    extraSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
+    extraSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
 
     local themeStrings = {};
     for _,v in next, library.themes do
         table.insert(themeStrings, v.name)
     end
-    local themeSection = settingsTab:AddSection('Theme', 2);
 
     themeSection:AddColor({text = 'Accent', flag = 'theme_accent', callback = function(c3)
         library.theme.Accent = c3
