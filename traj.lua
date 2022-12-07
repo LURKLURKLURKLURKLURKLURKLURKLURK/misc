@@ -1,24 +1,15 @@
 local module = {}
 
-local quartic = require(script.CardanoFerrari).solveQuartic
+local quartic = loadstring(game:HttpGet('https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/misc/main/CardanoFerrari.lua'))()
 
-function module.solve_trajectory(
+function module.solve_trajectory(origin,projectileSpeed,targetPos,targetVelocity,pickLongest,gravity)
 	
-	origin: Vector3,
-	projectileSpeed: number,
-	targetPos: Vector3,
-	targetVelocity: Vector3,
-	pickLongest: boolean?,
-	gravity: number?
-	
-	): Vector3?
-	
-	local g: number = gravity or workspace.Gravity
+	local g = gravity or workspace.Gravity
 
-	local disp: Vector3 = targetPos - origin
-	local p, q, r: number = targetVelocity.X, targetVelocity.Y, targetVelocity.Z
-	local h, j, k: number = disp.X, disp.Y, disp.Z
-	local l: number = -.5 * g 
+	local disp = targetPos - origin
+	local p, q, r = targetVelocity.X, targetVelocity.Y, targetVelocity.Z
+	local h, j, k = disp.X, disp.Y, disp.Z
+	local number = -.5 * g 
 
 	local solutions = quartic(
 		l*l,
@@ -28,17 +19,17 @@ function module.solve_trajectory(
 		j*j + h*h + k*k
 	)
 	if solutions then
-		local posRoots: {number} = table.create(2)
+		local posRoots = table.create(2)
 		for _, v in solutions do --filter out the negative roots
 			if v > 0 then
 				table.insert(posRoots, v)
 			end
 		end
 		if posRoots[1] then
-			local t: number = posRoots[if pickLongest then 2 else 1]
-			local d: number = (h + p*t)/t
-			local e: number = (j + q*t - l*t*t)/t
-			local f: number = (k + r*t)/t
+			local t = posRoots[1]
+			local d = (h + p*t)/t
+			local e number = (j + q*t - l*t*t)/t
+			local f number = (k + r*t)/t
 			return origin + Vector3.new(d, e, f)
 		end
 	end
