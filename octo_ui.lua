@@ -1062,7 +1062,7 @@ function library:init()
             notification.border1 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'Border 2';
+                ThemeColor = 'Border 1';
                 Parent = notification.background;
                 ZIndex = z-1;
             })
@@ -1167,7 +1167,7 @@ function library:init()
             objs.border1 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'Border 2';
+                ThemeColor = 'Border 1';
                 Parent = objs.background;
                 ZIndex = z-1;
             })
@@ -4662,8 +4662,8 @@ function library:init()
                 {localplayer.Name, false},
                 {localplayer.DisplayName, false},
                 {'user', false},
-                {'0 fps', true},
-                {'0ms', true},
+                {'0 fps', false},
+                {'0ms', false},
                 {'00:00:00', true},
                 {'M, D, Y', true},
             };
@@ -4727,7 +4727,7 @@ function library:init()
             objs.border1 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'Border 2';
+                ThemeColor = 'Border 1';
                 Parent = objs.background;
                 ZIndex = z-1;
             })
@@ -4902,10 +4902,25 @@ function library:CreateSettingsTab(menu)
         library.theme.Accent = c3
         library:SetTheme(library.theme)
     end});
+    themeSection:AddColor({color = library.theme['Border 1'], text = 'Border 1', flag = 'theme_border1', callback = function(c3)
+        library.theme['Border 1'] =  c3
+        library:SetTheme(library.theme)
+    end});
+    themeSection:AddColor({color = library.theme['Border 2'], text = 'Border 2', flag = 'theme_border2', callback = function(c3)
+        library.theme['Border 2'] = c3
+        library:SetTheme(library.theme)
+    end});
+    themeSection:AddColor({color = library.theme['Border 3'], text = 'Border 3', flag = 'theme_border3', callback = function(c3)
+        library.theme['Border 3'] = c3
+        library:SetTheme(library.theme)
+    end});
     themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
         for _,v in next, library.themes do
             if v.name == newTheme then
                 library.options.theme_accent:SetColor(v.theme.Accent);
+                library.options.theme_border1:SetColor(v.theme['Border 1'])
+                library.options.theme_border2:SetColor(v.theme['Border 2'])
+                library.options.theme_border3:SetColor(v.theme['Border 3'])
                 library:SetTheme(v.theme)
                 break
             end
@@ -4915,5 +4930,6 @@ function library:CreateSettingsTab(menu)
     return settingsTab;
 end
 getgenv().library = library
+
 --return library
 return library
