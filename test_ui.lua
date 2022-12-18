@@ -88,6 +88,7 @@ library.themes = {
     {
         name = 'Default',
         theme = {
+            ['Notification'] = fromrgb(255,255,255),
             ['Accent']                    = fromrgb(114, 111, 181),
             ['Background']                = fromrgb(19,19,19),
             ['Border']                    = fromrgb(0,0,0),
@@ -115,6 +116,7 @@ library.themes = {
 {
         name = 'NEVERLOSE',
         theme = {
+            ['Notification'] = fromrgb(255,255,255),
             ["Accent"]                    = fromrgb(15, 177, 239);
             ["Background"]                = fromrgb(7,6,20);
             ["Border"]                    = fromrgb(0,0,0);
@@ -141,6 +143,7 @@ library.themes = {
     {
         name = 'Bitch Bot',
         theme = {
+            ['Notification'] = fromrgb(255,255,255),
             ['Accent']                    = fromrgb(126,72,163),
             ['Background']                = fromrgb(33, 33, 33),
             ['Border']                    = fromrgb(17, 17, 17),
@@ -167,6 +170,7 @@ library.themes = {
     {
         name = 'Tokyo Night',
         theme = {
+            ['Notification'] = fromrgb(255,255,255),
             ['Accent']                    = fromrgb(103,89,179);
             ['Background']                = fromrgb(22,22,31);
             ['Border']                    = fromrgb(0,0,0);
@@ -193,6 +197,7 @@ library.themes = {
     {
         name = 'Nekocheat',
         theme = {
+            ['Notification'] = fromrgb(255,255,255),
             ["Accent"]                    = fromrgb(226, 30, 112);
             ["Background"]                = fromrgb(18,18,18);
             ["Border"]                    = fromrgb(0,0,0);
@@ -219,6 +224,7 @@ library.themes = {
     {
         name = 'Nekocheat Blue',
         theme = {
+            ['Notification'] = fromrgb(255,255,255),
             ["Accent"]                    = fromrgb(0, 247, 255);
             ["Background"]                = fromrgb(18,18,18);
             ["Border"]                    = fromrgb(0,0,0);
@@ -245,6 +251,7 @@ library.themes = {
     {
         name = 'Fatality',
         theme = {
+            ['Notification'] = fromrgb(255,255,255),
             ['Accent']                    = fromrgb(197,7,83);
             ['Background']                = fromrgb(25,19,53);
             ['Border']                    = fromrgb(0,0,0);
@@ -271,6 +278,7 @@ library.themes = {
     {
         name = 'Gamesense',
         theme = {
+            ['Notification'] = fromrgb(255,255,255),
             ['Accent']                    = fromrgb(147,184,26);
             ['Background']                = fromrgb(17,17,17);
             ['Border']                    = fromrgb(0,0,0);
@@ -297,6 +305,7 @@ library.themes = {
     {
         name = 'Twitch',
         theme = {
+            ['Notification'] = fromrgb(255,255,255),
             ['Accent']                    = fromrgb(169,112,255);
             ['Background']                = fromrgb(14,14,14);
             ['Border']                    = fromrgb(0,0,0);
@@ -1084,7 +1093,7 @@ function library:init()
             })
 
             notification.accentBar = utility:Draw('Square',{
-                Size = newUDim2(0,5,1,4);
+                Size = newUDim2(0,3,1,4);
                 Position = newUDim2(0,0,0,-2);
                 Parent = notification.background;
                 ThemeColor = color == nil and 'Accent' or '';
@@ -1093,7 +1102,7 @@ function library:init()
 
             notification.text = utility:Draw('Text', {
                 Position = newUDim2(0,13,0,2);
-                ThemeColor = 'Primary Text';
+                ThemeColor = 'Notification';
                 Text = message;
                 Outline = true;
                 Font = 2;
@@ -1116,15 +1125,15 @@ function library:init()
 
         task.spawn(function()
             self:UpdateNotifications();
-            notification.background.Size = newUDim2(0, notification.text.TextBounds.X + 20, 0, 19)
+            notification.background.Size = newUDim2(0, notification.text.TextBounds.X + 20, 0, notification.text.TextBounds.Y + 6)
             task.wait();
             utility:Tween(notification.background, 'Position', newUDim2(0,0,0, 0), .1);
             task.wait(time);
-            for i,v in next, notification do
-                if typeof(v) ~= 'function' then
-                    utility:Tween(v, 'Transparency', 0, .15);
-                end
-            end
+            -- for i,v in next, notification do
+            --    if typeof(v) ~= 'function' then
+            --        utility:Tween(v, 'Transparency', 0, .15);
+            --    end
+            --end
             utility:Connection(utility:Tween(notification.background, 'Position', newUDim2(0,-500,0, 0), .25).Completed, (function()
                 notification:Remove();
             end))
@@ -1135,7 +1144,7 @@ function library:init()
     function self:UpdateNotifications()
         local i = 0
         for v in next, self.notifications do
-            utility:Tween(v.holder, 'Position', newUDim2(0,0,0, 75 + (i * 30)), .15)
+            utility:Tween(v.holder, 'Position', newUDim2(0,0,0, 75 + (i * 35)), .15)
             i += 1
         end
     end
