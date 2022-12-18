@@ -65,6 +65,7 @@ local library = {
         ['fps'] = 0;
         ['ping'] = 0;
     };
+	-- credits to reaper for reuploading
     images = {
         ['gradientp90'] = 'https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/ui_images/main/gradientp90.oh'; -- gradient90
         ['gradientp45'] = 'https://raw.githubusercontent.com/LURKLURKLURKLURKLURKLURKLURKLURK/ui_images/main/gradientp45.oh'; -- gradient45
@@ -85,238 +86,238 @@ local library = {
 
 library.themes = {
     {
-        name = 'default',
+        name = 'Default',
         theme = {
-            ['accent']                    = fromrgb(114, 111, 181),
-            ['background']                = fromrgb(19,19,19),
-            ['border']                    = fromrgb(0,0,0),
-            ['border 1']                  = fromrgb(52, 52, 52),
-            ['border 2']                  = fromrgb(19,19,19),
-            ['border 3']                  = fromrgb(0,0,0),
-            ['primary text']              = fromrgb(220,220,220),
-            ['group background']          = fromrgb(21,21,21),
-            ['selected tab background']   = fromrgb(32,32,32),
-            ['unselected tab background'] = fromrgb(19,19,19),
-            ['selected tab Text']         = fromrgb(255,255,255),
-            ['unselected tab Text']       = fromrgb(220,220,220),
-            ['section background']        = fromrgb(19,19,19);
-            ['option text 1']             = fromrgb(245,245,245);
-            ['option text 2']             = fromrgb(195,195,195);
-            ['option text 3']             = fromrgb(145,145,145);
-            ['option border 1']           = fromrgb(0,0,0);
-            ['option border 2']           = fromrgb(52, 52, 52);
-            ['option background']         = fromrgb(35,35,35);
-            ["risky text"]                = fromrgb(175, 21, 21);
-            ["risky text enabled"]        = fromrgb(255, 41, 41);
+            ['Accent']                    = fromrgb(114, 111, 181),
+            ['Background']                = fromrgb(19,19,19),
+            ['Border']                    = fromrgb(0,0,0),
+            ['Border 1']                  = fromrgb(52, 52, 52),
+            ['Border 2']                  = fromrgb(19,19,19),
+            ['Border 3']                  = fromrgb(0,0,0),
+            ['Primary Text']              = fromrgb(220,220,220),
+            ['Group Background']          = fromrgb(21,21,21),
+            ['Selected Tab Background']   = fromrgb(32,32,32),
+            ['Unselected Tab Background'] = fromrgb(19,19,19),
+            ['Selected Tab Text']         = fromrgb(255,255,255),
+            ['Unselected Tab Text']       = fromrgb(220,220,220),
+            ['Section Background']        = fromrgb(19,19,19);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(0,0,0);
+            ['Option Border 2']           = fromrgb(52, 52, 52);
+            ['Option Background']         = fromrgb(35,35,35);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
         }
     },
 
 {
-        name = 'neverlose',
+        name = 'NEVERLOSE',
         theme = {
-            ["accent"]                    = fromrgb(15, 177, 239);
-            ["background"]                = fromrgb(7,6,20);
-            ["border"]                    = fromrgb(0,0,0);
-            ["border 1"]                  = fromrgb(60,60,80);
-            ["border 2"]                  = fromrgb(18,18,38);
-            ["border 3"]                  = fromrgb(10,10,18);
-            ["primary text"]              = fromrgb(255,255,255);
-            ["group background"]          = fromrgb(18,18,38);
-            ["selected tab background"]   = fromrgb(18,18,38);
-            ["unselected tab background"] = fromrgb(18,18,28);
-            ["selected tab Text"]         = fromrgb(245,245,245);
-            ["unselected tab Text"]       = fromrgb(220,220,220);
-            ["section background"]        = fromrgb(0, 15 ,30);
-            ['option text 1']             = fromrgb(245,245,245);
-            ['option text 2']             = fromrgb(195,195,195);
-            ['option text 3']             = fromrgb(145,145,145);
-            ["option border 1"]           = fromrgb(50,50,70);
-            ["option border 2"]           = fromrgb(0,0,10);
-            ["option background"]         = fromrgb(23,23,33);
-            ["risky text"]                = fromrgb(220, 220, 44);
-            ["risky text enabled"]        = fromrgb(255, 255, 64);
+            ["Accent"]                    = fromrgb(15, 177, 239);
+            ["Background"]                = fromrgb(7,6,20);
+            ["Border"]                    = fromrgb(0,0,0);
+            ["Border 1"]                  = fromrgb(60,60,80);
+            ["Border 2"]                  = fromrgb(18,18,38);
+            ["Border 3"]                  = fromrgb(10,10,18);
+            ["Primary Text"]              = fromrgb(255,255,255);
+            ["Group Background"]          = fromrgb(18,18,38);
+            ["Selected Tab Background"]   = fromrgb(18,18,38);
+            ["Unselected Tab Background"] = fromrgb(18,18,28);
+            ["Selected Tab Text"]         = fromrgb(245,245,245);
+            ["Unselected Tab Text"]       = fromrgb(220,220,220);
+            ["Section Background"]        = fromrgb(0, 15 ,30);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ["Option Border 1"]           = fromrgb(50,50,70);
+            ["Option Border 2"]           = fromrgb(0,0,10);
+            ["Option Background"]         = fromrgb(23,23,33);
+            ["Risky Text"]                = fromrgb(220, 220, 44);
+            ["Risky Text Enabled"]        = fromrgb(255, 255, 64);
         }
     },
     {
-        name = 'bitch bot',
+        name = 'Bitch Bot',
         theme = {
-            ['accent']                    = fromrgb(126,72,163),
-            ['background']                = fromrgb(33, 33, 33),
-            ['border']                    = fromrgb(17, 17, 17),
-            ['border 1']                  = fromrgb(32, 32, 32),
-            ['border 2']                  = fromrgb(42, 42, 42),
-            ['border 3']                  = fromrgb(10, 10, 10),
-            ['primary text']              = fromrgb(220,220,220),
-            ['group background']          = fromrgb(39, 39, 39),
-            ['selected tab background']   = fromrgb(39, 39, 39),
-            ['unselected tab background'] = fromrgb(36, 36, 36),
-            ['selected tab Text']         = fromrgb(255,255,255),
-            ['unselected tab Text']       = fromrgb(220,220,220),
-            ['section background']        = fromrgb(35, 35, 35);
-            ['option text 1']             = fromrgb(245,245,245);
-            ['option text 2']             = fromrgb(195,195,195);
-            ['option text 3']             = fromrgb(195, 195, 195);
-            ['option border 1']           = fromrgb(35, 35, 35);
-            ['option border 2']           = fromrgb(1, 1, 1);
-            ['option background']         = fromrgb(41, 40, 40);
-            ["risky text"]                = fromrgb(216, 224, 155);
-            ["risky text enabled"]        = fromrgb(233, 243, 142);
+            ['Accent']                    = fromrgb(126,72,163),
+            ['Background']                = fromrgb(19,19,19),
+            ['Border']                    = fromrgb(0,0,0),
+            ['Border 1']                  = fromrgb(0,0,0),
+            ['Border 2']                  = fromrgb(19,19,19),
+            ['Border 3']                  = fromrgb(0,0,0),
+            ['Primary Text']              = fromrgb(220,220,220),
+            ['Group Background']          = fromrgb(21,21,21),
+            ['Selected Tab Background']   = fromrgb(32,32,32),
+            ['Unselected Tab Background'] = fromrgb(19,19,19),
+            ['Selected Tab Text']         = fromrgb(255,255,255),
+            ['Unselected Tab Text']       = fromrgb(220,220,220),
+            ['Section Background']        = fromrgb(19,19,19);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(0,0,0);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(35,35,35);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
         }
     },
     {
-        name = 'tokyo night',
+        name = 'Tokyo Night',
         theme = {
-            ['accent']                    = fromrgb(103,89,179);
-            ['background']                = fromrgb(22,22,31);
-            ['border']                    = fromrgb(0,0,0);
-            ['border 1']                  = fromrgb(50,50,50);
-            ['border 2']                  = fromrgb(24,25,37);
-            ['border 3']                  = fromrgb(10,10,10);
-            ['primary text']              = fromrgb(235,235,235);
-            ['group background']          = fromrgb(24,25,37);
-            ['selected tab background']   = fromrgb(24,25,37);
-            ['unselected tab background'] = fromrgb(22,22,31);
-            ['selected tab Text']         = fromrgb(245,245,245);
-            ['unselected tab Text']       = fromrgb(145,145,145);
-            ['section background']        = fromrgb(22,22,31);
-            ['option text 1']             = fromrgb(245,245,245);
-            ['option text 2']             = fromrgb(195,195,195);
-            ['option text 3']             = fromrgb(145,145,145);
-            ['option border 1']           = fromrgb(50,50,50);
-            ['option border 2']           = fromrgb(0,0,0);
-            ['option background']         = fromrgb(24,25,37);
-            ["risky text"]                = fromrgb(175, 21, 21);
-            ["risky text enabled"]        = fromrgb(255, 41, 41);
+            ['Accent']                    = fromrgb(103,89,179);
+            ['Background']                = fromrgb(22,22,31);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(50,50,50);
+            ['Border 2']                  = fromrgb(24,25,37);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(24,25,37);
+            ['Selected Tab Background']   = fromrgb(24,25,37);
+            ['Unselected Tab Background'] = fromrgb(22,22,31);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(22,22,31);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(50,50,50);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(24,25,37);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
         }
     },
     {
-        name = 'nekocheat',
+        name = 'Nekocheat',
         theme = {
-            ["accent"]                    = fromrgb(226, 30, 112);
-            ["background"]                = fromrgb(18,18,18);
-            ["border"]                    = fromrgb(0,0,0);
-            ["border 1"]                  = fromrgb(60,60,60);
-            ["border 2"]                  = fromrgb(18,18,18);
-            ["border 3"]                  = fromrgb(10,10,10);
-            ["primary text"]              = fromrgb(255,255,255);
-            ["group background"]          = fromrgb(18,18,18);
-            ["selected tab background"]   = fromrgb(18,18,18);
-            ["unselected tab background"] = fromrgb(18,18,18);
-            ["selected tab Text"]         = fromrgb(245,245,245);
-            ["unselected tab Text"]       = fromrgb(145,145,145);
-            ["section background"]        = fromrgb(18,18,18);
-            ["option text 1"]             = fromrgb(255,255,255);
-            ["option text 2"]             = fromrgb(255,255,255);
-            ["option text 3"]             = fromrgb(255,255,255);
-            ["option border 1"]           = fromrgb(50,50,50);
-            ["option border 2"]           = fromrgb(0,0,0);
-            ["option background"]         = fromrgb(23,23,23);
-            ["risky text"]                = fromrgb(175, 21, 21);
-            ["risky text enabled"]        = fromrgb(255, 41, 41);
+            ["Accent"]                    = fromrgb(226, 30, 112);
+            ["Background"]                = fromrgb(18,18,18);
+            ["Border"]                    = fromrgb(0,0,0);
+            ["Border 1"]                  = fromrgb(60,60,60);
+            ["Border 2"]                  = fromrgb(18,18,18);
+            ["Border 3"]                  = fromrgb(10,10,10);
+            ["Primary Text"]              = fromrgb(255,255,255);
+            ["Group Background"]          = fromrgb(18,18,18);
+            ["Selected Tab Background"]   = fromrgb(18,18,18);
+            ["Unselected Tab Background"] = fromrgb(18,18,18);
+            ["Selected Tab Text"]         = fromrgb(245,245,245);
+            ["Unselected Tab Text"]       = fromrgb(145,145,145);
+            ["Section Background"]        = fromrgb(18,18,18);
+            ["Option Text 1"]             = fromrgb(255,255,255);
+            ["Option Text 2"]             = fromrgb(255,255,255);
+            ["Option Text 3"]             = fromrgb(255,255,255);
+            ["Option Border 1"]           = fromrgb(50,50,50);
+            ["Option Border 2"]           = fromrgb(0,0,0);
+            ["Option Background"]         = fromrgb(23,23,23);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
         }
     },
     {
-        name = 'nekocheat blue',
+        name = 'Nekocheat Blue',
         theme = {
-            ["accent"]                    = fromrgb(0, 247, 255);
-            ["background"]                = fromrgb(18,18,18);
-            ["border"]                    = fromrgb(0,0,0);
-            ["border 1"]                  = fromrgb(60,60,60);
-            ["border 2"]                  = fromrgb(18,18,18);
-            ["border 3"]                  = fromrgb(10,10,10);
-            ["primary text"]              = fromrgb(255,255,255);
-            ["group background"]          = fromrgb(18,18,18);
-            ["selected tab background"]   = fromrgb(18,18,18);
-            ["unselected tab background"] = fromrgb(18,18,18);
-            ["selected tab Text"]         = fromrgb(245,245,245);
-            ["unselected tab Text"]       = fromrgb(145,145,145);
-            ["section background"]        = fromrgb(18,18,18);
-            ["option text 1"]             = fromrgb(255,255,255);
-            ["option text 2"]             = fromrgb(255,255,255);
-            ["option text 3"]             = fromrgb(255,255,255);
-            ["option border 1"]           = fromrgb(50,50,50);
-            ["option border 2"]           = fromrgb(0,0,0);
-            ["option background"]         = fromrgb(23,23,23);
-            ["risky text"]                = fromrgb(175, 21, 21);
-            ["risky text enabled"]        = fromrgb(255, 41, 41);
+            ["Accent"]                    = fromrgb(0, 247, 255);
+            ["Background"]                = fromrgb(18,18,18);
+            ["Border"]                    = fromrgb(0,0,0);
+            ["Border 1"]                  = fromrgb(60,60,60);
+            ["Border 2"]                  = fromrgb(18,18,18);
+            ["Border 3"]                  = fromrgb(10,10,10);
+            ["Primary Text"]              = fromrgb(255,255,255);
+            ["Group Background"]          = fromrgb(18,18,18);
+            ["Selected Tab Background"]   = fromrgb(18,18,18);
+            ["Unselected Tab Background"] = fromrgb(18,18,18);
+            ["Selected Tab Text"]         = fromrgb(245,245,245);
+            ["Unselected Tab Text"]       = fromrgb(145,145,145);
+            ["Section Background"]        = fromrgb(18,18,18);
+            ["Option Text 1"]             = fromrgb(255,255,255);
+            ["Option Text 2"]             = fromrgb(255,255,255);
+            ["Option Text 3"]             = fromrgb(255,255,255);
+            ["Option Border 1"]           = fromrgb(50,50,50);
+            ["Option Border 2"]           = fromrgb(0,0,0);
+            ["Option Background"]         = fromrgb(23,23,23);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
         }
     },
     {
-        name = 'fatality',
+        name = 'Fatality',
         theme = {
-            ['accent']                    = fromrgb(197,7,83);
-            ['background']                = fromrgb(25,19,53);
-            ['border']                    = fromrgb(0,0,0);
-            ['border 1']                  = fromrgb(60,53,93);
-            ['border 2']                  = fromrgb(29,23,66);
-            ['border 3']                  = fromrgb(10,10,10);
-            ['primary text']              = fromrgb(235,235,235);
-            ['group background']          = fromrgb(29,23,66);
-            ['selected tab background']   = fromrgb(29,23,66);
-            ['unselected tab background'] = fromrgb(25,19,53);
-            ['selected tab Text']         = fromrgb(245,245,245);
-            ['unselected tab Text']       = fromrgb(145,145,145);
-            ['section background']        = fromrgb(25,19,53);
-            ['option text 1']             = fromrgb(245,245,245);
-            ['option text 2']             = fromrgb(195,195,195);
-            ['option text 3']             = fromrgb(145,145,145);
-            ['option border 1']           = fromrgb(60,53,93);
-            ['option border 2']           = fromrgb(0,0,0);
-            ['option background']         = fromrgb(29,23,66);
-            ["risky text"]                = fromrgb(175, 21, 21);
-            ["risky text enabled"]        = fromrgb(255, 41, 41);
+            ['Accent']                    = fromrgb(197,7,83);
+            ['Background']                = fromrgb(25,19,53);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(60,53,93);
+            ['Border 2']                  = fromrgb(29,23,66);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(29,23,66);
+            ['Selected Tab Background']   = fromrgb(29,23,66);
+            ['Unselected Tab Background'] = fromrgb(25,19,53);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(25,19,53);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(60,53,93);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(29,23,66);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
         }
     },
     {
-        name = 'gamesense',
+        name = 'Gamesense',
         theme = {
-            ['accent']                    = fromrgb(147,184,26);
-            ['background']                = fromrgb(17,17,17);
-            ['border']                    = fromrgb(0,0,0);
-            ['border 1']                  = fromrgb(47,47,47);
-            ['border 2']                  = fromrgb(17,17,17);
-            ['border 3']                  = fromrgb(10,10,10);
-            ['primary text']              = fromrgb(235,235,235);
-            ['group background']          = fromrgb(17,17,17);
-            ['selected tab background']   = fromrgb(17,17,17);
-            ['unselected tab background'] = fromrgb(17,17,17);
-            ['selected tab Text']         = fromrgb(245,245,245);
-            ['unselected tab Text']       = fromrgb(145,145,145);
-            ['section background']        = fromrgb(17,17,17);
-            ['option text 1']             = fromrgb(245,245,245);
-            ['option text 2']             = fromrgb(195,195,195);
-            ['option text 3']             = fromrgb(145,145,145);
-            ['option border 1']           = fromrgb(47,47,47);
-            ['option border 2']           = fromrgb(0,0,0);
-            ['option background']         = fromrgb(35,35,35);
-            ["risky text"]                = fromrgb(175, 21, 21);
-            ["risky text enabled"]        = fromrgb(255, 41, 41);
+            ['Accent']                    = fromrgb(147,184,26);
+            ['Background']                = fromrgb(17,17,17);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(47,47,47);
+            ['Border 2']                  = fromrgb(17,17,17);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(17,17,17);
+            ['Selected Tab Background']   = fromrgb(17,17,17);
+            ['Unselected Tab Background'] = fromrgb(17,17,17);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(17,17,17);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(47,47,47);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(35,35,35);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
         }
     },
     {
-        name = 'twitch',
+        name = 'Twitch',
         theme = {
-            ['accent']                    = fromrgb(169,112,255);
-            ['background']                = fromrgb(14,14,14);
-            ['border']                    = fromrgb(0,0,0);
-            ['border 1']                  = fromrgb(45,45,45);
-            ['border 2']                  = fromrgb(31,31,35);
-            ['border 3']                  = fromrgb(10,10,10);
-            ['primary text']              = fromrgb(235,235,235);
-            ['group background']          = fromrgb(31,31,35);
-            ['selected tab background']   = fromrgb(31,31,35);
-            ['unselected tab background'] = fromrgb(17,17,17);
-            ['selected tab Text']         = fromrgb(225,225,225);
-            ['unselected tab Text']       = fromrgb(160,170,175);
-            ['section background']        = fromrgb(17,17,17);
-            ['option text 1']             = fromrgb(245,245,245);
-            ['option text 2']             = fromrgb(195,195,195);
-            ['option text 3']             = fromrgb(145,145,145);
-            ['option border 1']           = fromrgb(45,45,45);
-            ['option border 2']           = fromrgb(0,0,0);
-            ['option background']         = fromrgb(24,24,27);
-            ["risky text"]                = fromrgb(175, 21, 21);
-            ["risky text enabled"]        = fromrgb(255, 41, 41);
+            ['Accent']                    = fromrgb(169,112,255);
+            ['Background']                = fromrgb(14,14,14);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(45,45,45);
+            ['Border 2']                  = fromrgb(31,31,35);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(31,31,35);
+            ['Selected Tab Background']   = fromrgb(31,31,35);
+            ['Unselected Tab Background'] = fromrgb(17,17,17);
+            ['Selected Tab Text']         = fromrgb(225,225,225);
+            ['Unselected Tab Text']       = fromrgb(160,170,175);
+            ['Section Background']        = fromrgb(17,17,17);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(45,45,45);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(24,24,27);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
         }
     }
 }
@@ -1027,7 +1028,7 @@ function library:init()
         end
     end
 
-    function self:SendNotification(message, time, color, class, ismulti)
+    function self:SendNotification(message, time, color)
         time = time or 5
         if typeof(message) ~= 'string' then
             return error(string.format('invalid message type, got %s, expected string', typeof(message)))
@@ -1040,17 +1041,11 @@ function library:init()
         local notification = {};
 
         self.notifications[notification] = true
+
         do
             local objs = notification;
             local z = self.zindexOrder.notification;
-            
-            
-            if ismulti and ismulti == true then 
-                notification.ismulti = true 
-            else 
-                notification.ismulti = false
-            end
-            
+
             notification.holder = utility:Draw('Square', {
                 Position = newUDim2(0, 0, 0, 75);
                 Transparency = 0;
@@ -1060,14 +1055,14 @@ function library:init()
                 Size = newUDim2(1,0,1,0);
                 Position = newUDim2(0, -500, 0, 0);
                 Parent = notification.holder;
-                ThemeColor = 'background';
+                ThemeColor = 'Background';
                 ZIndex = z;
             })
 
             notification.border1 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 1';
+                ThemeColor = 'Border 1';
                 Parent = notification.background;
                 ZIndex = z-1;
             })
@@ -1075,7 +1070,7 @@ function library:init()
             objs.border2 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 3';
+                ThemeColor = 'Border 3';
                 Parent = objs.border1;
                 ZIndex = z-2;
             })
@@ -1092,13 +1087,13 @@ function library:init()
                 Size = newUDim2(0,5,1,4);
                 Position = newUDim2(0,0,0,-2);
                 Parent = notification.background;
-                ThemeColor = color == nil and 'accent' or '';
+                ThemeColor = color == nil and 'Accent' or '';
                 ZIndex = z+5;
             })
 
             notification.text = utility:Draw('Text', {
                 Position = newUDim2(0,13,0,2);
-                ThemeColor = 'primary text';
+                ThemeColor = 'Primary Text';
                 Text = message;
                 Outline = true;
                 Font = 2;
@@ -1106,11 +1101,11 @@ function library:init()
                 ZIndex = z+4;
                 Parent = notification.background;
             })
-        
 
             if color then
                 notification.accentBar.Color = color;
             end
+
         end
 
         function notification:Remove()
@@ -1121,32 +1116,18 @@ function library:init()
 
         task.spawn(function()
             self:UpdateNotifications();
-            notification.background.Size = newUDim2(0, notification.text.TextBounds.X + 20, 0, notification.text.TextBounds.Y + 5)
+            notification.background.Size = newUDim2(0, notification.text.TextBounds.X + 20, 0, 19)
             task.wait();
-            if class ~= 'slow' then 
-                utility:Tween(notification.background, 'Position', newUDim2(0,0,0, 0), .1);
-            else 
-                utility:Tween(notification.background, 'Position', newUDim2(0,0,0, 0), 1);
-            end
+            utility:Tween(notification.background, 'Position', newUDim2(0,0,0, 0), .1);
             task.wait(time);
             for i,v in next, notification do
-                if typeof(v) ~= 'function' and type(v) ~= 'boolean' then
-                    if class ~= 'slow' then 
-                        utility:Tween(v, 'Transparency', 0, .15);
-                    else 
-                        utility:Tween(v, 'Transparency', 0, 1);
-                    end
+                if typeof(v) ~= 'function' then
+                    utility:Tween(v, 'Transparency', 0, .15);
                 end
             end
-            if class ~= 'slow' then 
-                utility:Connection(utility:Tween(notification.background, 'Position', newUDim2(0,-500,0, 0), .25).Completed, (function()
-                    notification:Remove();
-                end))
-            else 
-                utility:Connection(utility:Tween(notification.background, 'Position', newUDim2(0,-500,0, 0), 1).Completed, (function()
-                    notification:Remove();
-                end))
-            end
+            utility:Connection(utility:Tween(notification.background, 'Position', newUDim2(0,-500,0, 0), .25).Completed, (function()
+                notification:Remove();
+            end))
         end)
 
     end
@@ -1155,7 +1136,7 @@ function library:init()
         local i = 0
         for v in next, self.notifications do
             utility:Tween(v.holder, 'Position', newUDim2(0,0,0, 75 + (i * 30)), .15)
-            i+=1 
+            i += 1
         end
     end
 
@@ -1179,14 +1160,14 @@ function library:init()
             objs.background = utility:Draw('Square', {
                 Size = newUDim2(0, 200, 0, 16);
                 Position = indicator.position;
-                ThemeColor = 'background';
+                ThemeColor = 'Background';
                 ZIndex = z;
             })
 
             objs.border1 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 1';
+                ThemeColor = 'Border 1';
                 Parent = objs.background;
                 ZIndex = z-1;
             })
@@ -1194,14 +1175,14 @@ function library:init()
             objs.border2 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 3';
+                ThemeColor = 'Border 3';
                 Parent = objs.border1;
                 ZIndex = z-2;
             })
 
             objs.topborder = utility:Draw('Square', {
-                Size = newUDim2(1,0,0,2);
-                ThemeColor = 'accent';
+                Size = newUDim2(1,0,0,1);
+                ThemeColor = 'Accent';
                 Parent = objs.background;
                 ZIndex = z+1;
                 Thickness = 2,
@@ -1209,7 +1190,7 @@ function library:init()
 
             objs.textlabel = utility:Draw('Text', {
                 Position = newUDim2(.5,0,0,1);
-                ThemeColor = 'primary text';
+                ThemeColor = 'Primary Text';
                 Text = indicator.title;
                 Size = 13;
                 Font = 2;
@@ -1268,7 +1249,7 @@ function library:init()
 
                 objs.background = utility:Draw('Square', {
                     Size = newUDim2(1, 0, 0, 16);
-                    ThemeColor = 'background';
+                    ThemeColor = 'Background';
                     ZIndex = z;
                     Parent = indicator.objects.background;
                 })
@@ -1276,7 +1257,7 @@ function library:init()
                 objs.border1 = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border 2';
+                    ThemeColor = 'Border 2';
                     Parent = objs.background;
                     ZIndex = z-1;
                 })
@@ -1284,14 +1265,14 @@ function library:init()
                 objs.border2 = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border 3';
+                    ThemeColor = 'Border 3';
                     Parent = objs.border1;
                     ZIndex = z-2;
                 })
     
                 objs.keyLabel = utility:Draw('Text', {
                     Position = newUDim2(0,3,0,1);
-                    ThemeColor = 'option text 2';
+                    ThemeColor = 'Option Text 2';
                     Size = 13;
                     Font = 2;
                     ZIndex = z+2;
@@ -1301,7 +1282,7 @@ function library:init()
 
                 objs.valueLabel = utility:Draw('Text', {
                     Position = newUDim2(0,0,0,1);
-                    ThemeColor = 'option text 2';
+                    ThemeColor = 'Option Text 2';
                     Size = 13;
                     Font = 2;
                     ZIndex = z+2;
@@ -1410,53 +1391,53 @@ function library:init()
             objs.background = utility:Draw('Square', {
                 Size = size;
                 Position = position;
-                ThemeColor = 'background';
+                ThemeColor = 'Background';
                 ZIndex = z;
             })
 
-            objs.innerborder1 = utility:Draw('Square', {
+            objs.innerBorder1 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 3';
+                ThemeColor = 'Border 3';
                 ZIndex = z-1;
                 Parent = objs.background;
             })
 
-            objs.innerborder2 = utility:Draw('Square', {
+            objs.innerBorder2 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 1';
+                ThemeColor = 'Border 1';
                 ZIndex = z-2;
-                Parent = objs.innerborder1;
+                Parent = objs.innerBorder1;
             })
 
-            objs.midborder = utility:Draw('Square', {
+            objs.midBorder = utility:Draw('Square', {
                 Size = newUDim2(1,10,1,25);
                 Position = newUDim2(0,-5,0,-20);
-                ThemeColor = 'border 2';
+                ThemeColor = 'Border 2';
                 ZIndex = z-3;
-                Parent = objs.innerborder2;
+                Parent = objs.innerBorder2;
             })
 
-            objs.outerborder1 = utility:Draw('Square', {
+            objs.outerBorder1 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 1';
+                ThemeColor = 'Border 1';
                 ZIndex = z-4;
-                Parent = objs.midborder;
+                Parent = objs.midBorder;
             })
 
-            objs.outerborder2 = utility:Draw('Square', {
+            objs.outerBorder2 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 3';
+                ThemeColor = 'Border 3';
                 ZIndex = z-5;
-                Parent = objs.outerborder1;
+                Parent = objs.outerBorder1;
             })
 
-            objs.topborder = utility:Draw('Square', {
-                Size = newUDim2(1,0,0,2);
-                ThemeColor = 'accent';
+            objs.topBorder = utility:Draw('Square', {
+                Size = newUDim2(1,0,0,1);
+                ThemeColor = 'Accent';
                 ZIndex = z+1;
                 Parent = objs.background;
                 Thickness = 2, 
@@ -1464,43 +1445,43 @@ function library:init()
 
             objs.title = utility:Draw('Text', {
                 Position = newUDim2(0,7,0,2);
-                ThemeColor = 'primary text';
+                ThemeColor = 'Primary Text';
                 Text = window.title;
                 Font = 2;
                 Size = 13;
                 ZIndex = z+1;
                 Outline = true;
-                Parent = objs.midborder;
+                Parent = objs.midBorder;
             })
 
-            objs.groupbackground = utility:Draw('Square', {
+            objs.groupBackground = utility:Draw('Square', {
                 Size = newUDim2(1,-16,1,-(16+23));
                 Position = newUDim2(0,8,0,8+23);
-                ThemeColor = 'group background';
+                ThemeColor = 'Group Background';
                 ZIndex = z+5;
                 Parent = objs.background;
             })
 
-            objs.groupInnerborder = utility:Draw('Square', {
+            objs.groupInnerBorder = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 1';
+                ThemeColor = 'Border 1';
                 ZIndex = z+4;
-                Parent = objs.groupbackground;
+                Parent = objs.groupBackground;
             })
 
-            objs.groupOuterborder = utility:Draw('Square', {
+            objs.groupOuterBorder = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 3';
+                ThemeColor = 'Border 3';
                 ZIndex = z+3;
-                Parent = objs.groupInnerborder;
+                Parent = objs.groupInnerBorder;
             })
 
             objs.tabHolder = utility:Draw('Square', {
                 Size = newUDim2(1,0,0,20);
                 Position = newUDim2(0,0,0,-21);
-                Parent = objs.groupbackground;
+                Parent = objs.groupBackground;
                 Transparency = 0;
                 ZIndex = z+1;
             })
@@ -1510,7 +1491,7 @@ function library:init()
                 Position = newUDim2(.01, 0, .02, 0);
                 Transparency = 0;
                 ZIndex = z+6;
-                Parent = objs.groupbackground;
+                Parent = objs.groupBackground;
             })
 
             objs.columnholder2 = utility:Draw('Square', {
@@ -1518,12 +1499,13 @@ function library:init()
                 Position = newUDim2(1 - (.48 + .01), 0, .02, 0);
                 Transparency = 0;
                 ZIndex = z+6;
-                Parent = objs.groupbackground;
+                Parent = objs.groupBackground;
             })
+
 
             objs.dragdetector = utility:Draw('Square',{
                 Size = newUDim2(1,0,1,0);
-                Parent = objs.midborder;
+                Parent = objs.midBorder;
                 Transparency = 0;
                 ZIndex = z+2;
             })
@@ -1564,7 +1546,7 @@ function library:init()
                     Visible = false;
                     Size = newUDim2(0,200,0,242);
                     Position = newUDim2(1,-200,1,10);
-                    ThemeColor = 'background';
+                    ThemeColor = 'Background';
                     ZIndex = z;
                     Parent = window.objects.background;
                 })
@@ -1572,7 +1554,7 @@ function library:init()
                 objs.border1 = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border';
+                    ThemeColor = 'Border';
                     ZIndex = z-1;
                     Parent = objs.background;
                 })
@@ -1580,7 +1562,7 @@ function library:init()
                 objs.border2 = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border 1';
+                    ThemeColor = 'Border 1';
                     ZIndex = z-2;
                     Parent = objs.border1;
                 })
@@ -1588,7 +1570,7 @@ function library:init()
                 objs.border3 = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border';
+                    ThemeColor = 'Border';
                     ZIndex = z-3;
                     Parent = objs.border2;
                 })
@@ -1596,7 +1578,7 @@ function library:init()
                 objs.statusText = utility:Draw('Text', {
                     Position = newUDim2(0,5,0,4);
                     Text = 'colorpicker_status_text';
-                    ThemeColor = 'option text 1';
+                    ThemeColor = 'Option Text 1';
                     Size = 13;
                     Font = 2;
                     Outline = true;
@@ -1626,10 +1608,10 @@ function library:init()
                     Parent = objs.mainColor;
                 })
 
-                objs.colorborder = utility:Draw('Square', {
+                objs.colorBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border';
+                    ThemeColor = 'Border';
                     ZIndex = z+1;
                     Parent = objs.mainColor;
                 })
@@ -1649,10 +1631,10 @@ function library:init()
                     Parent = objs.background;
                 })
 
-                objs.hueborder = utility:Draw('Square', {
+                objs.hueBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border';
+                    ThemeColor = 'Border';
                     ZIndex = z+1;
                     Parent = objs.hue;
                 })
@@ -1679,10 +1661,10 @@ function library:init()
                     Parent = objs.transColor;
                 })
 
-                objs.transborder = utility:Draw('Square', {
+                objs.transBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border';
+                    ThemeColor = 'Border';
                     ZIndex = z+1;
                     Parent = objs.transColor;
                 })
@@ -1702,7 +1684,7 @@ function library:init()
                     Parent = objs.mainColor;
                 })
 
-                objs.pointerborder = utility:Draw('Square', {
+                objs.pointerBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
                     Color = c3new(0,0,0);
@@ -1717,7 +1699,7 @@ function library:init()
                     Parent = objs.hue;
                 })
 
-                objs.hueSliderborder = utility:Draw('Square', {
+                objs.hueSliderBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
                     Color = c3new(0,0,0);
@@ -1732,7 +1714,7 @@ function library:init()
                     Parent = objs.trans;
                 })
 
-                objs.transSliderborder = utility:Draw('Square', {
+                objs.transSliderBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
                     Color = c3new(0,0,0);
@@ -1740,20 +1722,20 @@ function library:init()
                     Parent = objs.transSlider;
                 })
 
-                objs.rbackground = utility:Draw('Square', {
+                objs.rBackground = utility:Draw('Square', {
                     Size = newUDim2(0, 60, 0, 15);
                     Position = newUDim2(0, 5, 1, - 20);
-                    ThemeColor = 'option background';
+                    ThemeColor = 'Option Background';
                     Parent = objs.background;
                     ZIndex = z+5;
                 })
 
-                objs.rborder = utility:Draw('Square', {
+                objs.rBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
                     Color = c3new(0,0,0);
                     ZIndex = z+4;
-                    Parent = objs.rbackground;
+                    Parent = objs.rBackground;
                 })
 
                 objs.rText = utility:Draw('Text', {
@@ -1765,23 +1747,23 @@ function library:init()
                     Outline = true;
                     Center = true;
                     ZIndex = z+6;
-                    Parent = objs.rbackground;
+                    Parent = objs.rBackground;
                 })
 
-                objs.gbackground = utility:Draw('Square', {
+                objs.gBackground = utility:Draw('Square', {
                     Size = newUDim2(0, 60, 0, 15);
                     Position = newUDim2(0, 70, 1, - 20);
-                    ThemeColor = 'option background';
+                    ThemeColor = 'Option Background';
                     Parent = objs.background;
                     ZIndex = z+5;
                 })
 
-                objs.gborder = utility:Draw('Square', {
+                objs.gBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
                     Color = c3new(0,0,0);
                     ZIndex = z+4;
-                    Parent = objs.gbackground;
+                    Parent = objs.gBackground;
                 })
 
                 objs.gText = utility:Draw('Text', {
@@ -1793,23 +1775,23 @@ function library:init()
                     Outline = true;
                     Center = true;
                     ZIndex = z+6;
-                    Parent = objs.gbackground;
+                    Parent = objs.gBackground;
                 })
 
-                objs.bbackground = utility:Draw('Square', {
+                objs.bBackground = utility:Draw('Square', {
                     Size = newUDim2(0, 60, 0, 15);
                     Position = newUDim2(0, 135, 1, - 20);
-                    ThemeColor = 'option background';
+                    ThemeColor = 'Option Background';
                     Parent = objs.background;
                     ZIndex = z+5;
                 })
 
-                objs.bborder = utility:Draw('Square', {
+                objs.bBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
                     Color = c3new(0,0,0);
                     ZIndex = z+4;
-                    Parent = objs.bbackground;
+                    Parent = objs.bBackground;
                 })
 
                 objs.bText = utility:Draw('Text', {
@@ -1821,7 +1803,7 @@ function library:init()
                     Outline = true;
                     Center = true;
                     ZIndex = z+6;
-                    Parent = objs.bbackground;
+                    Parent = objs.bBackground;
                 })
 
                 local draggingHue, draggingSat, draggingTrans = false, false, false;
@@ -1936,7 +1918,7 @@ function library:init()
                     Visible = false;
                     Size = newUDim2(1,-3,0,50);
                     Position = newUDim2(0,3,1,0);
-                    ThemeColor = 'background';
+                    ThemeColor = 'Background';
                     ZIndex = z;
                     Parent = window.objects.background;
                 })
@@ -1944,7 +1926,7 @@ function library:init()
                 objs.border1 = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border';
+                    ThemeColor = 'Border';
                     ZIndex = z-1;
                     Parent = objs.background;
                 })
@@ -1952,7 +1934,7 @@ function library:init()
                 objs.border2 = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border 1';
+                    ThemeColor = 'Border 1';
                     ZIndex = z-2;
                     Parent = objs.border1;
                 })
@@ -1960,7 +1942,7 @@ function library:init()
                 objs.border3 = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border';
+                    ThemeColor = 'Border';
                     ZIndex = z-3;
                     Parent = objs.border2;
                 })
@@ -1983,7 +1965,7 @@ function library:init()
                             })
                             valueObject.text = utility:Draw('Text', {
                                 Position = newUDim2(0,3,0,1);
-                                ThemeColor = 'option text 2';
+                                ThemeColor = 'Option Text 2';
                                 Text = tostring(value);
                                 Size = 13;
                                 Font = 2;
@@ -2125,35 +2107,35 @@ function library:init()
                 objs.background = utility:Draw('Square', {
                     Size = newUDim2(0,50,1,0);
                     Parent = self.objects.tabHolder;
-                    ThemeColor = 'unselected tab background';
+                    ThemeColor = 'Unselected Tab Background';
                     ZIndex = z;
                 })
 
-                objs.innerborder = utility:Draw('Square', {
+                objs.innerBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border 1';
+                    ThemeColor = 'Border 1';
                     ZIndex = z-1;
                     Parent = objs.background;
                 })
     
-                objs.outerborder = utility:Draw('Square', {
+                objs.outerBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
                     Position = newUDim2(0,-1,0,-1);
-                    ThemeColor = 'border 3';
+                    ThemeColor = 'Border 3';
                     ZIndex = z-2;
-                    Parent = objs.innerborder;
+                    Parent = objs.innerBorder;
                 })
 
-                objs.topborder = utility:Draw('Square', {
-                    Size = newUDim2(1,0,0,2);
-                    ThemeColor = 'unselected tab background';
+                objs.topBorder = utility:Draw('Square', {
+                    Size = newUDim2(1,0,0,1);
+                    ThemeColor = 'Unselected Tab Background';
                     ZIndex = z+1;
                     Parent = objs.background;
                 })
 
                 objs.text = utility:Draw('Text', {
-                    ThemeColor = 'unselected tab Text';
+                    ThemeColor = 'Unselected Tab Text';
                     Text = text;
                     Size = 13;
                     Font = 2;
@@ -2170,7 +2152,7 @@ function library:init()
             end
             ----------------------
 
-            function tab:Addsection(text, side, order)
+            function tab:AddSection(text, side, order)
                 local section = {
                     text = tostring(text);
                     side = side == nil and 1 or clamp(side,1,2);
@@ -2188,38 +2170,38 @@ function library:init()
                     local z = library.zindexOrder.window+15;
 
                     objs.background = utility:Draw('Square', {
-                        ThemeColor = 'section background';
+                        ThemeColor = 'Section Background';
                         ZIndex = z;
                         Parent = window.objects['columnholder'..(section.side)];
                     })
 
-                    objs.innerborder = utility:Draw('Square', {
+                    objs.innerBorder = utility:Draw('Square', {
                         Size = newUDim2(1,2,1,1);
                         Position = newUDim2(0,-1,0,0);
-                        ThemeColor = 'border 3';
+                        ThemeColor = 'Border 3';
                         ZIndex = z-1;
                         Parent = objs.background;
                     })
 
-                    objs.outerborder = utility:Draw('Square', {
+                    objs.outerBorder = utility:Draw('Square', {
                         Size = newUDim2(1,2,1,1);
                         Position = newUDim2(0,-1,0,0);
-                        ThemeColor = 'border 1';
+                        ThemeColor = 'Border 1';
                         ZIndex = z-2;
-                        Parent = objs.innerborder;
+                        Parent = objs.innerBorder;
                     })
 
-                    objs.topborder1 = utility:Draw('Square', {
-                        Size = newUDim2(.025,1,0,2);
+                    objs.topBorder1 = utility:Draw('Square', {
+                        Size = newUDim2(.025,1,0,1);
                         Position = newUDim2(0,-1,0,0);
-                        ThemeColor = 'accent';
+                        ThemeColor = 'Accent';
                         ZIndex = z+1;
                         Parent = objs.background;
                         Thickness = 2, 
                     })
 
-                    objs.topborder2 = utility:Draw('Square', {
-                        ThemeColor = 'accent';
+                    objs.topBorder2 = utility:Draw('Square', {
+                        ThemeColor = 'Accent';
                         ZIndex = z+1;
                         Parent = objs.background;
                         Thickness = 2, 
@@ -2227,7 +2209,7 @@ function library:init()
 
                     objs.textlabel = utility:Draw('Text', {
                         Position = newUDim2(.0425,0,0,-7);
-                        ThemeColor = 'primary text';
+                        ThemeColor = 'Primary Text';
                         Size = 13;
                         Font = 2;
                         ZIndex = z+1;
@@ -2248,12 +2230,12 @@ function library:init()
                 function section:SetText(text)
                     self.text = tostring(text);
                     self.objects.textlabel.Text = self.text;
-                    local x = self.objects.background.Object.Size.X - self.objects.textlabel.TextBounds.X - 12
-                    self.objects.topborder2.Size = newUDim2(0, x, 0, 2)
-                    self.objects.topborder2.Position = newUDim2(1, 1 + -x, 0, 0)
+                    local x = self.objects.background.Object.Size.X - self.objects.textlabel.TextBounds.X - 13
+                    self.objects.topBorder2.Size = newUDim2(0, x, 0, 1)
+                    self.objects.topBorder2.Position = newUDim2(1, 1 + -x, 0, 0)
                 end
 
-                function section:Updateoptions()
+                function section:UpdateOptions()
                     table.sort(self.options, function(a,b)
                         return a.order < b.order
                     end)
@@ -2274,11 +2256,11 @@ function library:init()
                 function section:SetEnabled(bool)
                     if typeof(bool) == 'boolean' then
                         section.enabled = bool;
-                        tab:Updatesections();
+                        tab:UpdateSections();
                     end
                 end
 
-                ------- options -------
+                ------- Options -------
 
                 -- // Toggle
                 function section:AddToggle(data)
@@ -2325,7 +2307,7 @@ function library:init()
                         objs.background = utility:Draw('Square', {
                             Size = newUDim2(0,8,0,8);
                             Position = newUDim2(0,2,0,4);
-                            ThemeColor = 'option background';
+                            ThemeColor = 'Option Background';
                             ZIndex = z+3;
                             Parent = objs.holder;
                         })
@@ -2341,7 +2323,7 @@ function library:init()
                         objs.border1 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 1';
+                            ThemeColor = 'Option Border 1';
                             ZIndex = z+2;
                             Parent = objs.background;
                         })
@@ -2349,14 +2331,14 @@ function library:init()
                         objs.border2 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 2';
+                            ThemeColor = 'Option Border 2';
                             ZIndex = z+1;
                             Parent = objs.border1;
                         })
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,19,0,1);
-                            ThemeColor = 'option text 3';
+                            ThemeColor = 'Option Text 3';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -2365,11 +2347,11 @@ function library:init()
                         })
 
                         utility:Connection(objs.holder.MouseEnter, function()
-                            objs.border1.ThemeColor = 'accent';
+                            objs.border1.ThemeColor = 'Accent';
                         end)
 
                         utility:Connection(objs.holder.MouseLeave, function()
-                            objs.border1.ThemeColor = toggle.state and 'accent' or 'option border 1';
+                            objs.border1.ThemeColor = toggle.state and 'Accent' or 'Option Border 1';
                         end)
 
                         utility:Connection(objs.holder.MouseButton1Down, function()
@@ -2386,9 +2368,9 @@ function library:init()
                                 library.flags[self.flag] = bool;
                             end
 
-                            self.objects.border1.ThemeColor = bool and 'accent' or (self.objects.holder.Hover and 'accent' or 'option border 1');
-                            self.objects.text.ThemeColor = bool and (self.risky and 'risky text enabled' or 'option text 1') or (self.risky and 'risky text' or 'option text 3');
-                            self.objects.background.ThemeColor = bool and 'accent' or 'option background';
+                            self.objects.border1.ThemeColor = bool and 'Accent' or (self.objects.holder.Hover and 'Accent' or 'Option Border 1');
+                            self.objects.text.ThemeColor = bool and (self.risky and 'Risky Text Enabled' or 'Option Text 1') or (self.risky and 'Risky Text' or 'Option Text 3');
+                            self.objects.background.ThemeColor = bool and 'Accent' or 'Option Background';
                             self.objects.background.ThemeColorOffset = bool and -55 or 0
 
                             if not nocallback then
@@ -2405,7 +2387,7 @@ function library:init()
                         end
                     end
 
-                    function toggle:Updateoptions()
+                    function toggle:UpdateOptions()
                         table.sort(self.options, function(a,b)
                             return a.order < b.order
                         end)
@@ -2422,7 +2404,7 @@ function library:init()
                         end
 
                         self.objects.holder.Size = newUDim2(1,0,0,17 + y);
-                        section:Updateoptions()
+                        section:UpdateOptions()
 
                     end
 
@@ -2486,7 +2468,7 @@ function library:init()
                             objs.border1 = utility:Draw('Square', {
                                 Size = newUDim2(1,2,1,2);
                                 Position = newUDim2(0,-1,0,-1);
-                                ThemeColor = 'option border 1';
+                                ThemeColor = 'Option Border 1';
                                 ZIndex = z+2;
                                 Parent = objs.background;
                             })
@@ -2494,17 +2476,17 @@ function library:init()
                             objs.border2 = utility:Draw('Square', {
                                 Size = newUDim2(1,2,1,2);
                                 Position = newUDim2(0,-1,0,-1);
-                                ThemeColor = 'option border 2';
+                                ThemeColor = 'Option Border 2';
                                 ZIndex = z+1;
                                 Parent = objs.border1;
                             })
     
                             utility:Connection(objs.holder.MouseEnter, function()
-                                objs.border1.ThemeColor = 'accent';
+                                objs.border1.ThemeColor = 'Accent';
                             end)
     
                             utility:Connection(objs.holder.MouseLeave, function()
-                                objs.border1.ThemeColor = color.state and 'accent' or 'option border 1';
+                                objs.border1.ThemeColor = color.state and 'Accent' or 'Option Border 1';
                             end)
     
                             utility:Connection(objs.holder.MouseButton1Down, function()
@@ -2566,7 +2548,7 @@ function library:init()
                         tooltip(color);
                         color:SetColor(color.color, true);
                         color:SetTrans(color.trans, true);
-                        self:Updateoptions();
+                        self:UpdateOptions();
                         return color
                     end
 
@@ -2617,7 +2599,7 @@ function library:init()
                             })
     
                             objs.keyText = utility:Draw('Text', {
-                                ThemeColor = 'option text 3';
+                                ThemeColor = 'Option Text 3';
                                 Size = 13;
                                 Font = 2;
                                 ZIndex = z+1;
@@ -2625,11 +2607,11 @@ function library:init()
                             })
     
                             utility:Connection(objs.holder.MouseEnter, function()
-                                objs.keyText.ThemeColor = 'accent';
+                                objs.keyText.ThemeColor = 'Accent';
                             end)
     
                             utility:Connection(objs.holder.MouseLeave, function()
-                                objs.keyText.ThemeColor = bind.binding and 'accent' or 'option text 3';
+                                objs.keyText.ThemeColor = bind.binding and 'Accent' or 'Option Text 3';
                             end)
     
                             utility:Connection(objs.holder.MouseButton1Down, function()
@@ -2652,7 +2634,7 @@ function library:init()
                                 end
                                 bind.callback(false);
                             end
-                            local keyName = 'none'
+                            local keyName = 'NONE'
                             self.bind = (keybind and keybind) or keybind or self.bind
                             if self.bind == Enum.KeyCode.Backspace then
                                 self.bind = 'none';
@@ -2663,7 +2645,7 @@ function library:init()
                             self:SetKeyText(keyName:upper());
                             self.indicatorValue:SetKey((self.text == nil or self.text == '') and (self.flag == nil and 'unknown' or self.flag) or self.text); -- this is so dumb
                             self.indicatorValue:SetValue('['..keyName:upper()..']');
-                            self.objects.keyText.ThemeColor = self.objects.holder.Hover and 'accent' or 'option text 3';
+                            self.objects.keyText.ThemeColor = self.objects.holder.Hover and 'Accent' or 'Option Text 3';
                         end
     
                         function bind:SetKeyText(str)
@@ -2671,7 +2653,7 @@ function library:init()
                             self.objects.keyText.Text = '['..str..']';
                             self.objects.keyText.Position = newUDim2(0, 2, 0, 2);
                             self.objects.holder.Size = newUDim2(0,self.objects.keyText.TextBounds.X+2,0,17)
-                            toggle:Updateoptions();
+                            toggle:UpdateOptions();
                         end
     
                         utility:Connection(inputservice.InputBegan, function(inp)
@@ -2723,7 +2705,7 @@ function library:init()
     
                         tooltip(bind);
                         bind:SetBind(bind.bind);
-                        self:Updateoptions();
+                        self:UpdateOptions();
                         return bind
                     end
 
@@ -2774,14 +2756,14 @@ function library:init()
                             objs.background = utility:Draw('Square', {
                                 Size = newUDim2(1,-4,1,-8);
                                 Position = newUDim2(0,2,0,4);
-                                ThemeColor = 'option background';
+                                ThemeColor = 'Option Background';
                                 ZIndex = z+2;
                                 Parent = objs.holder;
                             })
 
                             objs.slider = utility:Draw('Square', {
                                 Size = newUDim2(0,0,1,0);
-                                ThemeColor = 'accent';
+                                ThemeColor = 'Accent';
                                 ZIndex = z+3;
                                 Parent = objs.background;
                             })
@@ -2789,7 +2771,7 @@ function library:init()
                             objs.border1 = utility:Draw('Square', {
                                 Size = newUDim2(1,2,1,2);
                                 Position = newUDim2(0,-1,0,-1);
-                                ThemeColor = 'option border 1';
+                                ThemeColor = 'Option Border 1';
                                 ZIndex = z+1;
                                 Parent = objs.background;
                             })
@@ -2797,7 +2779,7 @@ function library:init()
                             objs.border2 = utility:Draw('Square', {
                                 Size = newUDim2(1,2,1,2);
                                 Position = newUDim2(0,-1,0,-1);
-                                ThemeColor = 'option border 2';
+                                ThemeColor = 'Option Border 2';
                                 ZIndex = z;
                                 Parent = objs.border1;
                             })
@@ -2812,7 +2794,7 @@ function library:init()
     
                             objs.text = utility:Draw('Text', {
                                 Position = newUDim2(.5,0,0,-1);
-                                ThemeColor = 'option text 3';
+                                ThemeColor = 'Option Text 3';
                                 Size = 13;
                                 Font = 2;
                                 ZIndex = z+5;
@@ -2822,11 +2804,11 @@ function library:init()
                             })
 
                             utility:Connection(objs.holder.MouseEnter, function()
-                                objs.border1.ThemeColor = 'accent';
+                                objs.border1.ThemeColor = 'Accent';
                             end)
     
                             utility:Connection(objs.holder.MouseLeave, function()
-                                objs.border1.ThemeColor = slider.dragging and 'accent' or 'option border 1';
+                                objs.border1.ThemeColor = slider.dragging and 'Accent' or 'Option Border 1';
                             end)
     
                             local c;
@@ -2866,7 +2848,7 @@ function library:init()
                             end)
     
                             utility:Connection(button1up, function()
-                                objs.border1.ThemeColor = objs.holder.Hover and 'accent' or 'option border 1';
+                                objs.border1.ThemeColor = objs.holder.Hover and 'Accent' or 'Option Border 1';
                                 slider.dragging = false;
                                 library.draggingSlider = nil;
                             end)
@@ -2892,7 +2874,7 @@ function library:init()
                                 self.value = newValue;
                                 library.flags[self.flag] = newValue;
                                 self.objects.text.Text = string.format("%.14g",newValue)..tostring(self.suffix)..'/'..self.max..tostring(self.suffix);
-                                self.objects.text.ThemeColor = (self.min < 0 and newValue == 0 or newValue == self.min)  and (self.risky and 'risky text' or 'option text 3') or (self.risky and 'risky text enabled' or 'option text 1');
+                                self.objects.text.ThemeColor = (self.min < 0 and newValue == 0 or newValue == self.min)  and (self.risky and 'Risky Text' or 'Option Text 3') or (self.risky and 'Risky Text Enabled' or 'Option Text 1');
     
                                 if not nocallback then
                                     self.callback(newValue);
@@ -2903,7 +2885,7 @@ function library:init()
 
                         tooltip(slider);
                         slider:SetValue(slider.value, true);
-                        self:Updateoptions();
+                        self:UpdateOptions();
                         return slider
                     end
 
@@ -2952,7 +2934,7 @@ function library:init()
                             objs.background = utility:Draw('Square', {
                                 Size = newUDim2(1,-4,1,-8);
                                 Position = newUDim2(0,2,0,4);
-                                ThemeColor = 'option background';
+                                ThemeColor = 'Option Background';
                                 ZIndex = z+2;
                                 Parent = objs.holder;
                             })
@@ -2960,7 +2942,7 @@ function library:init()
                             objs.border1 = utility:Draw('Square', {
                                 Size = newUDim2(1,2,1,2);
                                 Position = newUDim2(0,-1,0,-1);
-                                ThemeColor = 'option border 1';
+                                ThemeColor = 'Option Border 1';
                                 ZIndex = z+1;
                                 Parent = objs.background;
                             })
@@ -2968,7 +2950,7 @@ function library:init()
                             objs.border2 = utility:Draw('Square', {
                                 Size = newUDim2(1,2,1,2);
                                 Position = newUDim2(0,-1,0,-1);
-                                ThemeColor = 'option border 2';
+                                ThemeColor = 'Option Border 2';
                                 ZIndex = z;
                                 Parent = objs.border1;
                             })
@@ -2983,7 +2965,7 @@ function library:init()
     
                             objs.inputText = utility:Draw('Text', {
                                 Position = newUDim2(0,4,0,0);
-                                ThemeColor = 'option text 2';
+                                ThemeColor = 'Option Text 2';
                                 Text = 'none',
                                 Size = 13;
                                 Font = 2;
@@ -2994,7 +2976,7 @@ function library:init()
     
                             objs.openText = utility:Draw('Text', {
                                 Position = newUDim2(1,-10,0,0);
-                                ThemeColor = 'option text 3';
+                                ThemeColor = 'Option Text 3';
                                 Text = '+';
                                 Size = 13;
                                 Font = 2;
@@ -3004,11 +2986,11 @@ function library:init()
                             })
     
                             utility:Connection(objs.holder.MouseEnter, function()
-                                objs.border1.ThemeColor = 'accent';
+                                objs.border1.ThemeColor = 'Accent';
                             end)
     
                             utility:Connection(objs.holder.MouseLeave, function()
-                                objs.border1.ThemeColor = 'option border 1';
+                                objs.border1.ThemeColor = 'Option Border 1';
                             end)
     
                             utility:Connection(objs.holder.MouseButton1Down, function()
@@ -3087,14 +3069,14 @@ function library:init()
     
                         tooltip(list);
                         list:Select((data.value or data.selected) or (list.multi and 'none' or list.values[1]), true);
-                        self:Updateoptions();
+                        self:UpdateOptions();
                         return list
                     end
 
                     tooltip(toggle);
                     toggle:SetText(toggle.text);
                     toggle:SetState(toggle.state, true);
-                    self:Updateoptions();
+                    self:UpdateOptions();
                     return toggle
                 end
 
@@ -3148,14 +3130,14 @@ function library:init()
                         objs.background = utility:Draw('Square', {
                             Size = newUDim2(1,-4,0,11);
                             Position = newUDim2(0,2,1,-14);
-                            ThemeColor = 'option background';
+                            ThemeColor = 'Option Background';
                             ZIndex = z+2;
                             Parent = objs.holder;
                         })
 
                         objs.slider = utility:Draw('Square', {
                             Size = newUDim2(0,0,1,0);
-                            ThemeColor = 'accent';
+                            ThemeColor = 'Accent';
                             ZIndex = z+3;
                             Parent = objs.background;
                         })
@@ -3163,7 +3145,7 @@ function library:init()
                         objs.border1 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 1';
+                            ThemeColor = 'Option Border 1';
                             ZIndex = z+1;
                             Parent = objs.background;
                         })
@@ -3171,7 +3153,7 @@ function library:init()
                         objs.border2 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 2';
+                            ThemeColor = 'Option Border 2';
                             ZIndex = z;
                             Parent = objs.border1;
                         })
@@ -3186,7 +3168,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,1);
-                            ThemeColor = 'option text 3';
+                            ThemeColor = 'Option Text 3';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -3212,7 +3194,7 @@ function library:init()
 
                         objs.plusText = utility:Draw('Text', {
                             Position = newUDim2(.5,0,0,-1);
-                            ThemeColor = 'option text 3';
+                            ThemeColor = 'Option Text 3';
                             Text = '+';
                             Size = 13;
                             Font = 2;
@@ -3224,7 +3206,7 @@ function library:init()
 
                         objs.minusText = utility:Draw('Text', {
                             Position = newUDim2(.5,0,0,-1);
-                            ThemeColor = 'option text 3';
+                            ThemeColor = 'Option Text 3';
                             Text = '-';
                             Size = 13;
                             Font = 2;
@@ -3235,11 +3217,11 @@ function library:init()
                         })
 
                         utility:Connection(objs.holder.MouseEnter, function()
-                            objs.border1.ThemeColor = 'accent';
+                            objs.border1.ThemeColor = 'Accent';
                         end)
 
                         utility:Connection(objs.holder.MouseLeave, function()
-                            objs.border1.ThemeColor = slider.dragging and 'accent' or 'option border 1';
+                            objs.border1.ThemeColor = slider.dragging and 'Accent' or 'Option Border 1';
                         end)
 
                         utility:Connection(slider.objects.plusDetector.MouseButton1Down,function()
@@ -3291,7 +3273,7 @@ function library:init()
                         end)
 
                         utility:Connection(button1up, function()
-                            objs.border1.ThemeColor = objs.holder.Hover and 'accent' or 'option border 1';
+                            objs.border1.ThemeColor = objs.holder.Hover and 'Accent' or 'Option Border 1';
                             slider.dragging = false;
                             library.draggingSlider = nil;
                         end)
@@ -3317,7 +3299,7 @@ function library:init()
                             self.value = newValue;
                             library.flags[self.flag] = newValue;
                             self.objects.text.Text = slider.text..': '..string.format("%.14g",newValue)..tostring(self.suffix);
-                            self.objects.text.ThemeColor = (self.min < 0 and newValue == 0 or newValue == self.min)  and (self.risky and 'risky text' or 'option text 3') or (self.risky and 'risky text enabled' or 'option text 1');
+                            self.objects.text.ThemeColor = (self.min < 0 and newValue == 0 or newValue == self.min)  and (self.risky and 'Risky Text' or 'Option Text 3') or (self.risky and 'Risky Text Enabled' or 'Option Text 1');
 
                             if not nocallback then
                                 self.callback(newValue);
@@ -3336,7 +3318,7 @@ function library:init()
                     tooltip(slider);
                     slider:SetText(slider.text);
                     slider:SetValue(slider.value, true);
-                    self:Updateoptions();
+                    self:UpdateOptions();
                     return slider
                 end
 
@@ -3385,7 +3367,7 @@ function library:init()
                         objs.background = utility:Draw('Square', {
                             Size = newUDim2(1,-4,0,14);
                             Position = newUDim2(0,2,0,4);
-                            ThemeColor = 'option background';
+                            ThemeColor = 'Option Background';
                             ZIndex = z+2;
                             Parent = objs.holder;
                         })
@@ -3393,7 +3375,7 @@ function library:init()
                         objs.border1 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 1';
+                            ThemeColor = 'Option Border 1';
                             ZIndex = z+1;
                             Parent = objs.background;
                         })
@@ -3401,7 +3383,7 @@ function library:init()
                         objs.border2 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 2';
+                            ThemeColor = 'Option Border 2';
                             ZIndex = z;
                             Parent = objs.border1;
                         })
@@ -3416,7 +3398,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(.5,0,0,0);
-                            ThemeColor = 'option text 3';
+                            ThemeColor = 'Option Text 3';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+4;
@@ -3426,26 +3408,26 @@ function library:init()
                         })
 
                         utility:Connection(objs.holder.MouseEnter, function()
-                            objs.border1.ThemeColor = 'accent';
+                            objs.border1.ThemeColor = 'Accent';
                         end)
 
                         utility:Connection(objs.holder.MouseLeave, function()
-                            objs.border1.ThemeColor = 'option border 1';
-                            objs.text.ThemeColor = self.risky and 'risky text' or 'option text 3';
-                            objs.background.ThemeColor = 'option background';
+                            objs.border1.ThemeColor = 'Option Border 1';
+                            objs.text.ThemeColor = self.risky and 'Risky Text' or 'Option Text 3';
+                            objs.background.ThemeColor = 'Option Background';
                             objs.background.ThemeColorOffset = 0;
                         end)
 
                         utility:Connection(objs.holder.MouseButton1Up, function()
-                            objs.text.ThemeColor = self.risky and 'risky text' or  'option text 3';
-                            objs.background.ThemeColor = 'option background';
+                            objs.text.ThemeColor = self.risky and 'Risky Text' or  'Option Text 3';
+                            objs.background.ThemeColor = 'Option Background';
                             objs.background.ThemeColorOffset = 0;
                         end)
 
                         local clicked, counting = false, false
                         utility:Connection(objs.holder.MouseButton1Down, function()
-                            objs.text.ThemeColor = self.risky and 'risky text enabled' or 'option text 2';
-                            objs.background.ThemeColor = 'accent';
+                            objs.text.ThemeColor = self.risky and 'Risky Text Enabled' or 'Option Text 2';
+                            objs.background.ThemeColor = 'Accent';
                             objs.background.ThemeColorOffset = -95;
 
                             task.spawn(function() -- this is ugly and i do not care :)
@@ -3520,7 +3502,7 @@ function library:init()
                             objs.background = utility:Draw('Square', {
                                 Size = newUDim2(1,-4,1,-8);
                                 Position = newUDim2(0,2,0,4);
-                                ThemeColor = 'option background';
+                                ThemeColor = 'Option Background';
                                 ZIndex = z+2;
                                 Parent = objs.holder;
                             })
@@ -3528,7 +3510,7 @@ function library:init()
                             objs.border1 = utility:Draw('Square', {
                                 Size = newUDim2(1,2,1,2);
                                 Position = newUDim2(0,-1,0,-1);
-                                ThemeColor = 'option border 1';
+                                ThemeColor = 'Option Border 1';
                                 ZIndex = z+1;
                                 Parent = objs.background;
                             })
@@ -3536,7 +3518,7 @@ function library:init()
                             objs.border2 = utility:Draw('Square', {
                                 Size = newUDim2(1,2,1,2);
                                 Position = newUDim2(0,-1,0,-1);
-                                ThemeColor = 'option border 2';
+                                ThemeColor = 'Option Border 2';
                                 ZIndex = z;
                                 Parent = objs.border1;
                             })
@@ -3551,7 +3533,7 @@ function library:init()
     
                             objs.text = utility:Draw('Text', {
                                 Position = newUDim2(.5,0,0,0);
-                                ThemeColor = 'option text 3';
+                                ThemeColor = 'Option Text 3';
                                 Size = 13;
                                 Font = 2;
                                 ZIndex = z+4;
@@ -3561,26 +3543,26 @@ function library:init()
                             })
     
                             utility:Connection(objs.holder.MouseEnter, function()
-                                objs.border1.ThemeColor = 'accent';
+                                objs.border1.ThemeColor = 'Accent';
                             end)
     
                             utility:Connection(objs.holder.MouseLeave, function()
-                                objs.border1.ThemeColor = 'option border 1';
-                                objs.text.ThemeColor = self.risky and 'risky text' or 'option text 3';
-                                objs.background.ThemeColor = 'option background';
+                                objs.border1.ThemeColor = 'Option Border 1';
+                                objs.text.ThemeColor = self.risky and 'Risky Text' or 'Option Text 3';
+                                objs.background.ThemeColor = 'Option Background';
                                 objs.background.ThemeColorOffset = 0;
                             end)
     
                             utility:Connection(objs.holder.MouseButton1Up, function()
-                                objs.text.ThemeColor = self.risky and 'risky text' or 'option text 3';
-                                objs.background.ThemeColor = 'option background';
+                                objs.text.ThemeColor = self.risky and 'Risky Text' or 'Option Text 3';
+                                objs.background.ThemeColor = 'Option Background';
                                 objs.background.ThemeColorOffset = 0;
                             end)
     
                             local clicked, counting = false, false
                             utility:Connection(objs.holder.MouseButton1Down, function()
-                                objs.text.ThemeColor = self.risky and 'risky text enabled' or 'option text 2';
-                                objs.background.ThemeColor = 'accent';
+                                objs.text.ThemeColor = self.risky and 'Risky Text Enabled' or 'Option Text 2';
+                                objs.background.ThemeColor = 'Accent';
                                 objs.background.ThemeColorOffset = -95;
     
                                 task.spawn(function() -- this is ugly and i do not care :)
@@ -3623,12 +3605,12 @@ function library:init()
     
                         tooltip(button);
                         button:SetText(button.text);
-                        self:Updateoptions();
+                        self:UpdateOptions();
                         return button
                     end
                     ----------------------
 
-                    function button:Updateoptions() -- this so dumb XD
+                    function button:UpdateOptions() -- this so dumb XD
                         local buttons = 1 + #self.subbuttons;
                         local buttonSize = (1 / buttons) - .005;
                         self.objects.background.Size = newUDim2(buttonSize,-4,0,14);
@@ -3647,7 +3629,7 @@ function library:init()
 
                     tooltip(button);
                     button:SetText(button.text);
-                    self:Updateoptions();
+                    self:UpdateOptions();
                     return button
                 end
 
@@ -3685,14 +3667,14 @@ function library:init()
 
                         objs.line1 = utility:Draw('Square', {
                             Position = newUDim2(0,0,0,1);
-                            ThemeColor = 'option background';
+                            ThemeColor = 'Option Background';
                             ZIndex = z+1;
                             Parent = objs.holder;
                         })
 
                         objs.line2 = utility:Draw('Square', {
                             Position = newUDim2(0,0,0,1);
-                            ThemeColor = 'option background';
+                            ThemeColor = 'Option Background';
                             ZIndex = z+1;
                             Parent = objs.holder;
                         })
@@ -3700,7 +3682,7 @@ function library:init()
                         objs.border1 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 2';
+                            ThemeColor = 'Option Border 2';
                             ZIndex = z;
                             Parent = objs.line1;
                         })
@@ -3708,14 +3690,14 @@ function library:init()
                         objs.border2 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 2';
+                            ThemeColor = 'Option Border 2';
                             ZIndex = z;
                             Parent = objs.line2;
                         })
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(.5,0,0,1);
-                            ThemeColor = 'option text 2';
+                            ThemeColor = 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z;
@@ -3740,7 +3722,7 @@ function library:init()
                     end
 
                     separator:SetText(separator.text);
-                    self:Updateoptions();
+                    self:UpdateOptions();
                     return separator
                 end
 
@@ -3805,7 +3787,7 @@ function library:init()
                         objs.border1 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 1';
+                            ThemeColor = 'Option Border 1';
                             ZIndex = z+2;
                             Parent = objs.background;
                         })
@@ -3813,14 +3795,14 @@ function library:init()
                         objs.border2 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 2';
+                            ThemeColor = 'Option Border 2';
                             ZIndex = z+1;
                             Parent = objs.border1;
                         })
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = color.risky and 'risky text enabled' or 'option text 3';
+                            ThemeColor = color.risky and 'Risky Text Enabled' or 'Option Text 3';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -3829,11 +3811,11 @@ function library:init()
                         })
 
                         utility:Connection(objs.holder.MouseEnter, function()
-                            objs.border1.ThemeColor = 'accent';
+                            objs.border1.ThemeColor = 'Accent';
                         end)
 
                         utility:Connection(objs.holder.MouseLeave, function()
-                            objs.border1.ThemeColor = color.state and 'accent' or 'option border 1';
+                            objs.border1.ThemeColor = color.state and 'Accent' or 'Option Border 1';
                         end)
 
                         utility:Connection(objs.holder.MouseButton1Down, function()
@@ -3902,7 +3884,7 @@ function library:init()
                     color:SetText(color.text);
                     color:SetColor(color.color, true);
                     color:SetTrans(color.trans, true);
-                    self:Updateoptions();
+                    self:UpdateOptions();
                     return color
                 end
 
@@ -3950,7 +3932,7 @@ function library:init()
                         objs.background = utility:Draw('Square', {
                             Size = newUDim2(1,-4,0,15);
                             Position = newUDim2(0,2,1,-17);
-                            ThemeColor = 'option background';
+                            ThemeColor = 'Option Background';
                             ZIndex = z+2;
                             Parent = objs.holder;
                         })
@@ -3958,7 +3940,7 @@ function library:init()
                         objs.border1 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 1';
+                            ThemeColor = 'Option Border 1';
                             ZIndex = z+1;
                             Parent = objs.background;
                         })
@@ -3966,7 +3948,7 @@ function library:init()
                         objs.border2 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 2';
+                            ThemeColor = 'Option Border 2';
                             ZIndex = z;
                             Parent = objs.border1;
                         })
@@ -3981,7 +3963,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = box.risky and 'risky text enabled' or 'option text 2';
+                            ThemeColor = box.risky and 'Risky Text Enabled' or 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -3991,7 +3973,7 @@ function library:init()
 
                         objs.inputText = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,0);
-                            ThemeColor = 'option text 2';
+                            ThemeColor = 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+5;
@@ -4000,11 +3982,11 @@ function library:init()
                         })
 
                         utility:Connection(objs.holder.MouseEnter, function()
-                            objs.border1.ThemeColor = 'accent';
+                            objs.border1.ThemeColor = 'Accent';
                         end)
 
                         utility:Connection(objs.holder.MouseLeave, function()
-                            objs.border1.ThemeColor = 'option border 1';
+                            objs.border1.ThemeColor = 'Option Border 1';
                         end)
 
                         utility:Connection(objs.holder.MouseButton1Down, function()
@@ -4050,7 +4032,7 @@ function library:init()
                             input = '';
                         end
 
-                        self.objects.inputText.ThemeColor = 'option text 1';
+                        self.objects.inputText.ThemeColor = 'Option Text 1';
                         c = utility:Connection(inputservice.InputBegan, function(inp)
                             if inp.KeyCode == Enum.KeyCode.Return or inp.UserInputType == Enum.UserInputType.MouseButton1 then
                                 box:ReleaseFocus(true);
@@ -4076,7 +4058,7 @@ function library:init()
 
                     function box:ReleaseFocus(apply)
                         box.focused = false;
-                        self.objects.inputText.ThemeColor = 'option text 2';
+                        self.objects.inputText.ThemeColor = 'Option Text 2';
                         if apply then
                             box:SetInput(input);
                         end
@@ -4086,7 +4068,7 @@ function library:init()
                     tooltip(box);
                     box:SetText(box.text);
                     box:SetInput(box.input, true);
-                    self:Updateoptions();
+                    self:UpdateOptions();
                     return box
                 end
 
@@ -4139,7 +4121,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = bind.risky and 'risky text' or 'option text 2';
+                            ThemeColor = bind.risky and 'Risky Text' or 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -4148,7 +4130,7 @@ function library:init()
                         })
 
                         objs.keyText = utility:Draw('Text', {
-                            ThemeColor = 'option text 3';
+                            ThemeColor = 'Option Text 3';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -4156,11 +4138,11 @@ function library:init()
                         })
 
                         utility:Connection(objs.holder.MouseEnter, function()
-                            objs.keyText.ThemeColor = 'accent';
+                            objs.keyText.ThemeColor = 'Accent';
                         end)
 
                         utility:Connection(objs.holder.MouseLeave, function()
-                            objs.keyText.ThemeColor = bind.binding and 'accent' or 'option text 3';
+                            objs.keyText.ThemeColor = bind.binding and 'Accent' or 'Option Text 3';
                         end)
 
                         utility:Connection(objs.holder.MouseButton1Down, function()
@@ -4191,7 +4173,7 @@ function library:init()
                             end
                             bind.callback(false);
                         end
-                        local keyName = 'none'
+                        local keyName = 'NONE'
                         self.bind = (keybind and keybind) or keybind or self.bind
                         if self.bind == Enum.KeyCode.Backspace then
                             self.bind = 'none';
@@ -4202,11 +4184,11 @@ function library:init()
                         self:SetKeyText(keyName:upper());
                         self.indicatorValue:SetKey((self.text == nil or self.text == '') and (self.flag == nil and 'unknown' or self.flag) or self.text); -- this is so dumb
                         self.indicatorValue:SetValue('['..keyName:upper()..']');
-                        self.objects.keyText.ThemeColor = self.objects.holder.Hover and 'accent' or 'option text 3';
+                        self.objects.keyText.ThemeColor = self.objects.holder.Hover and 'Accent' or 'Option Text 3';
                     end
 
                     function bind:SetKeyText(str)
-                        str = tostring(str):lower();
+                        str = tostring(str);
                         self.objects.keyText.Text = '['..str..']';
                         self.objects.keyText.Position = newUDim2(1,-self.objects.keyText.TextBounds.X, 0, 2);
                     end
@@ -4256,7 +4238,7 @@ function library:init()
                     tooltip(bind);
                     bind:SetBind(bind.bind);
                     bind:SetText(bind.text);
-                    self:Updateoptions();
+                    self:UpdateOptions();
                     return bind
                 end
 
@@ -4307,7 +4289,7 @@ function library:init()
                         objs.background = utility:Draw('Square', {
                             Size = newUDim2(1,-4,0,15);
                             Position = newUDim2(0,2,1,-19);
-                            ThemeColor = 'option background';
+                            ThemeColor = 'Option Background';
                             ZIndex = z+2;
                             Parent = objs.holder;
                         })
@@ -4315,7 +4297,7 @@ function library:init()
                         objs.border1 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 1';
+                            ThemeColor = 'Option Border 1';
                             ZIndex = z+1;
                             Parent = objs.background;
                         })
@@ -4323,7 +4305,7 @@ function library:init()
                         objs.border2 = utility:Draw('Square', {
                             Size = newUDim2(1,2,1,2);
                             Position = newUDim2(0,-1,0,-1);
-                            ThemeColor = 'option border 2';
+                            ThemeColor = 'Option Border 2';
                             ZIndex = z;
                             Parent = objs.border1;
                         })
@@ -4338,7 +4320,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = list.risky and 'risky text enabled' or 'option text 2';
+                            ThemeColor = list.risky and 'Risky Text Enabled' or 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -4348,7 +4330,7 @@ function library:init()
 
                         objs.inputText = utility:Draw('Text', {
                             Position = newUDim2(0,4,0,0);
-                            ThemeColor = 'option text 2';
+                            ThemeColor = 'Option Text 2';
                             Text = 'none',
                             Size = 13;
                             Font = 2;
@@ -4359,7 +4341,7 @@ function library:init()
 
                         objs.openText = utility:Draw('Text', {
                             Position = newUDim2(1,-10,0,0);
-                            ThemeColor = 'option text 3';
+                            ThemeColor = 'Option Text 3';
                             Text = '+';
                             Size = 13;
                             Font = 2;
@@ -4369,11 +4351,11 @@ function library:init()
                         })
 
                         utility:Connection(objs.holder.MouseEnter, function()
-                            objs.border1.ThemeColor = 'accent';
+                            objs.border1.ThemeColor = 'Accent';
                         end)
 
                         utility:Connection(objs.holder.MouseLeave, function()
-                            objs.border1.ThemeColor = 'option border 1';
+                            objs.border1.ThemeColor = 'Option Border 1';
                         end)
 
                         utility:Connection(objs.holder.MouseButton1Down, function()
@@ -4460,7 +4442,7 @@ function library:init()
                     tooltip(list);
                     list:Select((data.value or data.selected) or (list.multi and 'none' or list.values[1]), true);
                     list:SetText(list.text);
-                    self:Updateoptions();
+                    self:UpdateOptions();
                     return list
                 end
 
@@ -4503,7 +4485,7 @@ function library:init()
 
                         objs.text = utility:Draw('Text', {
                             Position = newUDim2(0,2,0,2);
-                            ThemeColor = text.risky and 'risky text enabled' or 'option text 2';
+                            ThemeColor = text.risky and 'Risky Text Enabled' or 'Option Text 2';
                             Size = 13;
                             Font = 2;
                             ZIndex = z+1;
@@ -4518,24 +4500,24 @@ function library:init()
                             self.text = str;
                             self.objects.text.Text = str;
                             self.objects.holder.Size = newUDim2(1,0,0,self.objects.text.TextBounds.Y + 6);
-                            section:Updateoptions();
+                            section:UpdateOptions();
                         end
                     end
 
                     text:SetText(text.text);
-                    self:Updateoptions();
+                    self:UpdateOptions();
                     return text
                 end
 
                 -----------------------
 
-                section:Updateoptions();
+                section:UpdateOptions();
                 section:SetText(section.text);
-                self:Updatesections();
+                self:UpdateSections();
                 return section;
             end
 
-            function tab:Updatesections()
+            function tab:UpdateSections()
                 table.sort(self.sections, function(a,b)
                     return a.order < b.order
                 end)
@@ -4546,7 +4528,7 @@ function library:init()
 
                     if section.objects.background.Visible ~= (section.enabled and tab.selected) then
                         section.objects.background.Visible = section.enabled and tab.selected
-                        section:Updateoptions();
+                        section:UpdateOptions();
                     end
                     
                     if section.enabled then
@@ -4603,18 +4585,18 @@ function library:init()
             for i,v in next, self.tabs do
                 local objs = v.objects;
                 v.selected = v == self.selectedTab;
-                objs.background.ThemeColor = v.selected and 'selected tab background' or 'unselected tab background';
+                objs.background.ThemeColor = v.selected and 'Selected Tab Background' or 'Unselected Tab Background';
                 objs.background.Size = newUDim2(0, objs.text.TextBounds.X + 14, 1, v.selected and 1 or 0);
                 objs.background.Position = newUDim2(0, pos, 0, 0)
 
-                objs.text.ThemeColor = v.selected and 'selected tab Text' or 'unselected tab Text';
+                objs.text.ThemeColor = v.selected and 'Selected Tab Text' or 'Unselected Tab Text';
                 objs.text.Position = newUDim2(.5, 0, 0, 3);
 
-                objs.topborder.ThemeColor = v.selected and 'accent' or 'unselected tab background';
+                objs.topBorder.ThemeColor = v.selected and 'Accent' or 'Unselected Tab Background';
 
                 pos += objs.background.Size.X.Offset + 1
 
-                v:Updatesections();
+                v:UpdateSections();
 
             end
         end
@@ -4627,7 +4609,7 @@ function library:init()
     do
         local z = library.zindexOrder.window + 2000;
         tooltipObjects.background = utility:Draw('Square', {
-            ThemeColor = 'group background';
+            ThemeColor = 'Group Background';
             ZIndex = z;
             Visible = false;
         })
@@ -4635,7 +4617,7 @@ function library:init()
         tooltipObjects.border1 = utility:Draw('Square', {
             Size = UDim2.new(1,2,1,2);
             Position = UDim2.new(0,-1,0,-1);
-            ThemeColor = 'border 1';
+            ThemeColor = 'Border 1';
             ZIndex = z-1;
             Parent = tooltipObjects.background;
         })
@@ -4643,14 +4625,14 @@ function library:init()
         tooltipObjects.border2 = utility:Draw('Square', {
             Size = UDim2.new(1,4,1,4);
             Position = UDim2.new(0,-2,0,-2);
-            ThemeColor = 'border 3';
+            ThemeColor = 'Border 3';
             ZIndex = z-2;
             Parent = tooltipObjects.background;
         })
 
         tooltipObjects.text = utility:Draw('Text', {
             Position = UDim2.new(0,3,0,0);
-            ThemeColor = 'primary text';
+            ThemeColor = 'Primary Text';
             Size = 13;
             Font = 2;
             ZIndex = z+1;
@@ -4660,7 +4642,7 @@ function library:init()
 
         tooltipObjects.riskytext = utility:Draw('Text', {
             Position = UDim2.new(0,3,0,0);
-            ThemeColor = 'risky text enabled';
+            ThemeColor = 'Risky Text Enabled';
             Text = '[RISKY]';
             Size = 13;
             Font = 2;
@@ -4738,14 +4720,14 @@ function library:init()
                 Visible = false;
                 Size = newUDim2(0, 200, 0, 17);
                 Position = newUDim2(0,800,0,100);
-                ThemeColor = 'background';
+                ThemeColor = 'Background';
                 ZIndex = z;
             })
 
             objs.border1 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 1';
+                ThemeColor = 'Border 1';
                 Parent = objs.background;
                 ZIndex = z-1;
             })
@@ -4753,21 +4735,21 @@ function library:init()
             objs.border2 = utility:Draw('Square', {
                 Size = newUDim2(1,2,1,2);
                 Position = newUDim2(0,-1,0,-1);
-                ThemeColor = 'border 3';
+                ThemeColor = 'Border 3';
                 Parent = objs.border1;
                 ZIndex = z-2;
             })
             
             objs.topbar = utility:Draw('Square', {
-                Size = newUDim2(1,0,0,2);
-                ThemeColor = 'accent';
+                Size = newUDim2(1,0,0,1);
+                ThemeColor = 'Accent';
                 ZIndex = z+1;
                 Parent = objs.background;
             })
 
             objs.text = utility:Draw('Text', {
                 Position = newUDim2(.5,0,0,2);
-                ThemeColor = 'primary text';
+                ThemeColor = 'Primary Text';
                 Text = 'Watermark Text';
                 Size = 13;
                 Font = 2;
@@ -4801,156 +4783,153 @@ function library:init()
 end
 
 function library:CreateSettingsTab(menu)
-    local s, e = pcall(function()
-        local settingsTab = menu:AddTab('settings', 999);
-        local configsection = settingsTab:Addsection('config', 2);
-        local mainsection = settingsTab:Addsection('main', 2);
-        local themeSection = settingsTab:Addsection('theme', 1);
-        local extrasection = settingsTab:Addsection('extra', 2);
-        configsection:AddBox({text = 'config name', flag = 'configinput'})
-        configsection:AddList({text = 'config', flag = 'selectedconfig'})
-        
-        local function refreshConfigs()
-            library.options.selectedconfig:ClearValues();
-            for _,v in next, listfiles(self.cheatname..'/'..self.gamename..'/configs') do
-                local ext = '.'..v:split('.')[#v:split('.')];
-                if ext == self.fileext then
-                    library.options.selectedconfig:AddValue(v:split('\\')[#v:split('\\')]:sub(1,-#ext-1))
-                end
+    local settingsTab = menu:AddTab('Settings', 999);
+    local configSection = settingsTab:AddSection('Config', 2);
+    local mainSection = settingsTab:AddSection('Main', 2);
+    local themeSection = settingsTab:AddSection('Theme', 1);
+    local extraSection = settingsTab:AddSection('Extra', 1);
+    configSection:AddBox({text = 'Config Name', flag = 'configinput'})
+    configSection:AddList({text = 'Config', flag = 'selectedconfig'})
+    
+    local function refreshConfigs()
+        library.options.selectedconfig:ClearValues();
+        for _,v in next, listfiles(self.cheatname..'/'..self.gamename..'/configs') do
+            local ext = '.'..v:split('.')[#v:split('.')];
+            if ext == self.fileext then
+                library.options.selectedconfig:AddValue(v:split('\\')[#v:split('\\')]:sub(1,-#ext-1))
             end
         end
-    
-        configsection:AddButton({text = 'load', confirm = true, callback = function()
-            library:LoadConfig(library.flags.selectedconfig);
-        end}):AddButton({text = 'save', confirm = true, callback = function()
-            library:SaveConfig(library.flags.selectedconfig);
-        end})
-    
-        configsection:AddButton({text = 'create', confirm = true, callback = function()
-            if library:GetConfig(library.flags.configinput) then
-                library:SendNotification('Config \''..library.flags.configinput..'\' already exists.', 5, c3new(1,0,0));
-                return
-            end
-            writefile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.configinput.. self.fileext, http:JSONEncode({}));
-            refreshConfigs()
-        end}):AddButton({text = 'Delete', confirm = true, callback = function()
-            if library:GetConfig(library.flags.selectedconfig) then
-                delfile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.selectedconfig.. self.fileext);
-                refreshConfigs()
-            end
-        end})
-    
+    end
+
+    configSection:AddButton({text = 'Load', confirm = true, callback = function()
+        library:LoadConfig(library.flags.selectedconfig);
+    end}):AddButton({text = 'Save', confirm = true, callback = function()
+        library:SaveConfig(library.flags.selectedconfig);
+    end})
+
+    configSection:AddButton({text = 'Create', confirm = true, callback = function()
+        if library:GetConfig(library.flags.configinput) then
+            library:SendNotification('Config \''..library.flags.configinput..'\' already exists.', 5, c3new(1,0,0));
+            return
+        end
+        writefile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.configinput.. self.fileext, http:JSONEncode({}));
         refreshConfigs()
-    
-        mainsection:AddBind({text = 'open / close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
-            library:SetOpen(not library.open)
-        end});
-    
-        mainsection:AddToggle({text = 'disable movement if open', flag = 'disablemenumovement', callback = function(bool)
-            if bool and library.open then
-                actionservice:BindAction(
-                    'FreezeMovement',
-                    function()
-                        return Enum.ContextActionResult.Sink
-                    end,
-                    false,
-                    unpack(Enum.PlayerActions:GetEnumItems())
-                )
-            else
-                actionservice:UnbindAction('FreezeMovement');
-            end
-        end})
-    
-        mainsection:AddButton({text = 'join discord', flag = 'joindiscord', confirm = true, callback = function()
-            local res = syn.request({
-    			Url = 'http://127.0.0.1:6463/rpc?v=1',
-    			Method = 'POST',
-    			Headers = {
-    				['Content-Type'] = 'application/json',
-    				Origin = 'https://discord.com'
-    			},
-    			Body = game:GetService('HttpService'):JSONEncode({
-    				cmd = 'INVITE_BROWSER',
-    				nonce = game:GetService('HttpService'):GenerateGUID(false),
-    				args = {code = 'Va8VQnNfGQ'}
-    			})
-    		})
-            if res.Success then
-                library:SendNotification('pie.solutions'..' | joined discord', 3);
-            end
-        end})
-    
-        mainsection:AddButton({text = 'copy game invite', callback = function()
-            setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
-        end})
-        mainsection:AddButton({text = 'copy discord invite',callback = function()
-            setclipboard('https://discord.gg/Va8VQnNfGQ')
-        end})
-        mainsection:AddButton({text = 'rejoin',confirm = true, callback = function()
-            game.TeleportService:Teleport(game.PlaceId)
-        end})
-        mainsection:AddButton({text = 'unload', confirm = true, callback = function()
-            library:Unload();
-        end})
-    
-        extrasection:AddSeparator({text = 'Keybinds'});
-        extrasection:AddToggle({text = 'keybind indicator', flag = 'keybind_indicator', callback = function(bool)
-            library.keyIndicator:SetEnabled(bool);
-        end})
-        extrasection:AddSlider({text = 'offset x', flag = 'keybind_indicator_x', min = 0, max = 100, increment = .1, value = .5, callback = function()
-            library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
-        end});
-        extrasection:AddSlider({text = 'offset y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 35, callback = function()
-            library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
-        end});
-    
-        extrasection:AddSeparator({text = 'watermark'})
-        extrasection:AddToggle({text = 'enabled', flag = 'watermark_enabled'});
-        extrasection:AddList({text = 'position', flag = 'watermark_pos', selected = 'Custom', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
-            library.watermark.lock = val;
-        end})
-        extrasection:AddSlider({text = 'custom x', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
-        extrasection:AddSlider({text = 'custom y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
-    
-        local themeStrings = {};
-        for _,v in next, library.themes do
-            table.insert(themeStrings, v.name)
+    end}):AddButton({text = 'Delete', confirm = true, callback = function()
+        if library:GetConfig(library.flags.selectedconfig) then
+            delfile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.selectedconfig.. self.fileext);
+            refreshConfigs()
         end
+    end})
 
-        themeSection:AddColor({text = 'accent', flag = 'theme_accent', callback = function(c3)
-            library.theme.Accent = c3
-            library:SetTheme(library.theme)
-        end});
-        themeSection:AddColor({color = library.theme['Border 1'], text = 'border 1', flag = 'theme_border1', callback = function(c3)
-            library.theme['Border 1'] =  c3
-            library:SetTheme(library.theme)
-        end});
-        themeSection:AddColor({color = library.theme['Border 2'], text = 'border 2', flag = 'theme_border2', callback = function(c3)
-            library.theme['Border 2'] = c3
-            library:SetTheme(library.theme)
-        end});
-        themeSection:AddColor({color = library.theme['Border 3'], text = 'border 3', flag = 'theme_border3', callback = function(c3)
-            library.theme['Border 3'] = c3
-            library:SetTheme(library.theme)
-        end});
-        
-        
-        themeSection:AddList({text = 'theme presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
-            for _,v in next, library.themes do
-                if v.name == newTheme then
-                    library.options.theme_accent:SetColor(v.theme.accent);
-                    library.options.theme_border1:SetColor(v.theme['border 1'])
-                    library.options.theme_border2:SetColor(v.theme['border 2'])
-                    library.options.theme_border3:SetColor(v.theme['border 3'])
-                    library:SetTheme(v.theme)
-                    break
-                end
+    refreshConfigs()
+
+    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
+        library:SetOpen(not library.open)
+    end});
+
+    mainSection:AddToggle({text = 'Disable Movement If Open', flag = 'disablemenumovement', callback = function(bool)
+        if bool and library.open then
+            actionservice:BindAction(
+                'FreezeMovement',
+                function()
+                    return Enum.ContextActionResult.Sink
+                end,
+                false,
+                unpack(Enum.PlayerActions:GetEnumItems())
+            )
+        else
+            actionservice:UnbindAction('FreezeMovement');
+        end
+    end})
+
+    mainSection:AddButton({text = 'Join discord', flag = 'joindiscord', confirm = true, callback = function()
+        local res = syn.request({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = game:GetService('HttpService'):JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = game:GetService('HttpService'):GenerateGUID(false),
+				args = {code = 'Va8VQnNfGQ'}
+			})
+		})
+        if res.Success then
+            library:SendNotification('pie.solutions'..' | joined discord', 3);
+        end
+    end})
+
+    mainSection:AddButton({text = 'Copy Game Invite', callback = function()
+        setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
+    end})
+    mainSection:AddButton({text = 'Copy discord invite',callback = function()
+        setclipboard('https://discord.gg/Va8VQnNfGQ')
+    end})
+    mainSection:AddButton({text = 'Rejoin',confirm = true, callback = function()
+        game.TeleportService:Teleport(game.PlaceId)
+    end})
+    mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
+        library:Unload();
+    end})
+
+    extraSection:AddSeparator({text = 'Keybinds'});
+    extraSection:AddToggle({text = 'Keybind Indicator', flag = 'keybind_indicator', callback = function(bool)
+        library.keyIndicator:SetEnabled(bool);
+    end})
+    extraSection:AddSlider({text = 'Position X', flag = 'keybind_indicator_x', min = 0, max = 100, increment = .1, value = .5, callback = function()
+        library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
+    end});
+    extraSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 35, callback = function()
+        library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
+    end});
+
+    extraSection:AddSeparator({text = 'Watermark'})
+    extraSection:AddToggle({text = 'Enabled', flag = 'watermark_enabled'});
+    extraSection:AddList({text = 'Position', flag = 'watermark_pos', selected = 'Custom', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
+        library.watermark.lock = val;
+    end})
+    extraSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
+    extraSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
+
+    local themeStrings = {};
+    for _,v in next, library.themes do
+        table.insert(themeStrings, v.name)
+    end
+
+    themeSection:AddColor({text = 'Accent', flag = 'theme_accent', callback = function(c3)
+        library.theme.Accent = c3
+        library:SetTheme(library.theme)
+    end});
+    themeSection:AddColor({color = library.theme['Border 1'], text = 'Border 1', flag = 'theme_border1', callback = function(c3)
+        library.theme['Border 1'] =  c3
+        library:SetTheme(library.theme)
+    end});
+    themeSection:AddColor({color = library.theme['Border 2'], text = 'Border 2', flag = 'theme_border2', callback = function(c3)
+        library.theme['Border 2'] = c3
+        library:SetTheme(library.theme)
+    end});
+    themeSection:AddColor({color = library.theme['Border 3'], text = 'Border 3', flag = 'theme_border3', callback = function(c3)
+        library.theme['Border 3'] = c3
+        library:SetTheme(library.theme)
+    end});
+    themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
+        for _,v in next, library.themes do
+            if v.name == newTheme then
+                library.options.theme_accent:SetColor(v.theme.Accent);
+                library.options.theme_border1:SetColor(v.theme['Border 1'])
+                library.options.theme_border2:SetColor(v.theme['Border 2'])
+                library.options.theme_border3:SetColor(v.theme['Border 3'])
+                library:SetTheme(v.theme)
+                break
             end
-        end}):Select('default');
+        end
+    end}):Select('Default');
 
-        return settingsTab;
-    end)
-    if not s and e then printconsole(tostring(e)) end
+    return settingsTab;
 end
 getgenv().library = library
+
+--return library
 return library
