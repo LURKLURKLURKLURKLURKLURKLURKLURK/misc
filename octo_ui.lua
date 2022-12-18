@@ -142,26 +142,26 @@ library.themes = {
         name = 'Bitch Bot',
         theme = {
             ['Accent']                    = fromrgb(126,72,163),
-            ['Background']                = fromrgb(19,19,19),
-            ['Border']                    = fromrgb(0,0,0),
-            ['Border 1']                  = fromrgb(0,0,0),
-            ['Border 2']                  = fromrgb(19,19,19),
-            ['Border 3']                  = fromrgb(0,0,0),
+            ['Background']                = fromrgb(33, 33, 33),
+            ['Border']                    = fromrgb(17, 17, 17),
+            ['Border 1']                  = fromrgb(32, 32, 32),
+            ['Border 2']                  = fromrgb(42, 42, 42),
+            ['Border 3']                  = fromrgb(10, 10, 10),
             ['Primary Text']              = fromrgb(220,220,220),
-            ['Group Background']          = fromrgb(21,21,21),
-            ['Selected Tab Background']   = fromrgb(32,32,32),
-            ['Unselected Tab Background'] = fromrgb(19,19,19),
+            ['Group Background']          = fromrgb(39, 39, 39),
+            ['Selected Tab Background']   = fromrgb(39, 39, 39),
+            ['Unselected Tab Background'] = fromrgb(36, 36, 36),
             ['Selected Tab Text']         = fromrgb(255,255,255),
             ['Unselected Tab Text']       = fromrgb(220,220,220),
-            ['Section Background']        = fromrgb(19,19,19);
+            ['Section Background']        = fromrgb(35, 35, 35);
             ['Option Text 1']             = fromrgb(245,245,245);
             ['Option Text 2']             = fromrgb(195,195,195);
-            ['Option Text 3']             = fromrgb(145,145,145);
-            ['Option Border 1']           = fromrgb(0,0,0);
-            ['Option Border 2']           = fromrgb(0,0,0);
-            ['Option Background']         = fromrgb(35,35,35);
-            ["Risky Text"]                = fromrgb(175, 21, 21);
-            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+            ['Option Text 3']             = fromrgb(195, 195, 195);
+            ['Option Border 1']           = fromrgb(35, 35, 35);
+            ['Option Border 2']           = fromrgb(1, 1, 1);
+            ['Option Background']         = fromrgb(41, 40, 40);
+            ["Risky Text Enabled"]                = fromrgb(216, 224, 155);
+            ["Risky Text Enabled enabled"]        = fromrgb(233, 243, 142);
         }
     },
     {
@@ -1181,7 +1181,7 @@ function library:init()
             })
 
             objs.topborder = utility:Draw('Square', {
-                Size = newUDim2(1,0,0,1);
+                Size = newUDim2(1,0,0,2);
                 ThemeColor = 'Accent';
                 Parent = objs.background;
                 ZIndex = z+1;
@@ -1436,7 +1436,7 @@ function library:init()
             })
 
             objs.topBorder = utility:Draw('Square', {
-                Size = newUDim2(1,0,0,1);
+                Size = newUDim2(1,0,0,2);
                 ThemeColor = 'Accent';
                 ZIndex = z+1;
                 Parent = objs.background;
@@ -2128,7 +2128,7 @@ function library:init()
                 })
 
                 objs.topBorder = utility:Draw('Square', {
-                    Size = newUDim2(1,0,0,1);
+                    Size = newUDim2(1,0,0,2);
                     ThemeColor = 'Unselected Tab Background';
                     ZIndex = z+1;
                     Parent = objs.background;
@@ -2192,7 +2192,7 @@ function library:init()
                     })
 
                     objs.topBorder1 = utility:Draw('Square', {
-                        Size = newUDim2(.025,1,0,1);
+                        Size = newUDim2(.025,1,0,2);
                         Position = newUDim2(0,-1,0,0);
                         ThemeColor = 'Accent';
                         ZIndex = z+1;
@@ -2231,7 +2231,7 @@ function library:init()
                     self.text = tostring(text);
                     self.objects.textlabel.Text = self.text;
                     local x = self.objects.background.Object.Size.X - self.objects.textlabel.TextBounds.X - 13
-                    self.objects.topBorder2.Size = newUDim2(0, x, 0, 1)
+                    self.objects.topBorder2.Size = newUDim2(0, x, 0, 2)
                     self.objects.topBorder2.Position = newUDim2(1, 1 + -x, 0, 0)
                 end
 
@@ -4741,7 +4741,7 @@ function library:init()
             })
             
             objs.topbar = utility:Draw('Square', {
-                Size = newUDim2(1,0,0,1);
+                Size = newUDim2(1,0,0,2);
                 ThemeColor = 'Accent';
                 ZIndex = z+1;
                 Parent = objs.background;
@@ -4783,13 +4783,13 @@ function library:init()
 end
 
 function library:CreateSettingsTab(menu)
-    local settingsTab = menu:AddTab('Settings', 999);
-    local configSection = settingsTab:AddSection('Config', 2);
-    local mainSection = settingsTab:AddSection('Main', 2);
-    local themeSection = settingsTab:AddSection('Theme', 1);
-    local extraSection = settingsTab:AddSection('Extra', 1);
-    configSection:AddBox({text = 'Config Name', flag = 'configinput'})
-    configSection:AddList({text = 'Config', flag = 'selectedconfig'})
+    local settingsTab = menu:AddTab('settings', 999);
+    local configSection = settingsTab:AddSection('config', 2);
+    local mainSection = settingsTab:AddSection('main', 2);
+    local themeSection = settingsTab:AddSection('theme', 1);
+    local extraSection = settingsTab:AddSection('extra', 1);
+    configSection:AddBox({text = 'config name', flag = 'configinput'})
+    configSection:AddList({text = 'config', flag = 'selectedconfig'})
     
     local function refreshConfigs()
         library.options.selectedconfig:ClearValues();
@@ -4801,20 +4801,20 @@ function library:CreateSettingsTab(menu)
         end
     end
 
-    configSection:AddButton({text = 'Load', confirm = true, callback = function()
+    configSection:AddButton({text = 'load', confirm = true, callback = function()
         library:LoadConfig(library.flags.selectedconfig);
-    end}):AddButton({text = 'Save', confirm = true, callback = function()
+    end}):AddButton({text = 'save', confirm = true, callback = function()
         library:SaveConfig(library.flags.selectedconfig);
     end})
 
-    configSection:AddButton({text = 'Create', confirm = true, callback = function()
+    configSection:AddButton({text = 'create', confirm = true, callback = function()
         if library:GetConfig(library.flags.configinput) then
             library:SendNotification('Config \''..library.flags.configinput..'\' already exists.', 5, c3new(1,0,0));
             return
         end
         writefile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.configinput.. self.fileext, http:JSONEncode({}));
         refreshConfigs()
-    end}):AddButton({text = 'Delete', confirm = true, callback = function()
+    end}):AddButton({text = 'delete', confirm = true, callback = function()
         if library:GetConfig(library.flags.selectedconfig) then
             delfile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.selectedconfig.. self.fileext);
             refreshConfigs()
@@ -4823,11 +4823,11 @@ function library:CreateSettingsTab(menu)
 
     refreshConfigs()
 
-    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
+    mainSection:AddBind({text = 'open / close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
         library:SetOpen(not library.open)
     end});
 
-    mainSection:AddToggle({text = 'Disable Movement If Open', flag = 'disablemenumovement', callback = function(bool)
+    mainSection:AddToggle({text = 'disable movement if open', flag = 'disablemenumovement', callback = function(bool)
         if bool and library.open then
             actionservice:BindAction(
                 'FreezeMovement',
@@ -4842,7 +4842,7 @@ function library:CreateSettingsTab(menu)
         end
     end})
 
-    mainSection:AddButton({text = 'Join discord', flag = 'joindiscord', confirm = true, callback = function()
+    mainSection:AddButton({text = 'join discord', flag = 'joindiscord', confirm = true, callback = function()
         local res = syn.request({
 			Url = 'http://127.0.0.1:6463/rpc?v=1',
 			Method = 'POST',
@@ -4861,60 +4861,60 @@ function library:CreateSettingsTab(menu)
         end
     end})
 
-    mainSection:AddButton({text = 'Copy Game Invite', callback = function()
+    mainSection:AddButton({text = 'copy game invite', callback = function()
         setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
     end})
-    mainSection:AddButton({text = 'Copy discord invite',callback = function()
+    mainSection:AddButton({text = 'copy discord invite',callback = function()
         setclipboard('https://discord.gg/Va8VQnNfGQ')
     end})
-    mainSection:AddButton({text = 'Rejoin',confirm = true, callback = function()
+    mainSection:AddButton({text = 'rejoin',confirm = true, callback = function()
         game.TeleportService:Teleport(game.PlaceId)
     end})
-    mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
+    mainSection:AddButton({text = 'unload', confirm = true, callback = function()
         library:Unload();
     end})
 
-    extraSection:AddSeparator({text = 'Keybinds'});
-    extraSection:AddToggle({text = 'Keybind Indicator', flag = 'keybind_indicator', callback = function(bool)
+    extraSection:AddSeparator({text = 'keybinds'});
+    extraSection:AddToggle({text = 'keybind indicator', flag = 'keybind_indicator', callback = function(bool)
         library.keyIndicator:SetEnabled(bool);
     end})
-    extraSection:AddSlider({text = 'Position X', flag = 'keybind_indicator_x', min = 0, max = 100, increment = .1, value = .5, callback = function()
+    extraSection:AddSlider({text = 'position X', flag = 'keybind_indicator_x', min = 0, max = 100, increment = .1, value = .5, callback = function()
         library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
     end});
-    extraSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 35, callback = function()
+    extraSection:AddSlider({text = 'position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 35, callback = function()
         library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
     end});
 
-    extraSection:AddSeparator({text = 'Watermark'})
-    extraSection:AddToggle({text = 'Enabled', flag = 'watermark_enabled'});
-    extraSection:AddList({text = 'Position', flag = 'watermark_pos', selected = 'Custom', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
+    extraSection:AddSeparator({text = 'watermark'})
+    extraSection:AddToggle({text = 'enabled', flag = 'watermark_enabled'});
+    extraSection:AddList({text = 'position', flag = 'watermark_pos', selected = 'Custom', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
         library.watermark.lock = val;
     end})
-    extraSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
-    extraSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
+    extraSection:AddSlider({text = 'custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
+    extraSection:AddSlider({text = 'custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
 
     local themeStrings = {};
     for _,v in next, library.themes do
         table.insert(themeStrings, v.name)
     end
 
-    themeSection:AddColor({text = 'Accent', flag = 'theme_accent', callback = function(c3)
+    themeSection:AddColor({text = 'accent', flag = 'theme_accent', callback = function(c3)
         library.theme.Accent = c3
         library:SetTheme(library.theme)
     end});
-    themeSection:AddColor({color = library.theme['Border 1'], text = 'Border 1', flag = 'theme_border1', callback = function(c3)
+    themeSection:AddColor({color = library.theme['Border 1'], text = 'border 1', flag = 'theme_border1', callback = function(c3)
         library.theme['Border 1'] =  c3
         library:SetTheme(library.theme)
     end});
-    themeSection:AddColor({color = library.theme['Border 2'], text = 'Border 2', flag = 'theme_border2', callback = function(c3)
+    themeSection:AddColor({color = library.theme['Border 2'], text = 'border 2', flag = 'theme_border2', callback = function(c3)
         library.theme['Border 2'] = c3
         library:SetTheme(library.theme)
     end});
-    themeSection:AddColor({color = library.theme['Border 3'], text = 'Border 3', flag = 'theme_border3', callback = function(c3)
+    themeSection:AddColor({color = library.theme['Border 3'], text = 'border 3', flag = 'theme_border3', callback = function(c3)
         library.theme['Border 3'] = c3
         library:SetTheme(library.theme)
     end});
-    themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
+    themeSection:AddList({text = 'presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
         for _,v in next, library.themes do
             if v.name == newTheme then
                 library.options.theme_accent:SetColor(v.theme.Accent);
