@@ -20,9 +20,9 @@ local library = {
     ended = {},
     colors = {},
     folders = {
-        main = "crip",
-        assets = "crip/assets",
-        configs = "crip/configs"
+        main = "pie",
+        assets = "pie/assets",
+        configs = "pie/configs"
     },
     shared = {
         initialized = false,
@@ -39,11 +39,11 @@ local utility = {}
 local pages = {}
 local sections = {}
 local theme = {
-    accent = Color3.fromRGB(55, 175, 225),
-    lightcontrast = Color3.fromRGB(30, 30, 30),
-    darkcontrast = Color3.fromRGB(25, 25, 25),
+    accent = Color3.fromRGB(141, 111, 181),
+    lightcontrast = Color3.fromRGB(20, 20, 30),
+    darkcontrast = Color3.fromRGB(19, 19, 29),
     outline = Color3.fromRGB(0, 0, 0),
-    inline = Color3.fromRGB(50, 50, 50),
+    inline = Color3.fromRGB(52, 52, 52),
     textcolor = Color3.fromRGB(255, 255, 255),
     textborder = Color3.fromRGB(0, 0, 0),
     cursoroutline = Color3.fromRGB(10, 10, 10),
@@ -721,7 +721,7 @@ do
             }
             --
             local watermark_title = utility:Create("TextLabel", {Vector2.new(2 + 6,4), watermark_outline}, {
-                Text = string.format("crip scrip - fps : %u - uid : %u", 35, 2),
+                Text = string.format("pie solutions - fps : %u - uid : %u", 35, 2),
                 Size = theme.textsize,
                 Font = theme.font,
                 Color = theme.textcolor,
@@ -780,7 +780,7 @@ do
                 library.shared.ping = stats.Network:FindFirstChild("ServerStatsItem") and tostring(math.floor(stats.Network.ServerStatsItem["Data Ping"]:GetValue())) or "Unknown"
                 --
                 if (tick() - Tick) > 0.15 then
-                    watermark_title.Text = string.format("Cripware | Ping : %s | Fps : %u", library.shared.ping, library.shared.fps)
+                    watermark_title.Text = string.format("pie solutions | Ping : %s | Fps : %u", library.shared.ping, library.shared.fps)
                     window.watermark:UpdateSize()
                     --
                     Tick = tick()
